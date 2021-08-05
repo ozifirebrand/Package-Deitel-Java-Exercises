@@ -11,7 +11,7 @@ class KataTest {
     public void testFactorial(){
         Kata kata = new Kata();
        int result = kata.findFactorial(10);
-        System.out.println(result);
+       Assertions.assertEquals(151200, result);
 
     }
 
