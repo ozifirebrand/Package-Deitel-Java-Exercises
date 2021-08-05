@@ -7,7 +7,6 @@ class HackathonExercise2Test {
     @Test
     public void testThis(){
 
-
     }
 
 }
