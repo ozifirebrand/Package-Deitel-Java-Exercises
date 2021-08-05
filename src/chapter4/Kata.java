@@ -25,8 +25,26 @@ Display total sum based on unit price * total
 
 
 public class Kata {
-    int unitPrice = 1500;
+
+    private int factorialValue=1;
+    private int counter = 0;
+
+    public int findFactorial(int input) {
+
+        while ( counter <= (input+1) ){
+            factorialValue = factorialValue * input;
+            input -= 1;
+            counter += 1;
+        }
+        return factorialValue;
+
+    }
+
+
+        int unitPrice = 1500;
     int totalPriceOfPastQuestions;
+
+
     public int getPrice(int numberOfPqs) {
         boolean numberOfPqsLessThan5 = numberOfPqs>=1 && numberOfPqs <=5;
         if (numberOfPqsLessThan5) {
@@ -73,22 +91,3 @@ public class Kata {
     }
 }
 
-
-
-//    private int factorialValue=1;
-//    private int counter = 0;
-//
-//    public int findFactorial(int input) {
-//
-//        while ( counter <= (input+1) ){
-//            factorialValue = factorialValue * input;
-//            input -= 1;
-//            counter += 1;
-//        }
-//        return factorialValue;
-
-//}
-
-//
-//    public int returnFactorial(){
-//        return factorialValue;

@@ -69,11 +69,11 @@ public void testPriceForLessThan5(){
         Assertions.assertEquals(1600000, totalPriceOfPqs);
 
     }
-//    public void testFactorial(){
-//        Kata kata = new Kata();
-//       int result = kata.findFactorial(10);
-//       Assertions.assertEquals(151200, result);
-//
-//    }
+    public void testFactorial(){
+        Kata kata = new Kata();
+       int result = kata.findFactorial(10);
+       Assertions.assertEquals(151200, result);
+
+    }
 
 }
