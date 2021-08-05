@@ -18,9 +18,7 @@ public class Kata {
         while ( counter <= (input+1) ){
             factorialValue = factorialValue * input;
             input -= 1;
-
             counter += 1;
-            System.out.println(factorialValue);
         }
         return factorialValue;
 
