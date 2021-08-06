@@ -45,12 +45,15 @@ if number is greater than 5-digit, display an error message and ask user to inpu
 
                 if ( firstPalindrome.equals(secondPalindrome)) {
                     System.out.println("This is a palindrome");
+                    break;
                 }
                 else if (invalidNumber>0 && firstPalindrome!=secondPalindrome){
                 System.out.println("Enter a valid number");
+                continue;
 
                 }else if (firstPalindrome != secondPalindrome){
                     System.out.println("This is not a palindrome");
+                    break;
                 }
 
                 counter++;
