@@ -23,12 +23,10 @@ public class FourPointThreeOne {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter number --> ");
        int  binaryInteger = scanner.nextInt();
-       while(binaryInteger>= 0){
-           firstConversion = (int)(binaryInteger/Math.pow(10, counter));
-           counter+=1;
+       while(binaryInteger>= 0) {
+           firstConversion = (int) (binaryInteger / Math.pow(10, counter));
+           counter += 1;
            digitsStored = MessageFormat.format("{0}{1}", digitsStored, firstConversion);
-
-}
-
+       }
     }
 }

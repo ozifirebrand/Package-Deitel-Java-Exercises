@@ -35,7 +35,7 @@ public class TrianglePrinting {
                 for (int fastCounter =10; fastCounter>= largeCounter; fastCounter--) {
                     System.out.print("" + asterisk);
                 }
-                System.out.println("\n");
+                System.out.println();
             }
 //                //mainString="**********";
 //                String newString = mainString + asterisk;
@@ -49,7 +49,9 @@ public class TrianglePrinting {
 
     public static void main(String[] args) {
         TrianglePrinting asterisks = new TrianglePrinting();
+
         asterisks.asteriskMethod("*");
+        System.out.println("\n\n\n");
         asterisks.askeriskInverted("*");
 
     }
