@@ -1,5 +1,7 @@
 package chapter2;
+
 import java.util.Scanner;
+
 public class TwoPointThreeFourPopulation {
     public static void main(String[] args) {
 
@@ -34,6 +36,7 @@ public class TwoPointThreeFourPopulation {
             double worldPopulation = currentWorldPopulation * worldPopulationGrowthRate;
             currentWorldPopulation = worldPopulation;
             System.out.printf("%.3f%n",(worldPopulation));
+
         }
     }
 }
