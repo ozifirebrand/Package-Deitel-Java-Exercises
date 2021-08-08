@@ -20,20 +20,18 @@ public class FourPointThreeOne {
         int firstConversion= 1;
         int decimalNumber= 10;
         int tens= 1;
-
+        int binaryInteger = 1;
         System.out.println("Enter number --> ");
         int  binaryInput = scanner.nextInt();
 
-        while (tens >= 1){
-            int binaryInteger = binaryInput/tens;
-
-
-
+        while (binaryInteger > 0) {
+            binaryInteger = binaryInput % tens;
+            tens = tens * 10;
         }
 
 
 
-        System.out.print("" +1255/1000 +"\n" + 1255%1000 +"\n" +1255%100) ;
+        //System.out.print("" +1255/1000 +"\n" + 1255%1000 +"\n" +1255%100) ;
 
     }
 }
