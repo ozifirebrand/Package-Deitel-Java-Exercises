@@ -47,6 +47,11 @@ public class Employee {
     }
 
     public double oneYearSalary(){
+        salary = salary * 12;
+        return  salary;
+    }
+
+    public double oneYearSalaryAfterRaise(){
     double newSalary = tenPercentRaise();
     salary = newSalary*12;
     return salary;

@@ -3,8 +3,6 @@ package chapter3;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 class EmployeeTest {
     private Employee newEmployee = new Employee("Jide",
             "Amusan", 50000.00);
@@ -30,8 +28,15 @@ class EmployeeTest {
     }
 
     @Test
-    public void test10PercentRaise(){
+    public void testOneYearRaise(){
         newEmployee.oneYearSalary();
+        Assertions.assertEquals(600000, newEmployee.getSalary());
+
+    }
+
+    @Test
+    public void test10PercentRaise(){
+        newEmployee.oneYearSalaryAfterRaise();
         Assertions.assertEquals(606000, newEmployee.getSalary());
     }
 }
