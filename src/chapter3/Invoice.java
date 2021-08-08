@@ -7,6 +7,17 @@ public class Invoice {
     private double pricePerItem;
     double amount;
 
+    Invoice(){
+
+    }
+
+    Invoice(String number, String description, int quantity, double pricePerItem){
+        this.number = number;
+        this.description = description;
+        this.quantity= quantity;
+        this.pricePerItem = pricePerItem;
+    }
+
     public void setNumber(String number){
         this.number = number;
     }
@@ -40,7 +51,8 @@ this.pricePerItem = pricePerItem;
 
     public double getInvoiceAmount(double amount){
         amount = quantity * pricePerItem;
-        if( pricePerItem < 0 || quantity < 0){
+        boolean priceOrQuantityIsZero = pricePerItem < 0 || quantity < 0;
+        if(priceOrQuantityIsZero ){
             amount = 0;}
         return amount;
 
@@ -49,5 +61,13 @@ this.pricePerItem = pricePerItem;
 
         double discount = amount/2;
         return discount;
+    }
+
+    public static void main(String[] args) {
+        Invoice myInvoice = new  Invoice("Water", "part 2", 22, 15.5);
+
+        System.out.println(myInvoice.getDiscount(50));
+
+        System.out.println(myInvoice.getInvoiceAmount(75.2));
     }
 }
