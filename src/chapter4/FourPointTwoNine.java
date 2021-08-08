@@ -7,9 +7,11 @@ public class FourPointTwoNine {
         int squareSide = scanner.nextInt();
         String asterisk = "*";
         int noOfAsterisks = 0;
-        while(noOfAsterisks == squareSide && squareSide <= 20) {
+        while (noOfAsterisks <= 20){
+            noOfAsterisks = squareSide;
             System.out.print(asterisk);
-            squareSide++;
+            noOfAsterisks++;
         }
+
     }
 }
