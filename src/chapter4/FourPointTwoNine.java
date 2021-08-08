@@ -5,8 +5,11 @@ public class FourPointTwoNine {
         Scanner scanner  = new Scanner(System.in);
         System.out.println("Enter size of square here --> ");
         int squareSide = scanner.nextInt();
-        while(squareSide<=20) {
-            System.out.print(squareSide);
+        String asterisk = "*";
+        int noOfAsterisks = 0;
+        while(noOfAsterisks == squareSide && squareSide <= 20) {
+            System.out.print(asterisk);
+            squareSide++;
         }
     }
 }
