@@ -7,7 +7,7 @@ public class Diamond {
         int rowSpaces = 0;
         int rowAsterisks = 5;
 
-//
+//         MY TRIALS AND TEARS
 //        for (int row = 0; row <= 9; row++) {
 //            for (int column = 0; column<=row; column++){
 //                System.out.print(column);
@@ -32,6 +32,7 @@ public class Diamond {
 //            rowAsterisks--;
 //            System.out.println();
 //
+        //THEN VOILA!
 //        }
 //        }
 

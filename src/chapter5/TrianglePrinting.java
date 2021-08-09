@@ -1,16 +1,6 @@
 package chapter5;
 
 public class TrianglePrinting {
-//    public static void main(String[] args) {
-        /*A program that accurately displays asterisks in the order of one,
-            two, three etc and stops at ten
-           We have our asterisk printing string
-          Print first asterisk
-          Increase the asterisks up till 10
-
-          */
-//
-//        String asterisk = "*";
         String mainString="*";
         int counter = 1;
         public void asteriskMethod(String asterisk){
@@ -19,14 +9,12 @@ public class TrianglePrinting {
 
             String newString = mainString + asterisk;
             System.out.println(newString);
-//            counter++;
-//            while (counter < 10)
-//                //counter += 1;
-                mainString = newString + asterisk;
-                System.out.println(mainString);
-                counter++;
+            mainString = newString + asterisk;
+            System.out.println(mainString);
+            counter++;
         }
         }
+
 
         public void askeriskInverted(String asterisk){
 //            System.out.println(asterisk);
@@ -49,10 +37,19 @@ public class TrianglePrinting {
 
     public static void main(String[] args) {
         TrianglePrinting asterisks = new TrianglePrinting();
+//
+//        asterisks.asteriskMethod("*");
+//        System.out.println("\n\n");
+//        asterisks.askeriskInverted("*");
+        for(int row =0; row <10; row++){
+            for (int column = 10; column>row; column--){
+                System.out.print(" ");
+            }
+            for (int column =0; column< row; column++){
+                System.out.print("* ");
+            }
 
-        asterisks.asteriskMethod("*");
-        System.out.println("\n\n\n");
-        asterisks.askeriskInverted("*");
-
-    }
+        System.out.println(" ");
+            }
+        }
     }
