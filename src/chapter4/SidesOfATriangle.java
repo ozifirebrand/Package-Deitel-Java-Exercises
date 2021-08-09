@@ -8,14 +8,20 @@ public class SidesOfATriangle {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Enter the first side -> ");
-        double firstSide = scanner.nextDouble();
 
-        System.out.println("Enter the second side -> ");
+        System.out.println("Enter the three sides -> ");
+        double firstSide = scanner.nextDouble();
+        double thirdSide = scanner.nextDouble();
         double secondSide = scanner.nextDouble();
 
-        System.out.println("Enter the third side -> ");
-        double thirdSide = scanner.nextDouble();
+        String sides = (""+ firstSide +"" +secondSide +"" +thirdSide);
+
+        double firstSum = firstSide + secondSide;
+        double secondSum = secondSide + thirdSide;
+        double thirdSum = firstSum + thirdSide;
+
+        String sumOfSides = ("" + firstSum +"" +secondSum +"" +thirdSum);
+
 
 
 
