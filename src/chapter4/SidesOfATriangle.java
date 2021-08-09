@@ -9,7 +9,7 @@ public class SidesOfATriangle {
         Scanner scanner = new Scanner(System.in);
 
 //use loops to collect values
-        while (  )
+       // while (  )
         System.out.println("Enter the three sides -> ");
         double firstSide = scanner.nextDouble();
         double thirdSide = scanner.nextDouble();

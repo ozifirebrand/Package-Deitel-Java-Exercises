@@ -13,7 +13,8 @@ System.out.println("Enter 5-digit integer that is to be split -->");
 int splitNumber = input.nextInt();
 
 System.out.printf("%d %d %d %d %d ", splitNumber/10000, 
-splitNumber%10000/1000, splitNumber%1000/100, splitNumber%100/10, splitNumber%10);
+splitNumber%10000/1000, splitNumber%1000/100, splitNumber%100/10,
+        splitNumber%10);
 
 
 
