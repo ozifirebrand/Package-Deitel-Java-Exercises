@@ -9,12 +9,15 @@ public class FourPointTwoNine {
 
         String asterisk = "*";
 
-        int noOfAsterisks = 1;
-        while (noOfAsterisks <= squareSide){
-            if (squareSide<=20){
-            System.out.print(asterisk);
+        if (squareSide<=20){
+        for (int rows = 1;rows <= squareSide; rows++){
+            for (int column = rows; column<=squareSide; column++ ) {
+                System.out.print(asterisk);
+                // rows++;
+            }
+            System.out.println();
+            }
 
-            noOfAsterisks++;}
 
         }
 
