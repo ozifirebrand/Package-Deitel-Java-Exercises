@@ -2,7 +2,7 @@
 package chapter4;
 import java.util.Scanner;
 
-public class FourPointTwoNinePalindrome {
+public class FourPointThreeZeroPalindrome {
     public static void main(String[] args) {
 
         int counter = 0;
