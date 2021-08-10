@@ -16,22 +16,6 @@ public class FourPointThreeOne {
 
         Scanner scanner = new Scanner(System.in);
 
-        int counter = 0;
-        int firstConversion= 1;
-        int decimalNumber= 10;
-        int tens= 1;
-        int binaryInteger = 1;
-        System.out.println("Enter number --> ");
-        int  binaryInput = scanner.nextInt();
-
-        while (binaryInteger > 0) {
-            binaryInteger = binaryInput % tens;
-            tens = tens * 10;
-        }
-
-
-
-        //System.out.print("" +1255/1000 +"\n" + 1255%1000 +"\n" +1255%100) ;
 
     }
 }
