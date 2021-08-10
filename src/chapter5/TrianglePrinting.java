@@ -38,28 +38,56 @@ public class TrianglePrinting {
     public static void main(String[] args) {
         TrianglePrinting asterisks = new TrianglePrinting();
 
-        asterisks.asteriskMethod("*");
-        System.out.println("\n\n");
-        asterisks.askeriskInverted("*");
-        for(int row =0; row <10; row++){
-            for (int column = 10; column>row; column--){
-                System.out.print(" ");
-            }
-            for (int column =0; column< row; column++){
-                System.out.print("*");
-            }
+//        asterisks.asteriskMethod("*");
+//        System.out.println("\n\n");
+//        asterisks.askeriskInverted("*");
+//        for(int row =0; row <10; row++){
+//            for (int column = 10; column>row; column--){
+//                System.out.print(" ");
+//            }
+//            for (int column =0; column< row; column++){
+//                System.out.print("*");
+//            }
+//
+//        System.out.println(" ");
+//            }
+//
+//        for (int row =10; row >=0; row--){
+//            for (int column =0; column<=row; column++){
+//                System.out.print("*");
+//            }
+//            for (int column = 10; column>row; column--){
+//                System.out.print(" ");
+//            }
+//                System.out.println();
+//        }
 
-        System.out.println(" ");
+        for(int row =0; row <10; row++) {
+            for (int column = 10; column > row; column--) {
+                System.out.print("  ");
             }
-
-        for (int row =10; row >=0; row--){
-            for (int column =0; column<=row; column++){
-                System.out.print("*");
+            for (int column = 0; column <= row; column++) {
+                System.out.print("* ");
             }
-            for (int column = 10; column>row; column--){
-                System.out.print(" ");
+            for (int column =1; column<=row; column++){
+                System.out.print("* ");
             }
-                System.out.println();
+            for (int column = 1; column>= row; column--){
+                System.out.print("  ");
+            }
+            System.out.println();
         }
+        for (int row =0; row <=10; row++){
+            for (int column = 0; column<row; column++){
+                System.out.print("  ");
+            }
+            for (int column =10; column>row; column--){
+                System.out.print("* ");
+            }
+           for (int column =10; column>=row; column--){
+               System.out.print("* ");
+           }
+            System.out.println();
         }
     }
+}
