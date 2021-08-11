@@ -1,6 +1,6 @@
 package chapter4;
 
-public class InfiniteLoop {
+public class FourPointThreeInfiniteLoop {
     public static void main(String[] args) {
         int multipleOfTwo = 0;
         int number = 1;

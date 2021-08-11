@@ -1,5 +1,5 @@
 package chapter4;
-// ADDING INTEGERS IN FOR DIFFERENT WAYS USING LOOPS
+// ADDING INTEGERS IN FOUR DIFFERENT WAYS USING LOOPS
 
 public class FourPointThree {
     public static void main(String[] args) {

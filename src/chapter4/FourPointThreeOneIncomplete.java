@@ -11,7 +11,7 @@ Sum of digits gives the decimal figure
 Display sum of digits
  */
 
-public class FourPointThreeOne {
+public class FourPointThreeOneIncomplete {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
