@@ -38,7 +38,7 @@ public class FourPointTwoZero {
                     System.out.println("Worker's salary is " + totalWeeklySalary);
                 }
             }
-        fortyHours--;
+       // fortyHours--;
         }
     }
 }
