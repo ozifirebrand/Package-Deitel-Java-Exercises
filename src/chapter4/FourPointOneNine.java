@@ -22,7 +22,7 @@ public class FourPointOneNine {
 
         while (noOfItems>0) {
             Scanner scanner = new Scanner(System.in);
-            System.out.println("Enter value of item" + noOfItems +" or press " +
+            System.out.println("Enter price value of item" + noOfItems +"\tPress " +
                     "-1 to terminate");
             int amountSold = scanner.nextInt();
 
