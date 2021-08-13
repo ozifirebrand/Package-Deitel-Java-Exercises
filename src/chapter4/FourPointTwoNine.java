@@ -19,8 +19,11 @@ public class FourPointTwoNine {
                 for (int column = 0; column < 1; column++) {
                     System.out.print("*");
                 }
-                for (int column = 1; column < squareSide; column++) {
+                for (int column = 2; column < squareSide; column++) {
                     System.out.print("   ");
+                }
+                for (int column = 0; column < 1; column++) {
+                    System.out.print("  ");
                 }
                 for (int column = 0; column < 1; column++) {
                     System.out.print("*");
