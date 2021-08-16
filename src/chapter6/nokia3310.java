@@ -27,9 +27,44 @@ public class nokia3310 {
     }
     private static void pickMenuSubItems(int number){
         switch (number){
-            case 1 -> pickPhoneBookItem();
-            case 2 -> pickMessagesItem();
+            case 1 : pickPhoneBookItem();break;
+            case 2 : pickMessagesItem();break;
+            case 3 : displayChat();break;
+            case 4 :pickCallRegisterItems();break;
         }
+    }
+
+    private static void pickCallRegisterItems() {
+        displayCallRegisterItems();
+
+    }
+
+    private static void displayCallRegisterItems() {
+        System.out.println("""
+                1. Missed calls
+                2. Received calls
+                3. Dialled numbers
+                4. Erase recent call lists
+                5. Show call duration
+                6. Show call costs
+                7. Call cost settings
+                8. Prepaid credit""");
+    }
+    public static void pickCallDuration(){
+        displayCallDuration();
+    }
+
+    private static void displayCallDuration() {
+        System.out.println("""
+                1. Last call duration
+                2. All calls' duration
+                3. Received calls' duration
+                4. Dialled calls' duration
+                5. Clear timers""");
+    }
+
+    private static void displayChat() {
+        System.out.println("Chat");
     }
 
     private static void pickMessagesItem() {
@@ -76,19 +111,24 @@ public class nokia3310 {
     }
     private static void displayMenuItems(int number) {
  switch (number){
-     case 1-> System.out.println("Phone book");
-     case 2-> System.out.println("Messages");
-     case 3-> System.out.println("Chats");
-     case 4-> System.out.println("Call register");
-     case 5-> System.out.println("Tones");
-     case 6-> System.out.println("Settings");
-     case 7-> System.out.println("Call divert");
-     case 8-> System.out.println("Games");
-     case 9-> System.out.println("Calculator");
-     case 10-> System.out.println("Reminders");
-     case 11-> System.out.println("Clock");
-     case 12-> System.out.println("Profiles");
-     case 13-> System.out.println("SIM Services");
+     case 1: System.out.println("Phone book");
+     break;
+     case 2: System.out.println("Messages");
+     break;
+     case 3: System.out.println("Chats");
+     break;
+     case 4: System.out.println("Call register");
+     break;
+     case 5: System.out.println("Tones");
+     break;
+     case 6: System.out.println("Settings");break;
+     case 7:System.out.println("Call divert");break;
+     case 8:System.out.println("Games");break;
+     case 9:System.out.println("Calculator");break;
+     case 10: System.out.println("Reminders");break;
+     case 11: System.out.println("Clock");break;
+     case 12: System.out.println("Profiles");break;
+     case 13: System.out.println("SIM Services");break;
       }
     }
 
