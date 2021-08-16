@@ -3,8 +3,6 @@ import  java.util.Scanner;
 public class FourPointTwoNine {
     public static void main(String[] args) {
         printSquare();
-
-
     }
 
     public static void printSquare(){

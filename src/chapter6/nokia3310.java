@@ -139,7 +139,7 @@ public class nokia3310 {
 //        return message;
 //    }
 
-    public String  clock(int number){
+    public static String  clock(int number){
         String message= switch (number) {
             case 1 -> "Alarm clock";
             case 2 -> "Clock settings";
