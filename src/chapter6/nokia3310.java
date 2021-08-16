@@ -1,7 +1,5 @@
 package chapter6;
 
-//import com.sun.jdi.event.ThreadStartEvent;
-
 /*The phone is perpetually on
 When the menu key is pressed, the screen displays Phone book,
     Messages, Chats, Call register, Tones, Settings, Call diver,
@@ -9,7 +7,6 @@ When the menu key is pressed, the screen displays Phone book,
 
 The menu is a switch case static method on its own carrying
 all the displayed methods.
-
  */
 import java.util.Scanner;
 public class nokia3310 {
@@ -25,6 +22,7 @@ public class nokia3310 {
         int number = scanner.nextInt();
         pickMenuSubItems(number);
     }
+
     private static void pickMenuSubItems(int number){
         switch (number){
             case 1 : pickPhoneBookItem();break;
@@ -36,6 +34,26 @@ public class nokia3310 {
 
     private static void pickCallRegisterItems() {
         displayCallRegisterItems();
+        Scanner scanner = new Scanner(System.in);
+        int number = scanner.nextInt();
+        switch (number){
+            case 1:
+                System.out.println("Missed calls"); break;
+            case 2:
+                System.out.println("Received calls"); break;
+            case 3:
+                System.out.println("Dialled calls"); break;
+            case 4:
+                System.out.println("Erase recent call lists"); break;
+            case 5:
+                System.out.println("Show call duration");
+                if ( number ==5 ){pickCallDuration();
+                }break;
+            case 6:
+                System.out.println("Show call costs"); break;
+            case 7:
+                System.out.println("Prepaid credit"); break;
+        }
 
     }
 
@@ -50,8 +68,11 @@ public class nokia3310 {
                 7. Call cost settings
                 8. Prepaid credit""");
     }
+
     public static void pickCallDuration(){
         displayCallDuration();
+        Scanner scanner = new Scanner(System.in);
+        int number = scanner.nextInt();
     }
 
     private static void displayCallDuration() {
