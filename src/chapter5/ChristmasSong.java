@@ -3,7 +3,7 @@ package chapter5;
 public class ChristmasSong {
 
     String christmasActivity = "";
-    int dayOfChristmas = 1;
+    int dayOfChristmas = 5;
 
     public void dayOfChristmas(int dayOfChristmas) {
         switch (dayOfChristmas) {

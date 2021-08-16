@@ -1,4 +1,4 @@
-package chapter5;
+package chapter4;
 /*Loops starts from one and is multiplied by a new value initialised to one
 Display shows the first output
 Loop increases by 2

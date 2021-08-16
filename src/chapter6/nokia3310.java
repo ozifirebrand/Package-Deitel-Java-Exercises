@@ -14,11 +14,12 @@ public class nokia3310 {
         displayMenu();
         pickMenuItem();
         displayMenuSubItems();
+
     }
 
     private static  void displayMenuSubItems(){
         Scanner scanner = new Scanner(System.in);
-        System.out.println("");
+        System.out.println("Enter no");
         int number = scanner.nextInt();
         pickMenuSubItems(number);
     }
@@ -47,14 +48,12 @@ public class nokia3310 {
                 System.out.println("Erase recent call lists"); break;
             case 5:
                 System.out.println("Show call duration");
-                if ( number ==5 ){pickCallDuration();
-                }break;
+                pickCallDuration(); break;
             case 6:
                 System.out.println("Show call costs"); break;
             case 7:
                 System.out.println("Prepaid credit"); break;
         }
-
     }
 
     private static void displayCallRegisterItems() {
