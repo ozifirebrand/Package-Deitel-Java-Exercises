@@ -16,15 +16,34 @@ public class nokia3310 {
     public static void main(String[] args) {
         displayMenu();
         pickMenuItem();
+        pickPhoneBookItem();
+    }
+
+    private static void pickPhoneBookItem() {
+        phoneBookItems();
+    }
+
+    private static void phoneBookItems() {
+        System.out.println("""
+                1. Search
+                2. Service Nos.
+                3. Add name
+                4. Erase
+                5. Edit
+                6. Assign tone
+                7. Send b'card
+                8. Options
+                9. Speed dials
+                10. Voice tags""");
     }
 
     private static void pickMenuItem(){
         Scanner scanner = new Scanner(System.in);
         System.out.println("");
         int input = scanner.nextInt();
-        menuItem(input);
+        displayMenuItems(input);
     }
-    private static void menuItem(int number) {
+    private static void displayMenuItems(int number) {
  switch (number){
      case 1-> System.out.println("Phone book");
      case 2-> System.out.println("Messages");
