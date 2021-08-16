@@ -16,14 +16,45 @@ public class nokia3310 {
     public static void main(String[] args) {
         displayMenu();
         pickMenuItem();
-        pickPhoneBookItem();
+        displayMenuSubItems();
+    }
+
+    private static  void displayMenuSubItems(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("");
+        int number = scanner.nextInt();
+        pickMenuSubItems(number);
+    }
+    private static void pickMenuSubItems(int number){
+        switch (number){
+            case 1 -> pickPhoneBookItem();
+            case 2 -> pickMessagesItem();
+        }
+    }
+
+    private static void pickMessagesItem() {
+        displayMessagesItems();
+    }
+
+    private static void displayMessagesItems() {
+        System.out.println("""
+                1. Write messages
+                2. Inbox
+                3. Outbox
+                4. Picture messages
+                5. Templates
+                6. Smileys
+                7. Message settings
+                8. Info service
+                9. Voice mailbox number
+                10. Service command editor""");
     }
 
     private static void pickPhoneBookItem() {
-        phoneBookItems();
+        displayPhoneBookItems();
     }
 
-    private static void phoneBookItems() {
+    private static void displayPhoneBookItems() {
         System.out.println("""
                 1. Search
                 2. Service Nos.
@@ -58,10 +89,7 @@ public class nokia3310 {
      case 11-> System.out.println("Clock");
      case 12-> System.out.println("Profiles");
      case 13-> System.out.println("SIM Services");
-
-
-
- }
+      }
     }
 
     private static void displayMenu() {
