@@ -3,128 +3,70 @@ package chapter5;
 public class ChristmasSong {
 
     String christmasActivity = "";
-    int dayOfChristmas = 5;
+    int dayOfChristmas;
 
-    public void dayOfChristmas(int dayOfChristmas) {
+
+    public static void dayOfChristmasMethod(int dayOfChristmas) {
         switch (dayOfChristmas) {
-            case 1 -> christmasActivity = """
-                    On the first day of Christmas my true love sent to me
-                    A partridge in a pear tree.""";
-            case 2 -> christmasActivity = """
-                    On the second day of Christmas my true love sent to me
-                    Two turtle doves,
-                    And a partridge in a pear tree.""";
-            case 3 -> christmasActivity = """
-                    On the third day of Christmas my true love sent to me
-                    Three French Hens,
-                    Two turtle doves,
-                    And a partridge in a pear tree.""";
-            case 4 -> christmasActivity = """
-                    On the fourth day of Christmas my true love sent to me
-                    Four calling birds,
-                    Three French Hens,
-                    Two turtle doves,
-                    And a partridge in a pear tree.
-                    """;
-            case 5 -> christmasActivity = """
-                    On the fifth day of Christmas my true love sent to me
-                    Five gold rings,
-                    Four calling birds,
-                    Three French Hens,
-                    Two turtle doves,
-                    And a partridge in a pear tree.
-                    """;
-            case 6 -> christmasActivity = """
-                    On the sixth day of Christmas my true love sent to me
-                    Six geese a-laying
-                    Five gold rings,
-                    Four calling birds,
-                    Three French Hens,
-                    Two turtle doves,
-                    And a partridge in a pear tree.""";
-            case 7 -> christmasActivity = """
-                    On the seventh day of Christmas my true love sent to me
-                    Seven swans a-swimming,
-                    Six geese a-laying,
-                    Five gold rings,
-                    Four calling birds,
-                    Three French Hens,
-                    Two turtle doves,
-                    And a partridge in a pear tree.
-                    """;
-            case 8 -> christmasActivity = """
-                    On the eighth day of Christmas my true love sent to me
-                    Eight maids a-milking
-                    Seven swans a-swimming,
-                    Six geese a-laying,
-                    Five gold rings,
-                    Four calling birds,
-                    Three French Hens,
-                    Two turtle doves,
-                    And a partridge in a pear tree.
-                    """;
-            case 9 -> christmasActivity = """
-                    On the ninth day of Christmas my true love sent to me
-                    Nine ladies dancing
-                    Eight maids a-milking,
-                    Seven swans a-swimming,
-                    Six geese a-laying,
-                    Five gold rings,
-                    Four calling birds,
-                    Three French Hens,
-                    Two turtle doves,
-                    And a partridge in a pear tree.
-                    """;
-            case 10 -> christmasActivity = """
-                    On the tenth day of Christmas my true love sent to me
-                    Ten lords a-leaping
-                    Nine ladies dancing,
-                    Eight maids a-milking,
-                    Seven swans a-swimming,
-                    Six geese a-laying,
-                    Five gold rings,
-                    Four calling birds,
-                    Three French Hens,
-                    Two turtle doves,
-                    And a partridge in a pear tree.
-                    """;
-            case 11 -> christmasActivity = """
-                    On the eleventh day of Christmas my true love sent to me
-                    Eleven pipers piping
-                    Ten lords a-leaping,
-                    Nine ladies dancing,
-                    Eight maids a-milking,
-                    Seven swans a-swimming,
-                    Six geese a-laying,
-                    Five gold rings,
-                    Four calling birds,
-                    Three French Hens,
-                    Two turtle doves,
-                    And a partridge in a pear tree.
-                    """;
-            case 12 -> christmasActivity = """
-                    On the twelfth day of Christmas my true love sent to me
-                    Twelve drummers drumming
-                    Eleven pipers piping,
-                    Ten lords a-leaping,
-                    Nine ladies dancing,
-                    Eight maids a-milking,
-                    Seven swans a-swimming,
-                    Six geese a-laying,
-                    Five gold rings,
-                    Four calling birds,
-                    Three French Hens,
-                    Two turtle doves,
-                    And a partridge in a pear tree.
-                    """;
+            case 12:
+                System.out.println("Twelve drummers drumming");
+            case 11:
+                System.out.println("Eleven pipers piping");
+            case 10:
+                System.out.println("Ten lords a-leaping");
+            case 9:
+                System.out.println("Nine ladies dancing");
+            case 8:
+                System.out.println("Eight maids a-milking");
+            case 7:
+                System.out.println("Seven swans a-swimming");
+            case 6:
+                System.out.println("Six geese a-laying");
+            case 5:
+                System.out.println("Five gold rings");
+            case 4:
+                System.out.println("Four calling birds");
+            case 3:
+                System.out.println("Three French Hens");
+            case 2:
+                System.out.println("Two turtle doves and");
+            case 1:
+                System.out.println("A partridge in a pear tree.");
         }
-        System.out.println(christmasActivity);
+    }
+
+    public static int conditionForDisplay(int dayOfChristmas){
+     if ( dayOfChristmas == 1 ) System.out.println("On the first day of " +
+             "Christmas, my true love sent to me");
+     if ( dayOfChristmas == 2 ) System.out.println("On the second day of " +
+                "Christmas, my true love sent to me");
+     if ( dayOfChristmas == 3 ) System.out.println("On the third day of " +
+                "Christmas, my true love sent to me");
+     if ( dayOfChristmas == 4 ) System.out.println("On the fourth day of " +
+                "Christmas, my true love sent to me");
+     if ( dayOfChristmas == 5 ) System.out.println("On the fifth day of " +
+                "Christmas, my true love sent to me");
+     if ( dayOfChristmas == 6 ) System.out.println("On the sixth day of " +
+                "Christmas, my true love sent to me");
+     if ( dayOfChristmas == 7 ) System.out.println("On the seventh day of " +
+                "Christmas, my true love sent to me");
+    if ( dayOfChristmas == 8 ) System.out.println("On the eighth day of " +
+                "Christmas, my true love sent to me");
+    if ( dayOfChristmas == 9 ) System.out.println("On the ninth day of " +
+                "Christmas, my true love sent to me");
+    if ( dayOfChristmas == 10 ) System.out.println("On the tenth day of " +
+                "Christmas, my true love sent to me");
+    if ( dayOfChristmas == 11 ) System.out.println("On the eleventh day of " +
+                "Christmas, my true love sent to me");
+    if ( dayOfChristmas == 12 ) System.out.println("On the twelfth day of " +
+                "Christmas, my true love sent to me");
+
+    return dayOfChristmas;
     }
 
 
     public static void main(String[] args) {
-ChristmasSong happySinging = new ChristmasSong();
-happySinging.dayOfChristmas(10);
-
+        //conditionForDisplay(5);
+        dayOfChristmasMethod(conditionForDisplay(6));
     }
 }
