@@ -13,7 +13,5 @@ public class FivePointOneTwo {
             multiplier *= counterBtw1And15;
         }
         System.out.println(multiplier);
-
-
     }
 }
