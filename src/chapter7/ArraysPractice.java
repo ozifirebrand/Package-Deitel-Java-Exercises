@@ -1,4 +1,7 @@
 package chapter7;
+
+import java.util.Scanner;
+
 /*
 Program takes user input, ten of them
 Array loops through the items
@@ -17,12 +20,16 @@ Divides their sum by 10
 
 Finally display the largest, smallest and average score
  */
+//
 public class ArraysPractice {
     //public static void main(String[] args) {
         int smallestNumber = 0;
         int largestNumber = 0;
         double totalNumber = 0;
-        int[] scores = {56, 34, 76,32, 89, 23, 79, 44, 88, 65};
+
+       int[] scores = {56, 34, 76,32, 89, 23, 79, 44, 88, 65};
+       //int[] scores = new int[10];
+
 
         public void smallestNumberMethod() {
             smallestNumber = scores[0];
@@ -61,3 +68,14 @@ public class ArraysPractice {
         array.averageOfScores();
     }
     }
+
+
+
+
+
+
+
+//        java.util.Scanner scanner = new Scanner(System.in);
+//                System.out.println("Enter scores separated by space");
+//                int scoreInput = scanner.nextInt();
+//                int[] scores = new int[10];
