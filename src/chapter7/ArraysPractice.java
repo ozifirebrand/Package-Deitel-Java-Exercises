@@ -22,54 +22,55 @@ Finally display the largest, smallest and average score
  */
 //
 public class ArraysPractice {
-    //public static void main(String[] args) {
-        int smallestNumber = 0;
-        int largestNumber = 0;
-        double totalNumber = 0;
 
-       int[] scores = {526, 304, 706,300, 89, 203, 799, 44, 98, 65};
-       //int[] scores = new int[10];
-
-
-        public void smallestNumberMethod() {
-            smallestNumber = scores[0];
-            for (int index = 0; index < 10; index= index + 1) {
-                if ( scores[index] < smallestNumber ){
-                    smallestNumber = scores[index];
+        public static int calculateMinimumNumber(int [] scores) {
+            int smallestNumber = scores[0];
+            for (int score : scores) {
+                if ( score < smallestNumber ) {
+                    smallestNumber = score;
                 }
             }
-            System.out.println(smallestNumber);
+            return smallestNumber;
         }
-        public void largestNumberMethod(){
-            largestNumber = scores[0];
-            for (int index = 0; index < 10; index++) {
-                if ( scores[index]> largestNumber ){
-                    largestNumber = scores[index];
+        public static int calculateMaximumNumber(int [] scores){
+            int largestNumber = scores[0];
+            for (int score : scores) {
+                if ( score > largestNumber ) {
+                    largestNumber = score;
                 }
             }
-            System.out.println(largestNumber);
+            return largestNumber;}
+
+        public static int calculateTotalNumber(int[] scores) {
+            int totalNumber = 0;
+            for (int score : scores) {
+                totalNumber += score;
+            }
+             return totalNumber;
         }
 
-        public void averageOfScores(){
-            for (int index = 0; index < 10; index++){
-                totalNumber += scores[index];
-            }
-            System.out.println("Total is " +totalNumber);
-            int noOfStudents = 10;
-            double averageScores = totalNumber/ noOfStudents;
-            System.out.println("Average score is " + averageScores);
+        public static double calculateAverage(int [] scores){
+            double noOfStudents = scores.length * 1.0;
+            return (calculateTotalNumber(scores)/ noOfStudents);
 
         }
 
     public static void main(String[] args) {
-        ArraysPractice array = new ArraysPractice();
-        array.smallestNumberMethod();
-        array.largestNumberMethod();
-        array.averageOfScores();
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("How many inputs are you giving please?");
+        int numberOfTimes = scanner.nextInt();
+        int[] scoresOfStudents = new int[numberOfTimes];
+        for (int index = 0; index < scoresOfStudents.length; index++ ){
+            System.out.println("Enter score " +(index+1));
+            int scoreInput = scanner.nextInt();
+            scoresOfStudents[index] = scoreInput;
+        }
+        System.out.println("Minimum score is "+calculateMinimumNumber(scoresOfStudents));
+        System.out.println("Maximum score is "+calculateMaximumNumber(scoresOfStudents));
+        System.out.println("Total score is "+calculateTotalNumber(scoresOfStudents));
+        System.out.println("Average score is "+calculateAverage(scoresOfStudents));
     }
     }
-
-
 
 
 
