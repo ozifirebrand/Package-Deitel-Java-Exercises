@@ -27,7 +27,7 @@ public class ArraysPractice {
         int largestNumber = 0;
         double totalNumber = 0;
 
-       int[] scores = {56, 34, 76,32, 89, 23, 79, 44, 88, 65};
+       int[] scores = {526, 34, 76,3, 89, 23, 799, 44, 98, 65};
        //int[] scores = new int[10];
 
 
@@ -54,7 +54,7 @@ public class ArraysPractice {
             for (int index = 0; index < 10; index++){
                 totalNumber += scores[index];
             }
-            System.out.println(totalNumber);
+            System.out.println("Total is " +totalNumber);
             int noOfStudents = 10;
             double averageScores = totalNumber/ noOfStudents;
             System.out.println("Average score is " + averageScores);
