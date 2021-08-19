@@ -27,7 +27,7 @@ public class ArraysPractice {
         int largestNumber = 0;
         double totalNumber = 0;
 
-       int[] scores = {526, 34, 76,3, 89, 23, 799, 44, 98, 65};
+       int[] scores = {526, 304, 706,300, 89, 203, 799, 44, 98, 65};
        //int[] scores = new int[10];
 
 
