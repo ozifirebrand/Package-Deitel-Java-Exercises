@@ -52,7 +52,6 @@ public class ArraysPractice {
         public static double calculateAverage(int [] scores){
             double noOfStudents = scores.length * 1.0;
             return (calculateTotalNumber(scores)/ noOfStudents);
-
         }
 
     public static void main(String[] args) {
