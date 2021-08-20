@@ -7,6 +7,8 @@ After the first array has been completely looped through, the maximum and minimu
 of the new array is found
  */
 
+import java.util.Scanner;
+
 public class SumMaximumAndMinimumArray {
 
     public static int sumNumbersIn(int[] valuesInputted) {
@@ -44,7 +46,17 @@ public class SumMaximumAndMinimumArray {
         return highestNumber;
     }
     public static void main(String[] args) {
-        int [] values = {1,4,3,7};
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter number of elements here");
+        int noOfInputs = scanner.nextInt();
+        int [] values = new int[noOfInputs];
+        System.out.println("Enter nos separated by space ");
+        for (int i = 0; i< values.length; i++){
+            int input = scanner.nextInt();
+            values[i] = input;
+        }
+//        values = {2, 3,4,5};
         System.out.println(findLowestNumberIn(values));
         System.out.println(findHighestNumberIn(values));
         System.out.println(findMinimumNumberIn(values));
