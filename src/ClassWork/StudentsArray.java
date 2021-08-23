@@ -20,7 +20,18 @@ package ClassWork;
     Display how many subjects
     User inputs value
     Declare array with no of inputs by user as rows and columns
-    User input takes in the values for each student's scores
-    */
+    Students as rows, subjects as columns
+
+    Declare each row
+    Display enter student scores
+    User inputs scores separated by spaces
+    These are the student's scores for each subject
+
+    Each student at a particular index have a name student at
+        index plus 1
+
+    To get each students total score, add the scores in each index which could be
+        represented with .length
+     */
 public class StudentsArray {
 }
