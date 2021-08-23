@@ -5,6 +5,7 @@ import java.util.Arrays;
 /*The array contains three rows and columns each
 First row prints x, second prints o and so on
 Third row prints o and so on */
+
 public class TicTacToe {
 //
 //   public static void printRows(){
