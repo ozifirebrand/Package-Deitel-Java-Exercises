@@ -13,10 +13,10 @@ public class StudentsArray {
     private static int[][] initialiseArray(){
         Scanner scanner = new Scanner(System.in);
         int [] [] table = receiveInput();
-        for (int i = 0; i < table.length; i++) {
-            for (int j = 0; j < table[i].length; j++) {
-                System.out.println("Enter student" + (i+1) + "'s score for subject " + (1+j));
-                table[i][j] = scanner.nextInt();
+        for (int row = 0; row < table.length; row++) {
+            for (int column = 0; column < table[row].length; column++) {
+                System.out.println("Enter student" + (row+1) + "'s score for subject " + (1+column));
+                table[row][column] = scanner.nextInt();
             }
         }
         return table;
