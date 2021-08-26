@@ -1,6 +1,5 @@
 package ClassWork;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class StudentsArray {
@@ -23,8 +22,8 @@ public class StudentsArray {
         return table;
     }
 
-    public static void displayArray(){
-        int [][] table = initialiseArray();
+    public static void displayArray(int [][] table){
+
         for (int[] ints : table) {
             for (int column = 0; column < ints.length; column++) {
                 System.out.println(" " + ints[column]);
@@ -32,71 +31,57 @@ public class StudentsArray {
             System.out.println();
         }
     }
+/*To create a particular array of length array.length, we take in inputs based on index
+Each index is array[index]
+Index increases by 1
+New index gives new array item of array[newIndex]
+
+OR from an already made 2d array which is best
+A new array can be initialised such that its number of rows is the number of a given index
+Each row can then be initialised using the index of the row and column - which has been increasing systematically
+ */
+
+//    private static void locateRow() {
+//        int [][] table = initialiseArray();
+//        for (int i=0; i < table.length; i++){
+//            for (int j =0; j< table[i].length; j++) table[i] = new int[j];
+//
+//        }
+//        return table[];
+//    }
+
+
+//    public static int[] locateColumn() {
+//        int[][] table = initialiseArray();
+//        int row = 0;
+//        for (int column = 0; column < table[column].length; column++) {
+//            for (row = 0; row < table.length; row++) {
+//                table[row] = new int[column];
+//            }
+//        }
+//        return table[row];
+//    }
 
     public static void displayHorizontalArrayTable(){
         System.out.println("Student \t\t\t Subject scores");
     }
 
-    private static int[] locateRow() {
-        int[][] table = initialiseArray();
-        int index;
-        for (index=0; index < table.length; index++) {
-            for (int column = 0; column < table[index].length; column++)
-            table[index] = new int[column];
-        }
-        return table[index-1];
-    }
-
-    public static int totalScoreInRow(){
-        int [] table = locateRow();
-        int totalOfRow = 0;
-        for (int column = 0; column < table.length; column++){
-            totalOfRow += table[column];
-        }
-        return totalOfRow;
-    }
-
-    public static int[] locateColumn() {
-        int[][] table = initialiseArray();
-        int row = 0;
-        for (int column = 0; column < table[column].length; column++) {
-            for (row = 0; row < table.length; row++) {
-                table[row] = new int[column];
-            }
-        }
-        return table[row];
+    public static int totalScoreInRow(int [][] table){
+       int totalOfRows =0;
+       for (int i=0 ;i< 1; i++) {
+           for (int j=0;j< table[i].length; j++){
+               totalOfRows += table[i][j];
+           }
+       }
+        return totalOfRows;
     }
 
     public static void totalOfColumns(){
-        }
-
-
+    }
 
     public static void main(String[] args) {
-        System.out.println(Arrays.toString(locateRow()));
+       int [] [] table = initialiseArray();
+       totalScoreInRow(table);
+       displayArray(table);
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
