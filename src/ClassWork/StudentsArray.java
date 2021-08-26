@@ -1,5 +1,6 @@
 package ClassWork;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class StudentsArray {
@@ -36,17 +37,43 @@ public class StudentsArray {
         System.out.println("Student \t\t\t Subject scores");
     }
 
-    public static void locateRow(){
-
+    private static int[] locateRow() {
+        int[][] table = initialiseArray();
+        int index;
+        for (index=0; index < table.length; index++) {
+            for (int column = 0; column < table[index].length; column++)
+            table[index] = new int[column];
+        }
+        return table[index-1];
     }
 
-    public static void totalScoreInRow(){
-        int [][] table = initialiseArray();
-
+    public static int totalScoreInRow(){
+        int [] table = locateRow();
+        int totalOfRow = 0;
+        for (int column = 0; column < table.length; column++){
+            totalOfRow += table[column];
+        }
+        return totalOfRow;
     }
+
+    public static int[] locateColumn() {
+        int[][] table = initialiseArray();
+        int row = 0;
+        for (int column = 0; column < table[column].length; column++) {
+            for (row = 0; row < table.length; row++) {
+                table[row] = new int[column];
+            }
+        }
+        return table[row];
+    }
+
+    public static void totalOfColumns(){
+        }
+
+
 
     public static void main(String[] args) {
-
+        System.out.println(Arrays.toString(locateRow()));
     }
 }
 
