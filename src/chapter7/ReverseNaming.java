@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 /*user inputs a value string
 The letters are reversed
-To reverse, the loop starts printing the letters from the index at array.length
+    To reverse, the loop starts printing the letters from the index at array.length
  */
 public class ReverseNaming {
     private static String collectWord(){
@@ -12,6 +12,7 @@ public class ReverseNaming {
         System.out.println("Enter a word: ");
         return scanner.nextLine();
     }
+
     public static void reversePrinting(){
         String word = collectWord();
         for (int i = word.length()-1; i >= 0; i--){
