@@ -1,5 +1,8 @@
 package ClassWork;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+import java.text.NumberFormat;
 import java.util.Scanner;
 
 public class StudentsArray {
@@ -80,8 +83,16 @@ Each row can then be initialised using the index of the row and column - which h
     }
 
     public static void main(String[] args) {
-       int [] [] table = initialiseArray();
-       totalScoreInRow(table);
-       displayArray(table);
+//       int [] [] table = initialiseArray();
+//       totalScoreInRow(table);
+//       displayArray(table);
+
+
+        BigDecimal accountBalance = BigDecimal.valueOf(6873458732798.6778156);
+        NumberFormat formatter = NumberFormat.getInstance();
+        formatter.setGroupingUsed(true);
+        formatter.setMaximumFractionDigits(2);
+        formatter.setRoundingMode(RoundingMode.FLOOR);
+        System.out.println(formatter.format(accountBalance));
     }
 }
