@@ -88,11 +88,5 @@ Each row can then be initialised using the index of the row and column - which h
 //       displayArray(table);
 
 
-        BigDecimal accountBalance = BigDecimal.valueOf(6873458732798.6778156);
-        NumberFormat formatter = NumberFormat.getInstance();
-        formatter.setGroupingUsed(true);
-        formatter.setMaximumFractionDigits(2);
-        formatter.setRoundingMode(RoundingMode.FLOOR);
-        System.out.println(formatter.format(accountBalance));
     }
 }
