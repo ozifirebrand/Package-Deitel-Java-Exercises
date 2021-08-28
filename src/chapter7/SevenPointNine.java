@@ -7,7 +7,30 @@ public class SevenPointNine {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int[][] t = new int[2][3];
+        t[0][0]= 0;
+        t[0][1] = 0;
+        t[0][2] = 0;
+        t[1][0]= 0;
+        t[1][1]= 0;
+        t[1][2]= 0;
 
+        for (int row = 0; row < t.length;row++) {
+            for (int column = 0; column < t[row].length; column++){
+                System.out.println("What is row" + row + " and column"
+                        + column + "'s value?");
+            t[row][column] = scanner.nextInt();
+        }
+    }
+
+        int smallestNumber = t[0][0];
+        for (int[] ints : t) {
+            for (int anInt : ints) {
+                if ( anInt < smallestNumber ) {
+                    smallestNumber = anInt;
+                }
+            }
+            System.out.print(smallestNumber);
+        }
     /*How many rows does t have?
     2
     How many columns does t have?
