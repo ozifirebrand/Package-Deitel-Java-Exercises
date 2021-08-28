@@ -14,11 +14,7 @@ Each row can then be initialised using the index of the row and column - which h
 public class StudentsArray {
     /*To initialise a 2d array, use the number of columns and rows as initialisers
     To know the no of rows and columns, ask the user to enter the no of students and no of subjects respectively
-
-    /*To receive input into the array, we iterate through the rows and columns
-    The columns increment rapidly and after each iteration is completed, the new row is formed
-
-     */
+    */
 
     private static int[][] initialiseArray(){
         System.out.println("How many students and courses respectively?");
@@ -27,6 +23,10 @@ public class StudentsArray {
         int noOfCourses = scanner.nextInt();
         return new int[noOfStudents][noOfCourses];
     }
+
+    /*To receive input into the array, we iterate through the rows and columns
+    The columns increment rapidly and after each iteration is completed, the new row is formed
+     */
 
     private static int[][] receiveInputForEachElement(){
         Scanner scanner = new Scanner(System.in);
@@ -39,6 +39,7 @@ public class StudentsArray {
         }
         return table;
     }
+
     /*To display row in table or to display whole table at once
     To display whole table
         The inputs are collected and appropriately initialised
@@ -73,31 +74,24 @@ public class StudentsArray {
                 totalInRow = table[rowNumber][noOfColumns];
             }
         }
-        System.out.print("\t" + totalInRow);
         return totalInRow;
     }
 
-    private static void compareSumForEachRow(){
+    private static void sumRows(){
 
-        //int sumOfRow = addInputsInOneRow(specificRow);
-        int [] [] table = receiveInputForEachElement();
-        for (int specificRow = determineRow(); specificRow < table.length; specificRow++) {
-            for (int column = 0; column < column+1; column++) {
-
-
-            }
-        }
-    }
-    public static void displayInputsInTable(){
-        int [] [] table = receiveInputForEachElement();
-        for (int row = 0; row< table.length; row++){
-            for (int column = 0; column < table[row].length; column++){
-            System.out.println(table[row][column] + "\t");
-            }
-        }
-        System.out.println();
     }
 
+    /*To loop to the next row, there will be an increment of one
+    The row index is incremented by one and the sum of the row is computed
+
+     */
+
+    private static int iterateThroughColumnForSumInRows(){
+        int rowNumber = determineRow();
+        rowNumber = rowNumber + 1;
+        return rowNumber;
+    }
+//
 //    public static void
 //    public static void displayHorizontalArrayTable(){
 //        System.out.println("Student \t\t\t Subject scores");
@@ -117,3 +111,14 @@ public class StudentsArray {
     public static void main(String[] args) {
     }
 }
+
+
+//    public static void displayInputsInTable(){
+//        int [] [] table = receiveInputForEachElement();
+//        for (int row = 0; row< table.length; row++){
+//            for (int column = 0; column < table[row].length; column++){
+//            System.out.println(table[row][column] + "\t");
+//            }
+//        }
+//        System.out.println();
+//    }
