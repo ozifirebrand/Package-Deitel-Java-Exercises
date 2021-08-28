@@ -23,14 +23,14 @@ public class SevenPointNine {
     }
 
         int smallestNumber = t[0][0];
-        for (int[] ints : t) {
-            for (int anInt : ints) {
-                if ( anInt < smallestNumber ) {
-                    smallestNumber = anInt;
+        for(int row = 0; row<t.length; row++){
+            for(int column = 0; column<t[row].length; column++){
+                if (t[row][column] < smallestNumber){
+                    smallestNumber = t[row][column];
                 }
-            }
-            System.out.print(smallestNumber);
+            }System.out.print(smallestNumber);
         }
+
     /*How many rows does t have?
     2
     How many columns does t have?
