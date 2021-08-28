@@ -3,6 +3,7 @@ package ClassWork;
 //import java.math.BigDecimal;
 //import java.math.RoundingMode;
 //import java.text.NumberFormat;
+import java.util.Arrays;
 import java.util.Scanner;
 
 /* OR from an already made 2d array which is best
@@ -15,7 +16,11 @@ public class StudentsArray {
     /*To initialise a 2d array, use the number of columns and rows as initialisers
     To know the no of rows and columns, ask the user to enter the no of students and no of subjects respectively
 
+    /*To receive input into the array, we iterate through the rows and columns
+    The columns increment rapidly and after each iteration is completed, the new row is formed
+
      */
+
     private static int[][] initialiseArray(){
         System.out.println("How many students and courses respectively?");
         Scanner scanner = new Scanner(System.in);
@@ -24,10 +29,6 @@ public class StudentsArray {
         return new int[noOfStudents][noOfCourses];
     }
 
-    /*To receive input into the array, we iterate through the rows and columns
-    The columns increment rapidly and after each iteration is completed, the new row is formed
-
-     */
     private static int[][] receiveInput(){
         Scanner scanner = new Scanner(System.in);
         int [] [] table = initialiseArray();
@@ -39,10 +40,34 @@ public class StudentsArray {
         }
         return table;
     }
+    /*To display row in table or to display whole table at once
+    To display whole table
+        The inputs are collected and appropriately initialised
+        During initialisation, the counter-controlled loop also separates the inputs as rows and
+        columns
+            To display the average, total and rank one will need to add each row individually and
+             divide by number of students.
+             This implies that each row will be the major factor in this computation.
+             A method that adds all elements in a row and displays the sum immediately will be created.
+             Another method that finds the average of the row and immediately displays it will be created.
+             These methods will be repeatedly looped until every member of the 2d array gets analysed and
+             computed.
+     */
 
-    public static void displayHorizontalArrayTable(){
-        System.out.println("Student \t\t\t Subject scores");
+    public static void displayTable(){
+        int [] [] table = receiveInput();
+        for (int row = 0; row< table.length; row++){
+            for (int column = 0; column < table[row].length; column++){
+            System.out.println(table[row][column] + "\t");
+            }
+        }
+        System.out.println();
     }
+
+//    public static void
+//    public static void displayHorizontalArrayTable(){
+//        System.out.println("Student \t\t\t Subject scores");
+//    }
 
     public static int[][] scoreInOneRow(int[][] table) {
         int noOfRows = 0;
