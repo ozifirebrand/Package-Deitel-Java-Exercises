@@ -6,5 +6,9 @@ public class CreditCardInfo {
     int cardNumber;
     String nameOnCard;
     CardType cardType;
+
+    public CreditCardInfo(){
+
+    }
 //    Estore store = new Estore();
 }
