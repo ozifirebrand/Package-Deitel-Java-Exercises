@@ -83,7 +83,6 @@ public class StudentsArray {
 
     /*To loop to the next row, there will be an increment of one
     The row index is incremented by one and the sum of the row is computed
-
      */
 
     private static int iterateThroughColumnForSumInRows(){
