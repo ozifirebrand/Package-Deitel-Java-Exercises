@@ -6,6 +6,7 @@ public class Addresses {
     int houseNumber;
     String street;
     String state;
+
     public Addresses(){
 
     }

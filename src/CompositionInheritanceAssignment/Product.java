@@ -6,5 +6,6 @@ public class Product {
         String productName;
         int price;
         String productDescription;
+        ProductCategory productCategory;
     }
 }

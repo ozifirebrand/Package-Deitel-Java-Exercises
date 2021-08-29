@@ -5,6 +5,6 @@ public class CreditCardInfo {
     String cardExpirationYearAndMonth;
     int cardNumber;
     String nameOnCard;
-
-
+    CardType cardType;
+//    Estore store = new Estore();
 }
