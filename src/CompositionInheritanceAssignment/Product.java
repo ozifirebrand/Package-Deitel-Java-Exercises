@@ -1,11 +1,10 @@
 package CompositionInheritanceAssignment;
 
 public class Product {
-    public Product() {
-        String productId;
-        String productName;
-        int price;
-        String productDescription;
-        ProductCategory productCategory;
-    }
+       private String productId;
+       private String productName;
+       private int price;
+       private String productDescription;
+       private ProductCategory productCategory;
+
 }

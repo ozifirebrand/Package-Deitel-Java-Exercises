@@ -1,10 +1,9 @@
 package CompositionInheritanceAssignment;
 
+import java.util.ArrayList;
+
 public class ShoppingCart {
 
-    Items soap = new Items();
+    private ArrayList<Item> items = new ArrayList<>();
 
-    public ShoppingCart(){
-
-    }
 }

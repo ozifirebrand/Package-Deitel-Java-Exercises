@@ -1,12 +1,9 @@
 package CompositionInheritanceAssignment;
 
 public class BillingInformation {
-    String phoneNumberOfReceiver;
-    String nameOfReceiver;
-    String deliveryAddress;
-    CreditCardInfo creditCard = new CreditCardInfo();
+   private String phoneNumberOfReceiver;
+   private String nameOfReceiver;
+   private String deliveryAddress;
+   private CreditCardInfo creditCard = new CreditCardInfo();
 
-    public BillingInformation(){
-
-    }
 }

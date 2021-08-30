@@ -1,4 +1,4 @@
 package CompositionInheritanceAssignment;
 
-public class Admin extends Users{
+public class Admin extends User {
 }
