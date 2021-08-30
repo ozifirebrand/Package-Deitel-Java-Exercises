@@ -5,21 +5,16 @@ package ClassWork;
 //import java.text.NumberFormat;
 import java.util.Scanner;
 
-/* OR from an already made 2d array which is best
-A new array can be initialised such that its number of rows is the number of a given index
-Each row can then be initialised using the index of the row and column - which has been increasing systematically
- */
-
-
 public class StudentsArray {
     /*To initialise a 2d array, use the number of columns and rows as initialisers
     To know the no of rows and columns, ask the user to enter the no of students and no of subjects respectively
     */
 
-    private static int[][] initialiseArray(){
-        System.out.println("How many students and courses respectively?");
+    private static int[][] initialiseArray() {
+        System.out.println("How many students?");
         Scanner scanner = new Scanner(System.in);
         int noOfStudents = scanner.nextInt();
+        System.out.println("How many courses?");
         int noOfCourses = scanner.nextInt();
         return new int[noOfStudents][noOfCourses];
     }
@@ -28,18 +23,58 @@ public class StudentsArray {
     The columns increment rapidly and after each iteration is completed, the new row is formed
      */
 
-    private static int[][] receiveInputForEachElement(){
+    private static int[][] receiveInputForEachElement() {
         Scanner scanner = new Scanner(System.in);
-        int [] [] table = initialiseArray();
+        int[][] table = initialiseArray();
         for (int row = 0; row < table.length; row++) {
             for (int column = 0; column < table[row].length; column++) {
-                System.out.println("Enter student" + (row+1) + "'s score for subject " + (1+column));
+                System.out.println("Enter student" + (row + 1) + "'s score for subject " + (1 + column));
                 table[row][column] = scanner.nextInt();
             }
         }
         return table;
     }
 
+    /*To sum each row, sum the elements in the specific row
+    To do this, the iterator loops through each column and adds the individual element to an initialised variable - total in row
+     */
+
+    public static int determineRow(int row ){
+        row = 0;
+        return row;
+    }
+
+    public static int determineColumn(int column){
+        column =0;
+        return column;
+    }
+    public static void loopRows(){
+
+    }
+
+    public static void loopColumns(){
+
+    }
+
+    public static int sumEachRow(int [][] table){
+        int totalInRow =0;
+        for (int row = determineRow(0); row< row+1; row++) {
+            for (int column = determineColumn(0); column < table[row].length; column++) {
+                totalInRow += table[row][column];
+            }
+        }
+        return totalInRow;
+    }
+
+    public static int sumEachColumn(int[][] table){
+        int totalInColumn =0;
+        for (int column =determineColumn(0); column<column+1;column++){
+            for (int row = determineRow(0); row< table.length; row++) {
+                totalInColumn += table[row][column];
+            }
+        }
+        return totalInColumn;
+    }
     /*To display row in table or to display whole table at once
     To display whole table
         The inputs are collected and appropriately initialised
@@ -61,63 +96,4 @@ public class StudentsArray {
         Another method calls this method and loops over it to display several other elements of the
         2d array//STUCK
      */
-    public static int determineRow(){
-        return 0;
-
-    }
-
-    private static int addInputsInOneRow(int rowNumber){
-        int[][] table = receiveInputForEachElement();
-        int totalInRow = 0;
-        for (;rowNumber< rowNumber+1;rowNumber++){
-            for ( int noOfColumns=0; noOfColumns< table[rowNumber].length; noOfColumns++){
-                totalInRow = table[rowNumber][noOfColumns];
-            }
-        }
-        return totalInRow;
-    }
-
-    private static void sumRows(){
-
-    }
-
-    /*To loop to the next row, there will be an increment of one
-    The row index is incremented by one and the sum of the row is computed
-     */
-
-    private static int iterateThroughColumnForSumInRows(){
-        int rowNumber = determineRow();
-        rowNumber = rowNumber + 1;
-        return rowNumber;
-    }
-//
-//    public static void
-//    public static void displayHorizontalArrayTable(){
-//        System.out.println("Student \t\t\t Subject scores");
-//    }
-
-    public static int[][] scoreInOneRow(int[][] table) {
-        int noOfRows = 0;
-        Scanner scanner = new Scanner(System.in);
-        int noOfColumns = scanner.nextInt();
-        table[noOfRows] = receiveInputForEachElement()[noOfColumns];
-        return table;
-    }
-
-    public static void totalOfColumns(){
-    }
-
-    public static void main(String[] args) {
-    }
 }
-
-
-//    public static void displayInputsInTable(){
-//        int [] [] table = receiveInputForEachElement();
-//        for (int row = 0; row< table.length; row++){
-//            for (int column = 0; column < table[row].length; column++){
-//            System.out.println(table[row][column] + "\t");
-//            }
-//        }
-//        System.out.println();
-//    }
