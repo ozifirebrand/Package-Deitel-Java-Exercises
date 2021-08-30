@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>CompositionInheritanceAssignment</OriginalElement>
+  <nodes>
+    <node x="106.07499999999999" y="253.0">CompositionInheritanceAssignment.Users</node>
+    <node x="425.26250000000005" y="162.0">CompositionInheritanceAssignment.Addresses</node>
+    <node x="312.32500000000005" y="344.0">CompositionInheritanceAssignment.Customers</node>
+    <node x="564.2625" y="162.0">CompositionInheritanceAssignment.Items</node>
+    <node x="110.0" y="344.0">CompositionInheritanceAssignment.Admin</node>
+    <node x="-5.0" y="344.0">CompositionInheritanceAssignment.Sellers</node>
+    <node x="556.7625" y="81.0">CompositionInheritanceAssignment.Product</node>
+    <node x="536.7625" y="253.0">CompositionInheritanceAssignment.ShoppingCart</node>
+    <node x="231.5955357142857" y="162.0">CompositionInheritanceAssignment.CreditCardInfo</node>
+    <node x="218.07500000000002" y="253.0">CompositionInheritanceAssignment.BillingInformation</node>
+    <node x="526.7625" y="0.0">CompositionInheritanceAssignment.ProductCategory</node>
+    <node x="410.07500000000005" y="253.0">CompositionInheritanceAssignment.Estore</node>
+    <node x="248.5955357142857" y="81.0">CompositionInheritanceAssignment.CardType</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="CompositionInheritanceAssignment.Estore" target="CompositionInheritanceAssignment.Addresses" relationship="TO_ONE">
+      <point x="11.625" y="-15.5" />
+      <point x="468.20000000000005" y="233.0" />
+      <point x="455.01250000000005" y="233.0" />
+      <point x="-29.75" y="15.5" />
+    </edge>
+    <edge source="CompositionInheritanceAssignment.BillingInformation" target="CompositionInheritanceAssignment.CreditCardInfo" relationship="CREATE">
+      <point x="-43.0" y="-15.5" />
+      <point x="261.07500000000005" y="233.0" />
+      <point x="303.2883928571428" y="233.0" />
+      <point x="303.2883928571428" y="223.0" />
+      <point x="268.8455357142857" y="223.0" />
+      <point x="-37.25" y="15.5" />
+    </edge>
+    <edge source="CompositionInheritanceAssignment.BillingInformation" target="CompositionInheritanceAssignment.CreditCardInfo" relationship="TO_ONE">
+      <point x="43.0" y="-15.5" />
+      <point x="347.07500000000005" y="223.0" />
+      <point x="396.01250000000005" y="223.0" />
+      <point x="396.01250000000005" y="213.0" />
+      <point x="343.3455357142857" y="213.0" />
+      <point x="37.25" y="15.5" />
+    </edge>
+    <edge source="CompositionInheritanceAssignment.Sellers" target="CompositionInheritanceAssignment.Users" relationship="GENERALIZATION">
+      <point x="0.0" y="-15.5" />
+      <point x="42.5" y="324.0" />
+      <point x="149.575" y="324.0" />
+      <point x="0.0" y="15.5" />
+    </edge>
+    <edge source="CompositionInheritanceAssignment.Estore" target="CompositionInheritanceAssignment.Addresses" relationship="CREATE">
+      <point x="34.875" y="-15.5" />
+      <point x="491.45000000000005" y="233.0" />
+      <point x="514.5125" y="233.0" />
+      <point x="29.75" y="15.5" />
+    </edge>
+    <edge source="CompositionInheritanceAssignment.Admin" target="CompositionInheritanceAssignment.Users" relationship="GENERALIZATION">
+      <point x="0.0" y="-15.5" />
+      <point x="158.0" y="324.0" />
+      <point x="149.575" y="324.0" />
+      <point x="0.0" y="15.5" />
+    </edge>
+    <edge source="CompositionInheritanceAssignment.ShoppingCart" target="CompositionInheritanceAssignment.Items" relationship="CREATE">
+      <point x="-35.75" y="-15.5" />
+      <point x="572.5125" y="233.0" />
+      <point x="586.2625" y="233.0" />
+      <point x="-22.0" y="15.5" />
+    </edge>
+    <edge source="CompositionInheritanceAssignment.Estore" target="CompositionInheritanceAssignment.CreditCardInfo" relationship="TO_ONE">
+      <point x="-11.625" y="-15.5" />
+      <point x="444.95000000000005" y="223.0" />
+      <point x="396.01250000000005" y="223.0" />
+      <point x="396.01250000000005" y="213.0" />
+      <point x="343.3455357142857" y="213.0" />
+      <point x="37.25" y="15.5" />
+    </edge>
+    <edge source="CompositionInheritanceAssignment.Estore" target="CompositionInheritanceAssignment.CreditCardInfo" relationship="CREATE">
+      <point x="-34.875" y="-15.5" />
+      <point x="421.70000000000005" y="233.0" />
+      <point x="303.2883928571428" y="233.0" />
+      <point x="303.2883928571428" y="223.0" />
+      <point x="268.8455357142857" y="223.0" />
+      <point x="-37.25" y="15.5" />
+    </edge>
+    <edge source="CompositionInheritanceAssignment.Customers" target="CompositionInheritanceAssignment.BillingInformation" relationship="TO_ONE">
+      <point x="0.0" y="-15.5" />
+      <point x="372.82500000000005" y="304.0" />
+      <point x="347.07500000000005" y="304.0" />
+      <point x="43.0" y="15.5" />
+    </edge>
+    <edge source="CompositionInheritanceAssignment.Customers" target="CompositionInheritanceAssignment.Users" relationship="GENERALIZATION">
+      <point x="-48.400000000000034" y="-15.5" />
+      <point x="324.42499999999995" y="324.0" />
+      <point x="149.575" y="324.0" />
+      <point x="0.0" y="15.5" />
+    </edge>
+    <edge source="CompositionInheritanceAssignment.Product" target="CompositionInheritanceAssignment.ProductCategory" relationship="DEPENDENCY">
+      <point x="0.0" y="-15.5" />
+      <point x="0.0" y="15.5" />
+    </edge>
+    <edge source="CompositionInheritanceAssignment.Items" target="CompositionInheritanceAssignment.Product" relationship="TO_ONE">
+      <point x="-22.0" y="-15.5" />
+      <point x="586.2625" y="137.0" />
+      <point x="582.5125" y="137.0" />
+      <point x="-25.75" y="15.5" />
+    </edge>
+    <edge source="CompositionInheritanceAssignment.CreditCardInfo" target="CompositionInheritanceAssignment.CardType" relationship="TO_ONE">
+      <point x="0.0" y="-15.5" />
+      <point x="0.0" y="15.5" />
+    </edge>
+    <edge source="CompositionInheritanceAssignment.Customers" target="CompositionInheritanceAssignment.BillingInformation" relationship="CREATE">
+      <point x="-24.200000000000017" y="-15.5" />
+      <point x="348.625" y="314.0" />
+      <point x="261.07500000000005" y="314.0" />
+      <point x="-43.0" y="15.5" />
+    </edge>
+    <edge source="CompositionInheritanceAssignment.Customers" target="CompositionInheritanceAssignment.ShoppingCart" relationship="CREATE">
+      <point x="24.19999999999999" y="-15.5" />
+      <point x="397.025" y="314.0" />
+      <point x="572.5125" y="314.0" />
+      <point x="-35.75" y="15.5" />
+    </edge>
+    <edge source="CompositionInheritanceAssignment.ShoppingCart" target="CompositionInheritanceAssignment.Items" relationship="TO_ONE">
+      <point x="35.75" y="-15.5" />
+      <point x="644.0125" y="233.0" />
+      <point x="630.2625" y="233.0" />
+      <point x="22.0" y="15.5" />
+    </edge>
+    <edge source="CompositionInheritanceAssignment.Customers" target="CompositionInheritanceAssignment.ShoppingCart" relationship="TO_ONE">
+      <point x="48.400000000000006" y="-15.5" />
+      <point x="421.225" y="324.0" />
+      <point x="644.0125" y="324.0" />
+      <point x="35.75" y="15.5" />
+    </edge>
+    <edge source="CompositionInheritanceAssignment.Items" target="CompositionInheritanceAssignment.Product" relationship="CREATE">
+      <point x="22.0" y="-15.5" />
+      <point x="630.2625" y="137.0" />
+      <point x="634.0125" y="137.0" />
+      <point x="25.75" y="15.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic" zoom="1.0" showDependencies="true" x="213.5" y="208.0" />
+  <SelectedNodes>
+    <node>CompositionInheritanceAssignment.Users</node>
+    <node>CompositionInheritanceAssignment.Admin</node>
+    <node>CompositionInheritanceAssignment.Sellers</node>
+  </SelectedNodes>
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
