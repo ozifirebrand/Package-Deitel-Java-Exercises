@@ -35,46 +35,77 @@ public class StudentsArray {
         return table;
     }
 
+    private static void displayInputInArray(int [] [] table){
+        for (int [] number: table){
+            for (int ints: number){
+                System.out.print(ints + "\t");
+            }
+            System.out.println();
+        }
+    }
+
     /*To sum each row, sum the elements in the specific row
     To do this, the iterator loops through each column and adds the individual element to an initialised variable - total in row
      */
-
-    public static int determineRow(int row ){
-        row = 0;
-        return row;
-    }
-
-    public static int determineColumn(int column){
-        column =0;
-        return column;
-    }
-    public static void loopRows(){
-
-    }
-
-    public static void loopColumns(){
-
-    }
-
-    public static int sumEachRow(int [][] table){
-        int totalInRow =0;
-        for (int row = determineRow(0); row< row+1; row++) {
-            for (int column = determineColumn(0); column < table[row].length; column++) {
-                totalInRow += table[row][column];
+        public static int sumEachRow(int [][] table                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          ){
+            int totalInRow =0;
+            for (int row = 0; row< table.length; row++){
+                for (int column = 0;column<table[row].length; column++){
+                    totalInRow += table[row][column];
+                    if ( column==table[row].length)return totalInRow;
+                }
             }
+            return totalInRow;
         }
-        return totalInRow;
-    }
 
-    public static int sumEachColumn(int[][] table){
+    public static int sumEachColumn(int [][] table){
         int totalInColumn =0;
-        for (int column =determineColumn(0); column<column+1;column++){
-            for (int row = determineRow(0); row< table.length; row++) {
-                totalInColumn += table[row][column];
-            }
-        }
+
+//            for (int column = 0;column<table[row].length; column++){
+//                for (int row = 0; row< table.length; row++){
+//                totalInColumn += table[row][column];
+//                if ( column==table[row].length)return totalInColumn;
+//            }
+        //}
         return totalInColumn;
+
     }
+
+//
+//    public static int determineRow(int [][] table ){
+//        int row = 0;
+//        int column =0;
+//        for (row=0; row< table.length; row++){
+//            for (column=0; column<column+1; column++){
+//                row= row+1;
+//            }
+//        }
+//        return row;
+//    }
+//
+//    public static int determineColumn(int column){
+//        column =0;
+//        return column;
+//    }
+//    public static void loopRows(){
+//
+//    }
+//
+//    public static void loopColumns(){
+//
+//    }
+//
+
+//
+//    public static int sumEachColumn(int[][] table){
+//        int totalInColumn =0;
+//        for (int column =0; column<column+1;column++){
+//            for (int[] ints : table) {
+//                totalInColumn += ints[column];
+//            }
+//        }
+//        return totalInColumn;
+//    }
     /*To display row in table or to display whole table at once
     To display whole table
         The inputs are collected and appropriately initialised
