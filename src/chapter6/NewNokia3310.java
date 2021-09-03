@@ -131,47 +131,36 @@ public class NewNokia3310 {
     }
 
     private static void displayServiceCommandEditor() {
-        System.out.println("10. Service command editor");
-    }
+        System.out.println("10. Service command editor");}
 
     private static void displayVoiceMailboxNumber() {
-        System.out.println("9. Voice mailbox number");
-    }
+        System.out.println("9. Voice mailbox number");}
 
     private static void displayInfoService() {
-        System.out.println("8. Info service");
-    }
+        System.out.println("8. Info service");}
 
     private static void displayMessageSettings() {
-        System.out.println("7. Message settings");
-    }
+        System.out.println("7. Message settings");}
 
     private static void displaySmileys() {
-        System.out.println("6. Smileys");
-    }
+        System.out.println("6. Smileys");}
 
     private static void displayTemplates() {
-        System.out.println("5. Templates");
-    }
+        System.out.println("5. Templates");}
 
     private static void displayPicturesMessages() {
-        System.out.println("4. Picture messages");
-    }
+        System.out.println("4. Picture messages");}
 
     private static void createOutbox() {
-        System.out.println("3. Outbox");
-    }
+        System.out.println("3. Outbox");}
 
     private static void createInbox() {
-        System.out.println("2. Inbox");
-    }
+        System.out.println("2. Inbox");}
 
     private static void writeMessages() {
-        System.out.println("1. Write messages");
-    }
+        System.out.println("1. Write messages");}
 
-    private static void back() {
-    }
+    private static void back() {}
 
 
 }
