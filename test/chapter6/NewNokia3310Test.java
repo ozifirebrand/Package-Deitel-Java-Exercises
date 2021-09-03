@@ -20,6 +20,10 @@ class NewNokia3310Test {
 
     @Test
     public void testMessagesMenu(){
-        NewNokia3310.displayMessagesMenu();
+        //NewNokia3310.displayMessagesMenu();
+    }
+    @Test
+    public void testDisplayMenu(){
+        NewNokia3310.displayMenuItems();
     }
 }

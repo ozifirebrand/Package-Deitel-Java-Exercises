@@ -50,14 +50,21 @@ public class NewNokia3310 {
 
     public static void displayMenuItems(){
         displayPhoneBook();
-        displayMessagesMenu();
+        displayMessage();
+        displayChat();
+        displayCallRegister();
     }
+
+    private static void displayChat() {
+        System.out.println("3. Chat");}
+
+    private static void displayCallRegister() {
+        System.out.println("4. Call register");}
 
     public static void displayPhoneBook() {
-        System.out.println("1. Phone book");
-    }
+        System.out.println("1. Phone book");}
 
-    public static void displayPhonebookMenu() {
+    public static void displayPhonebookMenu(){
         search();
         showServiceNos();
         addName();
@@ -69,6 +76,7 @@ public class NewNokia3310 {
         implementVoiceTags();
         assignTone();
     }
+
     private static void search() {
         System.out.println("1. Search");}
 
@@ -111,11 +119,12 @@ public class NewNokia3310 {
     private static void implementVoiceTags() {
         System.out.println("10. Voice tags");}
 
+    public static void displayCallRegisterMenu(){}
 
-    public static void displayCallRegisterMenu(){
-    }
+    public static void displayChatMenu(){}
 
-    public static void displayChatMenu(){
+    public static void displayMessage(){
+        System.out.println("2. Messages");
     }
     public static void displayMessagesMenu(){
         writeMessages();
@@ -159,6 +168,17 @@ public class NewNokia3310 {
 
     private static void writeMessages() {
         System.out.println("1. Write messages");}
+
+    public static void displayMessageSettingsMenu(){
+        set();
+        displayCommon();
+    }
+
+    private static void displayCommon() {
+        System.out.println("2. Common");}
+
+    private static void set() {
+        System.out.println("1. Set");}
 
     private static void back() {}
 
