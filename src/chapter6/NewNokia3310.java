@@ -319,18 +319,17 @@ public class NewNokia3310 {
 
 
     public static void navigateCallCostSettingsMenu() {
-        try{ int input = input();
-            switch (input){
+
+         int input = input();
+         boolean isInvalidInput = input <5 || input>7;
+         if (isInvalidInput){
+             navigateCallCostSettingsMenu();
+         }else
+         { switch (input){
                 case 5:showCallDurationMenu();break;
                 case 6: showCallCostsMenu();break;
                 case 7: displayCallCostSettingsMenu();break;
             }
-        }
-        catch (InputMismatchException errorValue){
-            //System.out.println("The error message is "+errorValue);
-            navigateCallCostSettingsMenu();
-
-        }
 
     }
 
