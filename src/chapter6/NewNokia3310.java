@@ -55,6 +55,10 @@ public class NewNokia3310 {
         displayCallRegister();
     }
 
+
+
+
+
     public static void displayPhoneBook() {
         System.out.println("1. Phone book");}
 
@@ -116,57 +120,6 @@ public class NewNokia3310 {
 
 
 
-    private static void displayChat() {
-        System.out.println("3. Chat");}
-
-            public static void displayChatMenu(){}
-
-
-
-
-
-
-
-
-    private static void displayCallRegister() {
-                System.out.println("4. Call register");}
-
-    public static void displayCallRegisterMenu(){
-        displayMissedCalls();
-        displayReceivedCalls();
-        displayDialledNumbers();
-        eraseRecentCallLists();
-        showCallDuration();
-        showCallCosts();
-        callCostSettings();
-        prepaidCredit();
-
-    }
-
-    private static void displayMissedCalls() {
-        System.out.println("1. Missed calls");}
-
-    private static void displayReceivedCalls() {
-        System.out.println("2. Received calls");}
-
-    private static void displayDialledNumbers() {
-        System.out.println("3. Dialled numbers");}
-
-    private static void eraseRecentCallLists() {
-        System.out.println("4. Erase recent call lists");}
-
-    private static void showCallDuration() {
-        System.out.println("5. Call duration");}
-
-    private static void showCallCosts() {
-        System.out.println("6. Call costs");}
-
-    private static void callCostSettings() {
-        System.out.println("7. Call cost settings");}
-
-    private static void prepaidCredit() {
-        System.out.println("8. Prepaid credit");}
-
 
 
 
@@ -220,11 +173,153 @@ public class NewNokia3310 {
         set();
         displayCommon();}
 
-    private static void set() {
+    public static void set() {
         System.out.println("1. Set");}
 
-    private static void displayCommon() {
-        System.out.println("2. Common");}
+    public static void displaySetMenu(){
+        displayMessageCentreNumber();
+        displayMessageSentAs();
+        displayMessageValidity();
+    }
+
+                private static void displayMessageCentreNumber() {
+                    System.out.println("1. Message centre number");}
+
+                private static void displayMessageSentAs() {
+                    System.out.println("2. Message sent as");}
+
+                private static void displayMessageValidity() {
+                    System.out.println("3. Message validity");}
+
+        private static void displayCommon() {
+              System.out.println("2. Common");}
+
+                 private static void displayCommonMenu(){
+                     displayDeliveryReports();
+                     replyViaSameCentre();
+                     displayCharacterSupport();}
+
+                         private static void displayDeliveryReports() {
+                             System.out.println("1. Delivery reports");}
+
+                         private static void replyViaSameCentre() {
+                             System.out.println("2. Reply via same centre");}
+
+                         private static void displayCharacterSupport() {
+                             System.out.println("3. Character support");}
+
+
+
+
+
+    private static void displayChat() {
+        System.out.println("3. Chat");}
+
+
+
+
+
+
+
+
+    private static void displayCallRegister() {
+                System.out.println("4. Call register");}
+
+    public static void displayCallRegisterMenu(){
+        displayMissedCalls();
+        displayReceivedCalls();
+        displayDialledNumbers();
+        eraseRecentCallLists();
+        showCallDuration();
+        showCallCosts();
+        displayCallCostSettings();
+        prepaidCredit();
+
+    }
+
+    private static void displayMissedCalls() {
+        System.out.println("1. Missed calls");}
+
+    private static void displayReceivedCalls() {
+        System.out.println("2. Received calls");}
+
+    private static void displayDialledNumbers() {
+        System.out.println("3. Dialled numbers");}
+
+    private static void eraseRecentCallLists() {
+        System.out.println("4. Erase recent call lists");}
+
+    private static void showCallDuration() {
+        System.out.println("5. Call duration");}
+
+
+        public static void showCallDurationMenu() {
+            displayLastCallDuration();
+            displayAllCallDuration();
+            displayReceivedCallsDuration();
+            displayDialledCallsDuration();
+            clearTimers();
+        }
+
+                     private static void displayLastCallDuration() {
+                         System.out.println("1. Last call duration");}
+
+                     private static void displayAllCallDuration() {
+                         System.out.println("2. All calls duration");}
+
+                     private static void displayReceivedCallsDuration() {
+                         System.out.println("3. Received calls duration");}
+
+                     private static void displayDialledCallsDuration() {
+                         System.out.println("4. Dialled calls duration");}
+
+                     private static void clearTimers() {
+                         System.out.println("5. Clear timers");}
+
+
+    private static void showCallCosts() {
+         System.out.println("6. Call costs");}
+
+
+                    private static void displayCallCostsMenu() {
+                        displayLastCallCost();
+                        displayAllCallsCost();
+                        clearCounters();
+                    }
+
+                         private static void displayLastCallCost() {
+                             System.out.println("1. Last call cost");
+                         }
+
+                         private static void displayAllCallsCost() {
+                             System.out.println("2. All calls cost");
+                         }
+
+                         private static void clearCounters() {
+                             System.out.println("3. Clear counters");
+                         }
+
+    private static void displayCallCostSettings() {
+        System.out.println("7. Call cost settings");}
+
+    private static void displayCallCostSettingsMenu() {
+        displayCallCostLimit();
+        showCostsIn();
+    }
+
+    private static void displayCallCostLimit() {
+        System.out.println("1. Call cost limit");}
+
+    private static void showCostsIn() {
+        System.out.println("2. Show costs in");}
+
+    private static void prepaidCredit() {
+        System.out.println("8. Prepaid credit");}
+
+
+
+
+
 
     private static void back() {}
 }
