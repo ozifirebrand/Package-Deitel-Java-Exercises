@@ -1,5 +1,6 @@
 package chapter6;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class NewNokia3310 {
@@ -281,7 +282,7 @@ public class NewNokia3310 {
          System.out.println("6. Call costs");}
 
 
-                    private static void displayCallCostsMenu() {
+                    private static void showCallCostsMenu() {
                         displayLastCallCost();
                         displayAllCallsCost();
                         clearCounters();
@@ -317,11 +318,27 @@ public class NewNokia3310 {
         System.out.println("8. Prepaid credit");}
 
 
+    public static void navigateCallCostSettingsMenu() {
+        try{ int input = input();
+            switch (input){
+                case 5:showCallDurationMenu();break;
+                case 6: showCallCostsMenu();break;
+                case 7: displayCallCostSettingsMenu();break;
+            }
+        }
+        catch (InputMismatchException errorValue){
+            //System.out.println("The error message is "+errorValue);
+            navigateCallCostSettingsMenu();
+
+        }
+
+    }
 
 
 
 
-    private static void back() {}
+
+        private static void back() {}
 }
 /*The display methods call the construct methods.
     The major function of the display methods is to carry out the

@@ -24,6 +24,12 @@ class NewNokia3310Test {
     }
     @Test
     public void testDisplayMenu(){
-        NewNokia3310.displayMenuItems();
+       // NewNokia3310.displayMenuItems();
     }
+//    @Test
+//    public void navigateCallCostSettingsCostTest(){}
+
+public static void main(String[] args) {
+    NewNokia3310.navigateCallCostSettingsMenu();
+}
 }
