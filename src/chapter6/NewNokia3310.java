@@ -1,6 +1,5 @@
 package chapter6;
 
-import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class NewNokia3310 {
@@ -44,12 +43,12 @@ public class NewNokia3310 {
         }
     }
 */
-    public static int input(){
+    public static int input() {
         Scanner scanner = new Scanner(System.in);
         return scanner.nextInt();
     }
 
-    public static void displayMenuItems(){
+    public static void displayMenuItems() {
         displayPhoneBook();
         displayMessage();
         displayChat();
@@ -57,13 +56,11 @@ public class NewNokia3310 {
     }
 
 
-
-
-
     public static void displayPhoneBook() {
-        System.out.println("1. Phone book");}
+        System.out.println("1. Phone book");
+    }
 
-    public static void displayPhonebookMenu(){
+    public static void displayPhonebookMenu() {
         search();
         showServiceNos();
         addName();
@@ -77,57 +74,65 @@ public class NewNokia3310 {
     }
 
     private static void search() {
-        System.out.println("1. Search");}
+        System.out.println("1. Search");
+    }
 
     private static void showServiceNos() {
-        System.out.println("2. Service Nos");}
+        System.out.println("2. Service Nos");
+    }
 
     private static void addName() {
-        System.out.println("3. Add name");}
+        System.out.println("3. Add name");
+    }
 
     private static void erase() {
-        System.out.println("4. Erase");}
+        System.out.println("4. Erase");
+    }
 
     private static void edit() {
-        System.out.println("5. Edit");}
+        System.out.println("5. Edit");
+    }
 
     private static void assignTone() {
-        System.out.println("6. Assign tone");}
+        System.out.println("6. Assign tone");
+    }
 
     private static void sendBCard() {
-        System.out.println("7. Send B'card");}
+        System.out.println("7. Send B'card");
+    }
 
     private static void showOptions() {
         System.out.println("8. Options");
     }
 
-        public static void displayOptionsMenu() {
-            displayTypeOfView();
-            displayMemoryStatus();}
+    public static void displayOptionsMenu() {
+        displayTypeOfView();
+        displayMemoryStatus();
+    }
 
-             private static void displayTypeOfView() {
-                    System.out.println("1. Type of View");}
+    private static void displayTypeOfView() {
+        System.out.println("1. Type of View");
+    }
 
-             private static void displayMemoryStatus() {
-                    System.out.println("2. Memory status");}
+    private static void displayMemoryStatus() {
+        System.out.println("2. Memory status");
+    }
 
     private static void displaySpeedDials() {
-        System.out.println("9. Speed dials");}
+        System.out.println("9. Speed dials");
+    }
 
     private static void implementVoiceTags() {
-        System.out.println("10. Voice tags");}
+        System.out.println("10. Voice tags");
+    }
 
 
-
-
-
-
-
-
-    public static void displayMessage(){
+    public static void displayMessage() {
         System.out.println("2. Messages");
     }
-    public static void displayMessagesMenu(){
+
+    public static void displayMessagesMenu() {
+        displayMessage();
         writeMessages();
         createInbox();
         createOutbox();
@@ -141,92 +146,122 @@ public class NewNokia3310 {
     }
 
     private static void writeMessages() {
-        System.out.println("1. Write messages");}
+        System.out.println("1. Write messages");
+    }
 
     private static void createInbox() {
-        System.out.println("2. Inbox");}
+        System.out.println("2. Inbox");
+    }
 
     private static void createOutbox() {
-        System.out.println("3. Outbox");}
+        System.out.println("3. Outbox");
+    }
 
     private static void displayPicturesMessages() {
-        System.out.println("4. Picture messages");}
+        System.out.println("4. Picture messages");
+    }
 
     private static void displayTemplates() {
-        System.out.println("5. Templates");}
+        System.out.println("5. Templates");
+    }
 
     private static void displaySmileys() {
-        System.out.println("6. Smileys");}
+        System.out.println("6. Smileys");
+    }
 
     private static void displayMessageSettings() {
-        System.out.println("7. Message settings");}
+        System.out.println("7. Message settings");
+    }
 
     private static void displayInfoService() {
-        System.out.println("8. Info service");}
+        System.out.println("8. Info service");
+    }
 
     private static void displayVoiceMailboxNumber() {
-        System.out.println("9. Voice mailbox number");}
+        System.out.println("9. Voice mailbox number");
+    }
 
     private static void displayServiceCommandEditor() {
-        System.out.println("10. Service command editor");}
+        System.out.println("10. Service command editor");
+    }
 
-    public static void displayMessageSettingsMenu(){
+    public static void displayMessageSettingsMenu() {
         set();
-        displayCommon();}
+        displayCommon();
+    }
+
+    public static void navigateMessageSettingsMenu(){
+        int input = input();
+        boolean isInvalidInput = input >2 || input <1 ;
+        if ( isInvalidInput ) {
+            navigateMessageSettingsMenu();
+        } else {
+            switch (input) {
+                case 1 -> displaySetMenu();
+                case 2 -> displayCommonMenu();
+            }
+        }
+    }
+
 
     public static void set() {
-        System.out.println("1. Set");}
+        System.out.println("1. Set");
+    }
 
-    public static void displaySetMenu(){
+    public static void displaySetMenu() {
+        set();
         displayMessageCentreNumber();
         displayMessageSentAs();
         displayMessageValidity();
     }
 
-                private static void displayMessageCentreNumber() {
-                    System.out.println("1. Message centre number");}
+    private static void displayMessageCentreNumber() {
+        System.out.println("1. Message centre number");
+    }
 
-                private static void displayMessageSentAs() {
-                    System.out.println("2. Message sent as");}
+    private static void displayMessageSentAs() {
+        System.out.println("2. Message sent as");
+    }
 
-                private static void displayMessageValidity() {
-                    System.out.println("3. Message validity");}
+    private static void displayMessageValidity() {
+        System.out.println("3. Message validity");
+    }
 
-        private static void displayCommon() {
-              System.out.println("2. Common");}
+    private static void displayCommon() {
+        System.out.println("2. Common");
+    }
 
-                 private static void displayCommonMenu(){
-                     displayDeliveryReports();
-                     replyViaSameCentre();
-                     displayCharacterSupport();}
+    private static void displayCommonMenu() {
+        displayCommon();
+        displayDeliveryReports();
+        replyViaSameCentre();
+        displayCharacterSupport();
+    }
 
-                         private static void displayDeliveryReports() {
-                             System.out.println("1. Delivery reports");}
+    private static void displayDeliveryReports() {
+        System.out.println("1. Delivery reports");
+    }
 
-                         private static void replyViaSameCentre() {
-                             System.out.println("2. Reply via same centre");}
+    private static void replyViaSameCentre() {
+        System.out.println("2. Reply via same centre");
+    }
 
-                         private static void displayCharacterSupport() {
-                             System.out.println("3. Character support");}
-
-
-
+    private static void displayCharacterSupport() {
+        System.out.println("3. Character support");
+    }
 
 
     private static void displayChat() {
-        System.out.println("3. Chat");}
-
-
-
-
-
-
+        System.out.println("3. Chat");
+    }
 
 
     private static void displayCallRegister() {
-                System.out.println("4. Call register");}
+        System.out.println("4. Call register");
+    }
 
-    public static void displayCallRegisterMenu(){
+    public static void displayCallRegisterMenu() {
+        displayCallRegister();
         displayMissedCalls();
         displayReceivedCalls();
         displayDialledNumbers();
@@ -239,69 +274,83 @@ public class NewNokia3310 {
     }
 
     private static void displayMissedCalls() {
-        System.out.println("1. Missed calls");}
+        System.out.println("1. Missed calls");
+    }
 
     private static void displayReceivedCalls() {
-        System.out.println("2. Received calls");}
+        System.out.println("2. Received calls");
+    }
 
     private static void displayDialledNumbers() {
-        System.out.println("3. Dialled numbers");}
+        System.out.println("3. Dialled numbers");
+    }
 
     private static void eraseRecentCallLists() {
-        System.out.println("4. Erase recent call lists");}
+        System.out.println("4. Erase recent call lists");
+    }
 
     private static void showCallDuration() {
-        System.out.println("5. Call duration");}
+        System.out.println("5. Call duration");
+    }
 
 
-        public static void showCallDurationMenu() {
-            displayLastCallDuration();
-            displayAllCallDuration();
-            displayReceivedCallsDuration();
-            displayDialledCallsDuration();
-            clearTimers();
-        }
+    public static void showCallDurationMenu() {
+        showCallDuration();
+        displayLastCallDuration();
+        displayAllCallDuration();
+        displayReceivedCallsDuration();
+        displayDialledCallsDuration();
+        clearTimers();
+    }
 
-                     private static void displayLastCallDuration() {
-                         System.out.println("1. Last call duration");}
+    private static void displayLastCallDuration() {
+        System.out.println("1. Last call duration");
+    }
 
-                     private static void displayAllCallDuration() {
-                         System.out.println("2. All calls duration");}
+    private static void displayAllCallDuration() {
+        System.out.println("2. All calls duration");
+    }
 
-                     private static void displayReceivedCallsDuration() {
-                         System.out.println("3. Received calls duration");}
+    private static void displayReceivedCallsDuration() {
+        System.out.println("3. Received calls duration");
+    }
 
-                     private static void displayDialledCallsDuration() {
-                         System.out.println("4. Dialled calls duration");}
+    private static void displayDialledCallsDuration() {
+        System.out.println("4. Dialled calls duration");
+    }
 
-                     private static void clearTimers() {
-                         System.out.println("5. Clear timers");}
+    private static void clearTimers() {
+        System.out.println("5. Clear timers");
+    }
 
 
     private static void showCallCosts() {
-         System.out.println("6. Call costs");}
+        System.out.println("6. Call costs");
+    }
 
 
-                    private static void showCallCostsMenu() {
-                        displayLastCallCost();
-                        displayAllCallsCost();
-                        clearCounters();
-                    }
+    private static void showCallCostsMenu() {
+        showCallCosts();
+        displayLastCallCost();
+        displayAllCallsCost();
+        clearCounters();
+    }
 
-                         private static void displayLastCallCost() {
-                             System.out.println("1. Last call cost");
-                         }
+    private static void displayLastCallCost() {
+        System.out.println("1. Last call cost");
+    }
 
-                         private static void displayAllCallsCost() {
-                             System.out.println("2. All calls cost");
-                         }
+    private static void displayAllCallsCost() {
+        System.out.println("2. All calls cost");
+    }
 
-                         private static void clearCounters() {
-                             System.out.println("3. Clear counters");
-                         }
+    private static void clearCounters() {
+        System.out.println("3. Clear counters");
+    }
 
     private static void displayCallCostSettings() {
-        System.out.println("7. Call cost settings");}
+        System.out.println("7. Call cost settings");
+    }
 
     private static void displayCallCostSettingsMenu() {
         displayCallCostLimit();
@@ -309,36 +358,39 @@ public class NewNokia3310 {
     }
 
     private static void displayCallCostLimit() {
-        System.out.println("1. Call cost limit");}
+        System.out.println("1. Call cost limit");
+    }
 
     private static void showCostsIn() {
-        System.out.println("2. Show costs in");}
+        System.out.println("2. Show costs in");
+    }
 
     private static void prepaidCredit() {
-        System.out.println("8. Prepaid credit");}
-
-
-    public static void navigateCallCostSettingsMenu() {
-
-         int input = input();
-         boolean isInvalidInput = input <5 || input>7;
-         if (isInvalidInput){
-             navigateCallCostSettingsMenu();
-         }else
-         { switch (input){
-                case 5:showCallDurationMenu();break;
-                case 6: showCallCostsMenu();break;
-                case 7: displayCallCostSettingsMenu();break;
-            }
-
+        System.out.println("8. Prepaid credit");
     }
 
 
+    public static void navigateCallRegisterMenu() {
+        int input = input();
+        boolean isInvalidInput = input < 5 || input > 7;
+        if ( isInvalidInput ) {
+            navigateCallRegisterMenu();
+        } else {
+            switch (input) {
+                case 5 -> showCallDurationMenu();
+                case 6 -> showCallCostsMenu();
+                case 7 -> displayCallCostSettingsMenu();
+            }
 
-
-
-        private static void back() {}
+        }
+    }
 }
+
+
+
+
+        //private static void back() {}
+
 /*The display methods call the construct methods.
     The major function of the display methods is to carry out the
     commands in the construct methods which carry the main print

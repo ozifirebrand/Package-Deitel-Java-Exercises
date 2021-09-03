@@ -1,9 +1,6 @@
 package chapter6;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class NewNokia3310Test {
 
@@ -30,6 +27,7 @@ class NewNokia3310Test {
 //    public void navigateCallCostSettingsCostTest(){}
 
 public static void main(String[] args) {
-    NewNokia3310.navigateCallCostSettingsMenu();
+    //NewNokia3310.navigateCallRegisterMenu();
+    NewNokia3310.navigateMessageSettingsMenu();
 }
 }
