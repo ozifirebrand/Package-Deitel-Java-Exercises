@@ -103,41 +103,41 @@ public class NewNokia3310 {
         implementVoiceTags();
         assignTone();
     }
-
-    private static void assignTone() {
-        System.out.println("Assign tone");}
-
-    private static void implementVoiceTags() {
-        System.out.println("Voice tags");}
-
-    private static void displaySpeedDials() {
-        System.out.println("Speed dials");}
-
-    private static void showOptions() {
-        System.out.println("Options");}
-
-    private static void sendBCard() {
-        System.out.println("Send B'card");}
-
-    private static void edit() {
-        System.out.println("Edit");
-    }
-
-    private static void erase() {
-        System.out.println("Erase");
-    }
-
-    private static void addName() {
-        System.out.println("Add name");
+    private static void search() {
+        System.out.println("1. Search");
     }
 
     private static void showServiceNos() {
-        System.out.println("Service Nos");
+        System.out.println("2. Service Nos");
     }
 
-    private static void search() {
-        System.out.println("Search");
+    private static void addName() {
+        System.out.println("3. Add name");
     }
+
+    private static void erase() {
+        System.out.println("4. Erase");
+    }
+
+    private static void edit() {
+        System.out.println("5. Edit");
+    }
+
+    private static void assignTone() {
+        System.out.println("6. Assign tone");}
+
+    private static void sendBCard() {
+        System.out.println("7. Send B'card");}
+
+    private static void showOptions() {
+        System.out.println("8. Options");}
+
+    private static void displaySpeedDials() {
+        System.out.println("9. Speed dials");}
+
+    private static void implementVoiceTags() {
+        System.out.println("10. Voice tags");}
+
 
     public static void displayCallRegisterMenu(){
 
