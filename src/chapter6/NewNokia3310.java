@@ -55,12 +55,6 @@ public class NewNokia3310 {
         displayCallRegister();
     }
 
-    private static void displayChat() {
-        System.out.println("3. Chat");}
-
-    private static void displayCallRegister() {
-        System.out.println("4. Call register");}
-
     public static void displayPhoneBook() {
         System.out.println("1. Phone book");}
 
@@ -102,16 +96,15 @@ public class NewNokia3310 {
         System.out.println("8. Options");
     }
 
-    public static void displayOptionsMenu() {
-        displayTypeOfView();
-        displayMemoryStatus();
-    }
+        public static void displayOptionsMenu() {
+            displayTypeOfView();
+            displayMemoryStatus();}
 
-    private static void displayTypeOfView() {
-        System.out.println("1. Type of View");}
+             private static void displayTypeOfView() {
+                    System.out.println("1. Type of View");}
 
-    private static void displayMemoryStatus() {
-        System.out.println("2. Memory status");}
+             private static void displayMemoryStatus() {
+                    System.out.println("2. Memory status");}
 
     private static void displaySpeedDials() {
         System.out.println("9. Speed dials");}
@@ -119,9 +112,63 @@ public class NewNokia3310 {
     private static void implementVoiceTags() {
         System.out.println("10. Voice tags");}
 
-    public static void displayCallRegisterMenu(){}
 
-    public static void displayChatMenu(){}
+
+
+
+    private static void displayChat() {
+        System.out.println("3. Chat");}
+
+            public static void displayChatMenu(){}
+
+
+
+
+
+
+
+
+    private static void displayCallRegister() {
+                System.out.println("4. Call register");}
+
+    public static void displayCallRegisterMenu(){
+        displayMissedCalls();
+        displayReceivedCalls();
+        displayDialledNumbers();
+        eraseRecentCallLists();
+        showCallDuration();
+        showCallCosts();
+        callCostSettings();
+        prepaidCredit();
+
+    }
+
+    private static void displayMissedCalls() {
+        System.out.println("1. Missed calls");}
+
+    private static void displayReceivedCalls() {
+        System.out.println("2. Received calls");}
+
+    private static void displayDialledNumbers() {
+        System.out.println("3. Dialled numbers");}
+
+    private static void eraseRecentCallLists() {
+        System.out.println("4. Erase recent call lists");}
+
+    private static void showCallDuration() {
+        System.out.println("5. Call duration");}
+
+    private static void showCallCosts() {
+        System.out.println("6. Call costs");}
+
+    private static void callCostSettings() {
+        System.out.println("7. Call cost settings");}
+
+    private static void prepaidCredit() {
+        System.out.println("8. Prepaid credit");}
+
+
+
 
     public static void displayMessage(){
         System.out.println("2. Messages");
@@ -139,50 +186,47 @@ public class NewNokia3310 {
         displayServiceCommandEditor();
     }
 
-    private static void displayServiceCommandEditor() {
-        System.out.println("10. Service command editor");}
-
-    private static void displayVoiceMailboxNumber() {
-        System.out.println("9. Voice mailbox number");}
-
-    private static void displayInfoService() {
-        System.out.println("8. Info service");}
-
-    private static void displayMessageSettings() {
-        System.out.println("7. Message settings");}
-
-    private static void displaySmileys() {
-        System.out.println("6. Smileys");}
-
-    private static void displayTemplates() {
-        System.out.println("5. Templates");}
-
-    private static void displayPicturesMessages() {
-        System.out.println("4. Picture messages");}
-
-    private static void createOutbox() {
-        System.out.println("3. Outbox");}
+    private static void writeMessages() {
+        System.out.println("1. Write messages");}
 
     private static void createInbox() {
         System.out.println("2. Inbox");}
 
-    private static void writeMessages() {
-        System.out.println("1. Write messages");}
+    private static void createOutbox() {
+        System.out.println("3. Outbox");}
+
+    private static void displayPicturesMessages() {
+        System.out.println("4. Picture messages");}
+
+    private static void displayTemplates() {
+        System.out.println("5. Templates");}
+
+    private static void displaySmileys() {
+        System.out.println("6. Smileys");}
+
+    private static void displayMessageSettings() {
+        System.out.println("7. Message settings");}
+
+    private static void displayInfoService() {
+        System.out.println("8. Info service");}
+
+    private static void displayVoiceMailboxNumber() {
+        System.out.println("9. Voice mailbox number");}
+
+    private static void displayServiceCommandEditor() {
+        System.out.println("10. Service command editor");}
 
     public static void displayMessageSettingsMenu(){
         set();
-        displayCommon();
-    }
-
-    private static void displayCommon() {
-        System.out.println("2. Common");}
+        displayCommon();}
 
     private static void set() {
         System.out.println("1. Set");}
 
+    private static void displayCommon() {
+        System.out.println("2. Common");}
+
     private static void back() {}
-
-
 }
 /*The display methods call the construct methods.
     The major function of the display methods is to carry out the
