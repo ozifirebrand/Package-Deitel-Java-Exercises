@@ -4,10 +4,10 @@ package chapter6;
 When the menu key is pressed, the screen displays Phone book,
     Messages, Chats, Call register, Tones, Settings, Call diver,
     Games, Calculator, Reminders, Clock,Profiles, SIM Services.
+When the other menu items are typed in, the menu displays the
+items in that menu item
 
-The menu is a switch case static method on its own carrying
-all the displayed methods.
- */
+*/
 import java.util.Scanner;
 public class nokia3310 {
     public static void main(String[] args) {
@@ -129,6 +129,7 @@ public class nokia3310 {
         int input = scanner.nextInt();
         displayMenuItems(input);
     }
+
     private static void displayMenuItems(int number) {
  switch (number){
      case 1: System.out.println("Phone book");

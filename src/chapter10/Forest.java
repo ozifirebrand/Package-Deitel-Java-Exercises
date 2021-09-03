@@ -9,7 +9,7 @@ public class Forest {
         animals[3] = new Animal();
 
         for (Animal animal: animals){
-            animal.move();
+            animal.move(); 
         }
 
 
