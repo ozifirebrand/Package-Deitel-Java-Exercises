@@ -19,9 +19,22 @@ public class SixPointEightParkingCharges {
     private static int calculateTheCostForTheRemainingHoursInPark() {
         int noOfHours = receiveInput();
         int firstThreeHours = 3;
-        int remainingHours = noOfHours - firstThreeHours;
-        int costOfEveryHourAfterThreeHours = 2;
-        return remainingHours * costOfEveryHourAfterThreeHours;
+        int remainingHours;
+        int costForRemainingHours=0;
+        int costOfEveryHourAfterThreeHours ;
+        if ( noOfHours <= 3 && noOfHours >0 ) {
+            remainingHours = 0;
+            costOfEveryHourAfterThreeHours = 0;
+            costForRemainingHours=0;
+        }else if (noOfHours< 1 ){
+            calculateTheCostForTheRemainingHoursInPark();
+        }else {
+            remainingHours = noOfHours - firstThreeHours;
+            costOfEveryHourAfterThreeHours = 2;
+            costForRemainingHours = remainingHours * costOfEveryHourAfterThreeHours;
+        }
+
+        return costForRemainingHours;
     }
 
     private static int calculateCharges() {
