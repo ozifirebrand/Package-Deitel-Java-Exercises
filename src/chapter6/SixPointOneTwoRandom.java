@@ -2,6 +2,12 @@ package chapter6;
 
 import java.security.SecureRandom;
 import java.util.stream.IntStream;
+/*shifting value
+* This represents the first number on the scale of numbers to be displayed randomly*/
+/*difference between values
+* This depicts the difference between individual elements*/
+/*scaling factor or bound
+* This specifies how many numbers are in the range*/
 
 public class SixPointOneTwoRandom {
     public static void main(String[] args) {
