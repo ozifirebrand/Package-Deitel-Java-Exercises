@@ -2,7 +2,7 @@ package chapter6;
 
 import java.util.Scanner;
 
-public class OtherExercisesInDeitelChapterSix {
+public class SixPointOneZeroUsingMathClassFloorMethod {
     public static void main(String[] args) {
         calculateFloorValue();
         calculateFloorValueToTheNearestTenths();
