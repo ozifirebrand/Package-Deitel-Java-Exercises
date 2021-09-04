@@ -1,6 +1,7 @@
 package chapter6;
 
 import java.security.SecureRandom;
+import java.util.Scanner;
 import java.util.stream.IntStream;
 /*shifting value
 * This represents the first number on the scale of numbers to be displayed randomly*/
@@ -11,12 +12,24 @@ import java.util.stream.IntStream;
 
 public class SixPointOneTwoRandom {
     public static void main(String[] args) {
+        configureRandomValues();
+    }
+
+    public static void configureRandomValues(){
         SecureRandom newRandom = new SecureRandom();
-        for (int counter = 0; counter <= 10; counter++) {
-            int number = 2 /*shifting value*/ + 2/*difference between values*/
-                    * newRandom.nextInt(/*scaling factor or bound*/15);
-            System.out.print(number + " ");
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("How what is the range of the numbers?");
+        int range = scanner.nextInt();
+        System.out.println("What is your starting point?");
+        int startingPoint = scanner.nextInt();
+        System.out.println("What is the difference between the random numbers to be generated?");
+        int difference = scanner.nextInt();
+       for (int counter = 0; counter < range; counter++) {
+            int randomNumber = startingPoint + difference
+                    * newRandom.nextInt(range);
+            System.out.print(randomNumber + " ");
         }
+
     }
 }
 
@@ -57,4 +70,10 @@ public class SixPointOneTwoRandom {
 //        for (int counter = 0; counter <= 10; counter++) {
 //            IntStream h = newRandom.ints();
 //            System.out.println(h +" ");
+/*for (int counter = 0; counter < range; counter++) {
+            int number = startingPoint /*shifting value+ differencedifference between values
+        * newRandom.nextInt(scaling factor or boundrange);
+        System.out.print(number + " ");
+        }
+        */
 //        }
