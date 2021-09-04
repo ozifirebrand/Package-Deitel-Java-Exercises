@@ -52,7 +52,9 @@ public class NewNokia3310 {
         displayPhoneBook();
         displayMessage();
         displayChat();
-        displayCallRegister();}
+        displayCallRegister();
+        navigateMenuItems();
+    }
 
 
     public static void navigateMenuItems(){
@@ -64,13 +66,20 @@ public class NewNokia3310 {
                 case 1 -> {
                     displayPhonebookMenu();
                     navigatePhoneBookMenu();}
-                case 2 -> displayMessagesMenu();
+                case 2 -> {
+                    displayMessagesMenu();
+                    navigateMessagesMenu();
+                }
                 case 3 -> displayChat();
-                case 4 -> displayCallRegisterMenu();
+                case 4 -> {
+                    displayCallRegisterMenu();
+                    navigateCallRegisterMenu();
+                }
             }
         }
         }
     }
+
 
     private static void displayPhoneBook() {
         System.out.println("1. Phone book");
@@ -123,7 +132,7 @@ public class NewNokia3310 {
     public static void navigatePhoneBookMenu(){
         int input = input();
         boolean inputIsNotAvailable= input>0 && input< 8;
-        if ( input ==0 ){displayPhonebookMenu();}
+        if ( input ==0 ){displayMenuItems();}
 
         else if(inputIsNotAvailable){
             navigatePhoneBookMenu();
@@ -154,10 +163,22 @@ public class NewNokia3310 {
         System.out.println("10. Voice tags");
     }
 
-
     private static void displayMessage() {
-        System.out.println("2. Messages");
+       System.out.println("2. Messages");
 
+    }
+
+    private static void navigateMessagesMenu() {
+        int input = input();
+        if(input ==0 ){displayMenuItems();}
+        else {
+            if ( input != 7 ) {
+                navigateMessagesMenu();}
+            else {
+                displayMessageSettings();
+                navigateMessageSettingsMenu();
+            }
+        }
     }
 
     private static void displayMessagesMenu() {
@@ -171,7 +192,8 @@ public class NewNokia3310 {
         displayMessageSettings();
         displayInfoService();
         displayVoiceMailboxNumber();
-        displayServiceCommandEditor();}
+        displayServiceCommandEditor();
+    }
 
     private static void writeMessages() {
         System.out.println("1. Write messages");
@@ -220,12 +242,15 @@ public class NewNokia3310 {
     private static void navigateMessageSettingsMenu(){
         int input = input();
         boolean isInvalidInput = input >2 || input <1 ;
-        if ( isInvalidInput ) {
-            navigateMessageSettingsMenu();
-        } else {
-            switch (input) {
-                case 1 -> displaySetMenu();
-                case 2 -> displayCommonMenu();}
+        if(input == 0){displayMessagesMenu();}
+        else
+            if ( isInvalidInput ) {
+                navigateMessageSettingsMenu();
+            }
+        else {
+                switch (input) {
+                    case 1 -> displaySetMenu();
+                    case 2 -> displayCommonMenu();}
         }
     }
 
@@ -238,7 +263,10 @@ public class NewNokia3310 {
         set();
         displayMessageCentreNumber();
         displayMessageSentAs();
-        displayMessageValidity();}
+        displayMessageValidity();
+        int input = input();
+        if ( input> 0 ){displaySetMenu();}else {displayMessagesMenu();}
+    }
 
     private static void displayMessageCentreNumber() {
         System.out.println("1. Message centre number");
@@ -260,7 +288,10 @@ public class NewNokia3310 {
         displayCommon();
         displayDeliveryReports();
         replyViaSameCentre();
-        displayCharacterSupport();}
+        displayCharacterSupport();
+        int input = input();
+        if ( input> 0 ){displayCommonMenu();}else {displayMessagesMenu();}
+    }
 
     private static void displayDeliveryReports() {
         System.out.println("1. Delivery reports");
@@ -284,6 +315,19 @@ public class NewNokia3310 {
         System.out.println("4. Call register");
     }
 
+    public static void navigateCallRegisterMenu() {
+        int input = input();
+        boolean isInvalidInput = input < 5 || input > 7;
+        if ( isInvalidInput ) {
+            navigateCallRegisterMenu();
+        } else {
+            switch (input) {
+                case 5 -> showCallDurationMenu();
+                case 6 -> showCallCostsMenu();
+                case 7 -> displayCallCostSettingsMenu(); }
+        }
+    }
+
     private static void displayCallRegisterMenu() {
         displayCallRegister();
         displayMissedCalls();
@@ -293,7 +337,11 @@ public class NewNokia3310 {
         showCallDuration();
         showCallCosts();
         displayCallCostSettings();
-        prepaidCredit();}
+        prepaidCredit();
+        navigateCallRegisterMenu();
+        int input = input();
+        if ( input> 0 ){displayCallRegisterMenu();}else {displayMenuItems();}
+    }
 
     private static void displayMissedCalls() {
         System.out.println("1. Missed calls");
@@ -313,14 +361,16 @@ public class NewNokia3310 {
         System.out.println("5. Call duration");
     }
 
-
     private static void showCallDurationMenu() {
         showCallDuration();
         displayLastCallDuration();
         displayAllCallDuration();
         displayReceivedCallsDuration();
         displayDialledCallsDuration();
-        clearTimers();}
+        clearTimers();
+        int input = input();
+        if ( input> 0 ){showCallDurationMenu();}else {displayCallRegister();}
+    }
 
     private static void displayLastCallDuration() {
         System.out.println("1. Last call duration");
@@ -352,7 +402,10 @@ public class NewNokia3310 {
         showCallCosts();
         displayLastCallCost();
         displayAllCallsCost();
-        clearCounters();}
+        clearCounters();
+        int input = input();
+        if ( input> 0 ){showCallCostsMenu();}else {displayCallRegister();}
+    }
 
     private static void displayLastCallCost() { System.out.println("1. Last call cost"); }
 
@@ -364,7 +417,10 @@ public class NewNokia3310 {
 
     private static void displayCallCostSettingsMenu() {
         displayCallCostLimit();
-        showCostsIn();}
+        showCostsIn();
+        int input = input();
+        if ( input> 0 ){displayCallCostSettingsMenu();}else {displayCallRegister();}
+    }
 
     private static void displayCallCostLimit() { System.out.println("1. Call cost limit"); }
 
@@ -372,18 +428,6 @@ public class NewNokia3310 {
 
     private static void prepaidCredit() { System.out.println("8. Prepaid credit"); }
 
-
-    public static void navigateCallRegisterMenu() {
-        int input = input();
-        boolean isInvalidInput = input < 5 || input > 7;
-        if ( isInvalidInput ) {
-            navigateCallRegisterMenu();
-        } else {
-            switch (input) {
-                case 5 -> showCallDurationMenu();
-                case 6 -> showCallCostsMenu();
-                case 7 -> displayCallCostSettingsMenu(); }
-        } }
 }
 
 /*The display methods call the construct methods.
