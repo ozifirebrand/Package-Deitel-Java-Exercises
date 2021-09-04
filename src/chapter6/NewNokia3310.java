@@ -57,13 +57,19 @@ public class NewNokia3310 {
 
     public static void navigateMenuItems(){
         int input = input();
-        switch (input){
-            case 1: displayPhonebookMenu(); break;
-            case 2: displayMessagesMenu(); break;
-            case 3: displayChat(); break;
-            case 4: displayCallRegisterMenu(); break;
+        while (true){
+        if ( input ==0 ){displayMenuItems(); break;}
+        else {
+            switch (input) {
+                case 1 -> {
+                    displayPhonebookMenu();
+                    navigatePhoneBookMenu();}
+                case 2 -> displayMessagesMenu();
+                case 3 -> displayChat();
+                case 4 -> displayCallRegisterMenu();
+            }
         }
-
+        }
     }
 
     private static void displayPhoneBook() {
@@ -81,6 +87,7 @@ public class NewNokia3310 {
         showOptions();
         displaySpeedDials();
         implementVoiceTags();
+        navigatePhoneBookMenu();
         }
 
     private static void search() {
@@ -112,6 +119,20 @@ public class NewNokia3310 {
     }
 
     private static void showOptions() { System.out.println("8. Options"); }
+
+    public static void navigatePhoneBookMenu(){
+        int input = input();
+        boolean inputIsNotAvailable= input>0 && input< 8;
+        if ( input ==0 ){displayPhonebookMenu();}
+
+        else if(inputIsNotAvailable){
+            navigatePhoneBookMenu();
+        }else {
+            if ( input == 8 ) {
+                displayOptionsMenu();
+            }
+        }
+    }
 
     private static void displayOptionsMenu() {
         displayTypeOfView();
