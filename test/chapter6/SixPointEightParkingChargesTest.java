@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class SixPointEightParkingChargesTest {
     @Test
     public static void main(String[] args) {
-        System.out.println(SixPointEightParkingCharges.calculateCharges() +" Naira");
+        System.out.println(SixPointEightParkingCharges.calculateTotalAmountMadeInGarage() +" Naira");
     }
 
 }
