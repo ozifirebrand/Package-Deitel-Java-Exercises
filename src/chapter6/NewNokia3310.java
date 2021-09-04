@@ -317,10 +317,13 @@ public class NewNokia3310 {
 
     public static void navigateCallRegisterMenu() {
         int input = input();
+        boolean isGreaterThanZero = input>0;
         boolean isInvalidInput = input < 5 || input > 7;
-        if ( isInvalidInput ) {
+        if ( isInvalidInput && isGreaterThanZero) {
             navigateCallRegisterMenu();
-        } else {
+        } else if ( input==0 ){
+            displayMenuItems();
+        }else {
             switch (input) {
                 case 5 -> showCallDurationMenu();
                 case 6 -> showCallCostsMenu();
@@ -339,9 +342,8 @@ public class NewNokia3310 {
         displayCallCostSettings();
         prepaidCredit();
         navigateCallRegisterMenu();
-        int input = input();
-        if ( input> 0 ){displayCallRegisterMenu();}else {displayMenuItems();}
     }
+
 
     private static void displayMissedCalls() {
         System.out.println("1. Missed calls");
@@ -369,7 +371,7 @@ public class NewNokia3310 {
         displayDialledCallsDuration();
         clearTimers();
         int input = input();
-        if ( input> 0 ){showCallDurationMenu();}else {displayCallRegister();}
+        if ( input> 0 ){showCallDurationMenu();}else {displayCallRegisterMenu();}
     }
 
     private static void displayLastCallDuration() {
