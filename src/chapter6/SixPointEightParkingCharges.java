@@ -12,7 +12,7 @@ import java.util.Scanner;
 public class SixPointEightParkingCharges {
     private static int receiveInput() {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("How many hours did the customer park?");
+        System.out.print("How many hours did the customer park? --> ");
         return scanner.nextInt();
     }
 
@@ -45,8 +45,5 @@ public class SixPointEightParkingCharges {
             noOfCustomers--; counter++;
         }
         return totalAmountForYesterday;
-    }
-    public static void displayTable(){
-
     }
 }
