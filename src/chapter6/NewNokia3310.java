@@ -43,7 +43,7 @@ public class NewNokia3310 {
         }
     }
 */
-    public static int input() {
+    private static int input() {
         Scanner scanner = new Scanner(System.in);
         return scanner.nextInt();
     }
@@ -55,7 +55,18 @@ public class NewNokia3310 {
         displayCallRegister();}
 
 
-    public static void displayPhoneBook() {
+    public static void navigateMenuItems(){
+        int input = input();
+        switch (input){
+            case 1: displayPhonebookMenu(); break;
+            case 2: displayMessagesMenu(); break;
+            case 3: displayChat(); break;
+            case 4: displayCallRegisterMenu(); break;
+        }
+
+    }
+
+    private static void displayPhoneBook() {
         System.out.println("1. Phone book");
     }
 
@@ -65,11 +76,12 @@ public class NewNokia3310 {
         addName();
         erase();
         edit();
+        assignTone();
         sendBCard();
         showOptions();
         displaySpeedDials();
         implementVoiceTags();
-        assignTone();}
+        }
 
     private static void search() {
         System.out.println("1. Search");
@@ -101,7 +113,7 @@ public class NewNokia3310 {
 
     private static void showOptions() { System.out.println("8. Options"); }
 
-    public static void displayOptionsMenu() {
+    private static void displayOptionsMenu() {
         displayTypeOfView();
         displayMemoryStatus();}
 
@@ -122,11 +134,12 @@ public class NewNokia3310 {
     }
 
 
-    public static void displayMessage() {
+    private static void displayMessage() {
         System.out.println("2. Messages");
+
     }
 
-    public static void displayMessagesMenu() {
+    private static void displayMessagesMenu() {
         displayMessage();
         writeMessages();
         createInbox();
@@ -183,7 +196,7 @@ public class NewNokia3310 {
         set();
         displayCommon();}
 
-    public static void navigateMessageSettingsMenu(){
+    private static void navigateMessageSettingsMenu(){
         int input = input();
         boolean isInvalidInput = input >2 || input <1 ;
         if ( isInvalidInput ) {
@@ -196,11 +209,11 @@ public class NewNokia3310 {
     }
 
 
-    public static void set() {
+    private static void set() {
         System.out.println("1. Set");
     }
 
-    public static void displaySetMenu() {
+    private static void displaySetMenu() {
         set();
         displayMessageCentreNumber();
         displayMessageSentAs();
@@ -250,7 +263,7 @@ public class NewNokia3310 {
         System.out.println("4. Call register");
     }
 
-    public static void displayCallRegisterMenu() {
+    private static void displayCallRegisterMenu() {
         displayCallRegister();
         displayMissedCalls();
         displayReceivedCalls();
@@ -280,7 +293,7 @@ public class NewNokia3310 {
     }
 
 
-    public static void showCallDurationMenu() {
+    private static void showCallDurationMenu() {
         showCallDuration();
         displayLastCallDuration();
         displayAllCallDuration();
@@ -351,11 +364,6 @@ public class NewNokia3310 {
                 case 7 -> displayCallCostSettingsMenu(); }
         } }
 }
-
-
-
-
-        //private static void back() {}
 
 /*The display methods call the construct methods.
     The major function of the display methods is to carry out the

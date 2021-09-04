@@ -28,6 +28,6 @@ class NewNokia3310Test {
 
 public static void main(String[] args) {
     //NewNokia3310.navigateCallRegisterMenu();
-    NewNokia3310.navigateMessageSettingsMenu();
+
 }
 }
