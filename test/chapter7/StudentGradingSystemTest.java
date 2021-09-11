@@ -11,10 +11,11 @@ class StudentGradingSystemTest {
 //    public void testThatStudentRowReturnsASingleRow(){
 
     public static void main(String[] args) {
+        System.out.println(Arrays.deepToString(StudentGradingSystem.initStudentSubjectDetails()));
 //        System.out.println(Arrays.deepToString(StudentGradingSystem.initSubjectsColumn()));
 //        System.out.println(Arrays.toString(StudentGradingSystem.initStudentRow()));
 //        System.out.println(StudentGradingSystem.findStudentsHighestScore());
 //        System.out.println(Arrays.toString(StudentGradingSystem.returnAStudentsRow()));
-//        System.out.println(Arrays.deepToString(StudentGradingSystem.returnASubjectsColumn()));
+//        System.out.println(Arrays.deepToString(StudentGradingSystem.returnASubjectsDetail()));
     }
 }
