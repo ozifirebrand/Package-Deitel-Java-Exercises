@@ -58,17 +58,21 @@ public class StudentGradingSystem2 {
         return maximumNumber;
     }
 
-//    public static void printHighestScores(){
-//        for (int index = 0; index <
-//        int maximumNumber = highestScoreOfStudent(index);
-//    }
+    public static void printHighestScores() {
+        for (int index = 0; index < studentScoreDetails().length; index++) {
+            int maximumNumber = highestScoreOfStudent(index);
+        }
+    }
 
     public static void printTable(){
         int [] [] studentScoreDetails =inputStudentsScoresDetails();
         int maximumStudentScore;
+        int maximumSubjectScore = studentScoreDetails[0][0];
         for (int row =0; row< studentScoreDetails.length; row++) {
             maximumStudentScore = studentScoreDetails[row][0];
+            System.out.println("S" +(row+1));
             for (int column =0; column< studentScoreDetails[row].length; column++) {
+                System.out.println("S" +(column+1) +"\t");
                 System.out.print(studentScoreDetails[row][column] + " ");
                 if ( studentScoreDetails[row][column] > maximumStudentScore){
                     maximumStudentScore = studentScoreDetails[row][column];
