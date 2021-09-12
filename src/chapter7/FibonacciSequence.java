@@ -7,22 +7,21 @@ public class FibonacciSequence {
         int zerothTerm = 0;
         int firstTerm = 1;
         ArrayList<Integer> fibonacci = new ArrayList<Integer>(n);
-        fibonacci.add(zerothTerm); fibonacci.add(firstTerm);
-
-        if ( n==0) System.out.println("0");
-        else if ( n==1) System.out.println("1");
+        if ( n==0) fibonacci.add(0);
+        else if ( n==1) {fibonacci.add(0); fibonacci.add(1);}
         else {
+            fibonacci.add(zerothTerm); fibonacci.add(firstTerm);
             int i = 2;
             while (i < n) {
                 int number = fibonacci.get(i - 1) + fibonacci.get(i - 2);
                 fibonacci.add(number);
                 i++;
             }
-            System.out.println(fibonacci);
         }
+        System.out.println(fibonacci);
     }
     public static void main(String[] args) {
-        findFibonacci(19);
+        findFibonacci(72);
     }
 }
     /*User inputs a parameter into a method
