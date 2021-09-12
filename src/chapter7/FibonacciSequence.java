@@ -18,11 +18,11 @@ public class FibonacciSequence {
                 fibonacci.add(number);
                 i++;
             }
+            System.out.println(fibonacci);
         }
-        System.out.println(fibonacci);
     }
     public static void main(String[] args) {
-        findFibonacci(7);
+        findFibonacci(19);
     }
 }
     /*User inputs a parameter into a method
