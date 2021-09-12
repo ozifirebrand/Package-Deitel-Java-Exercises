@@ -21,7 +21,7 @@ public class FibonacciSequence {
         System.out.println(fibonacci);
     }
     public static void main(String[] args) {
-        findFibonacci(72);
+        findFibonacci(22);
     }
 }
     /*User inputs a parameter into a method
