@@ -7,8 +7,8 @@ public class FibonacciSequence {
         int zerothTerm = 0;
         int firstTerm = 1;
         ArrayList<Integer> fibonacci = new ArrayList<Integer>(n);
-        if ( n==0) fibonacci.add(0);
-        else if ( n==1) {fibonacci.add(0); fibonacci.add(1);}
+        if ( n==0) fibonacci.add(zerothTerm);
+        else if ( n==1) {fibonacci.add(zerothTerm); fibonacci.add(firstTerm);}
         else {
             fibonacci.add(zerothTerm); fibonacci.add(firstTerm);
             int i = 2;
