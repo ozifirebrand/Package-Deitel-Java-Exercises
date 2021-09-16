@@ -3,8 +3,6 @@ package chapter7;
 import java.util.Scanner;
 
 public class StudentGradingSystem {
-    /*Algorithm already on paper to be transferred after program completely executes
-     */
 
     private static int input(){
         Scanner scanner = new Scanner(System.in);
