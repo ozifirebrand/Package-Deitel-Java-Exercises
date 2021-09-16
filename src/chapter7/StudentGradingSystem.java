@@ -3,17 +3,17 @@ package chapter7;
 import java.util.Scanner;
 
 public class StudentGradingSystem {
-    public static int[][] initArray(){
+    public static int[][] initArray() {
         return new int[][]
                 {{34, 94, 66},
-                {98, 21, 45},
-                {67, 77, 88}};
+                        {98, 21, 45},
+                        {67, 77, 88}};
     }
 
     public static void displayHighestScoreAlongsideScores() {
         int[][] studentsScore = initArray();
         int highestStudentsScore = 0;
-        int highestSubjectScore = 0;
+
         for (int[] row : studentsScore) {
             for (int column : row) {
                 highestStudentsScore = row[0];
@@ -24,20 +24,42 @@ public class StudentGradingSystem {
             }
             System.out.print(highestStudentsScore + "\n");
         }
-        System.out.println();
+    }
+
+    public static int findHighestStudentScore() {
+        int[][] studentsScore = initArray();
+        int highestStudentsScore = 0;
+        for (int[] row : studentsScore) {
+            for (int column : row) {
+                highestStudentsScore = row[0];
+                if ( column > highestStudentsScore ) {
+                    highestStudentsScore = column;
+                }
+            }
+        }
+        return highestStudentsScore;
+    }
+
+    public static int findHighestSubjectScore(){
+        int [] [] studentsScore = initArray();
+        int highestSubjectScore = 0;
         for (int column = 0; column < studentsScore[0].length; column++) {
             highestSubjectScore = studentsScore[0][column];
-            for (int row = 0; row < studentsScore.length; row++) {
-                if ( studentsScore[row][column] > highestSubjectScore ) {
-                    highestSubjectScore = studentsScore[row][column];
+            for (int[] row : studentsScore) {
+                if ( row[column] > highestSubjectScore ) {
+                    highestSubjectScore = row[column];
                 }
+                return highestSubjectScore;
             }
             System.out.print(highestSubjectScore + " ");
         }
+
+        return 0;
     }
+
+
     public static void main(String[] args) {
-        displayHighestScoreAlongsideScores();
-    }
+        System.out.println(findHighestStudentScore());    }
 }
 
 
