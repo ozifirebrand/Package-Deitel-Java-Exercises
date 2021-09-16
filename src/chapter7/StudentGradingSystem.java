@@ -3,125 +3,204 @@ package chapter7;
 import java.util.Scanner;
 
 public class StudentGradingSystem {
-
-    private static int input(){
-        Scanner scanner = new Scanner(System.in);
-        return scanner.nextInt();
+    public static int[][] initArray(){
+        return new int[][]
+                {{34, 94, 66},
+                {98, 21, 45},
+                {67, 77, 88}};
     }
 
-    private static int receiveNoOfStudents(){
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("How many students are in the class?");
-        return scanner.nextInt();
-    }
-    private static int receiveNoOfSubjects(){
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("How many subjects are the students offering?");
-        return scanner.nextInt();
-    }
-
-    public static int[][] initStudentSubjectDetails(){
-        int [] [] studentScoresDetails = new  int[receiveNoOfStudents()][receiveNoOfSubjects()];
-        for (int row = 0; row< studentScoresDetails.length; row++) {
-            for (int column = 0; column < studentScoresDetails[row].length; column++) {
-                studentScoresDetails[row][column] = input();
+    public static void displayHighestScoreAlongsideScores() {
+        int[][] studentsScore = initArray();
+        int highestStudentsScore = 0;
+        int highestSubjectScore = 0;
+        for (int[] row : studentsScore) {
+            for (int column : row) {
+                highestStudentsScore = row[0];
+                if ( column > highestStudentsScore ) {
+                    highestStudentsScore = column;
+                }
+                System.out.print(column + " ");
             }
+            System.out.print(highestStudentsScore + "\n");
         }
-        return studentScoresDetails;
+        System.out.println();
+        for (int column = 0; column < studentsScore[0].length; column++) {
+            highestSubjectScore = studentsScore[0][column];
+            for (int row = 0; row < studentsScore.length; row++) {
+                if ( studentsScore[row][column] > highestSubjectScore ) {
+                    highestSubjectScore = studentsScore[row][column];
+                }
+            }
+            System.out.print(highestSubjectScore + " ");
+        }
     }
-
-    public static int[] returnAStudentsDetails(){
-        int [][] studentsScoresDetails = initStudentSubjectDetails();
-         return studentsScoresDetails[receiveNoOfStudents()];
+    public static void main(String[] args) {
+        displayHighestScoreAlongsideScores();
     }
-
-//
-//    public static int[] initStudentRow(){
-//        int [][] studentScoreDetails = initStudentSubjectDetails();
-//        int row = 0;
-//        studentScoreDetails[row] = returnAStudentsRow();
-//        for (row = 0; row < studentScoreDetails)
-//        int [] studentsScores = returnAStudentsRow();
-
-//        for (int scoreIndex = 0; scoreIndex< studentsScores.length; scoreIndex++){
-//            System.out.println("What is student " +(scoreIndex+1) +"'s score");
-//            studentsScores[scoreIndex] = input();
-//        }
-//        return studentsScores;
-//    }
-
-//
-//    private static int[] returnAStudentsRow(){
-//        Scanner scanner = new Scanner(System.in);
-//        System.out.println("How many subjects are the students offering?");
-//        int noOfSubjects =  scanner.nextInt();
-//        return new int[noOfSubjects];
-//    }
-//
-//    public static int[][] returnASubjectsDetail(){
-//        Scanner scanner = new Scanner(System.in);
-//        System.out.println("How many students are in the class?");
-//        int noOfStudents = scanner.nextInt();
-//        return new int[noOfStudents][1];
-//    }
-//
-//    public static int findStudentsHighestScore(){
-//        int [] studentsRow = initStudentRow();
-//        int highestScore = studentsRow[0];
-//        for (int score : studentsRow){
-//            if (score> highestScore){
-//                highestScore = score;
-//            }
-//        }
-//        return highestScore;
-//    }
 }
 
 
-//    public static int [] studentScoreDetails(){
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//    private static int input(){
 //        Scanner scanner = new Scanner(System.in);
-//        System.out.println("How many students are in the class?");
-//        int noOfStudents = scanner.nextInt();
-//        System.out.println("How many subjects are the students offering?");
-//        int noOfSubjects = scanner.nextInt();
-//        return new int[]{noOfStudents, noOfSubjects};
+//        return scanner.nextInt();
 //    }
-
-
+//
 //    private static int receiveNoOfStudents(){
 //        Scanner scanner = new Scanner(System.in);
 //        System.out.println("How many students are in the class?");
 //        return scanner.nextInt();
 //    }
-
-//     private static int receiveNoOfSubjects(){
-//        Scanner scanner = new Scanner(System.in);
-//        System.out.println("How many subjects are the students offering?");
-//        return scanner.nextInt();
-//    }
-//
-//
-//
-
-
-//
 //    private static int receiveNoOfSubjects(){
 //        Scanner scanner = new Scanner(System.in);
 //        System.out.println("How many subjects are the students offering?");
 //        return scanner.nextInt();
 //    }
-//    public static int[][] initStudentsFile(){
-//        return new int[receiveNoOfStudents()][receiveNoOfSubjects()];
-//    }
-
-//{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{
-// COULD BE USEFUL FOR A DIFFERENT COMPUTATION INSTEAD OF THE ROW INIT. AT LEAST I CAN ITERATE THROUGH A COLUMN HAHAHAHAHAHA
-//    public static int[][] initSubjectsColumn(){
-//        int [][] subjectsScores = returnASubjectsDetail();
-//        for (int scoreIndex = 0; scoreIndex< subjectsScores.length; scoreIndex++){
-//            for (int column = 0; column < subjectsScores[scoreIndex].length; column++){
-//                subjectsScores[scoreIndex][column] = input();
+//
+//    public static int[][] initStudentSubjectDetails(){
+//        int [] [] studentScoresDetails = new  int[receiveNoOfStudents()][receiveNoOfSubjects()];
+//        for (int row = 0; row< studentScoresDetails.length; row++) {
+//            for (int column = 0; column < studentScoresDetails[row].length; column++) {
+//                studentScoresDetails[row][column] = input();
 //            }
 //        }
-//        return subjectsScores;
-//    }}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}
+//        return studentScoresDetails;
+//    }
+//
+//    public static int[] returnAStudentsDetails(){
+//        int [][] studentsScoresDetails = initStudentSubjectDetails();
+//         return studentsScoresDetails[receiveNoOfStudents()];
+//    }
+//
+////
+////    public static int[] initStudentRow(){
+////        int [][] studentScoreDetails = initStudentSubjectDetails();
+////        int row = 0;
+////        studentScoreDetails[row] = returnAStudentsRow();
+////        for (row = 0; row < studentScoreDetails)
+////        int [] studentsScores = returnAStudentsRow();
+//
+////        for (int scoreIndex = 0; scoreIndex< studentsScores.length; scoreIndex++){
+////            System.out.println("What is student " +(scoreIndex+1) +"'s score");
+////            studentsScores[scoreIndex] = input();
+////        }
+////        return studentsScores;
+////    }
+//
+////
+////    private static int[] returnAStudentsRow(){
+////        Scanner scanner = new Scanner(System.in);
+////        System.out.println("How many subjects are the students offering?");
+////        int noOfSubjects =  scanner.nextInt();
+////        return new int[noOfSubjects];
+////    }
+////
+////    public static int[][] returnASubjectsDetail(){
+////        Scanner scanner = new Scanner(System.in);
+////        System.out.println("How many students are in the class?");
+////        int noOfStudents = scanner.nextInt();
+////        return new int[noOfStudents][1];
+////    }
+////
+////    public static int findStudentsHighestScore(){
+////        int [] studentsRow = initStudentRow();
+////        int highestScore = studentsRow[0];
+////        for (int score : studentsRow){
+////            if (score> highestScore){
+////                highestScore = score;
+////            }
+////        }
+////        return highestScore;
+////    }
+//}
+//
+//
+////    public static int [] studentScoreDetails(){
+////        Scanner scanner = new Scanner(System.in);
+////        System.out.println("How many students are in the class?");
+////        int noOfStudents = scanner.nextInt();
+////        System.out.println("How many subjects are the students offering?");
+////        int noOfSubjects = scanner.nextInt();
+////        return new int[]{noOfStudents, noOfSubjects};
+////    }
+//
+//
+////    private static int receiveNoOfStudents(){
+////        Scanner scanner = new Scanner(System.in);
+////        System.out.println("How many students are in the class?");
+////        return scanner.nextInt();
+////    }
+//
+////     private static int receiveNoOfSubjects(){
+////        Scanner scanner = new Scanner(System.in);
+////        System.out.println("How many subjects are the students offering?");
+////        return scanner.nextInt();
+////    }
+////
+////
+////
+//
+//
+////
+////    private static int receiveNoOfSubjects(){
+////        Scanner scanner = new Scanner(System.in);
+////        System.out.println("How many subjects are the students offering?");
+////        return scanner.nextInt();
+////    }
+////    public static int[][] initStudentsFile(){
+////        return new int[receiveNoOfStudents()][receiveNoOfSubjects()];
+////    }
+//
+////{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{
+//// COULD BE USEFUL FOR A DIFFERENT COMPUTATION INSTEAD OF THE ROW INIT. AT LEAST I CAN ITERATE THROUGH A COLUMN HAHAHAHAHAHA
+////    public static int[][] initSubjectsColumn(){
+////        int [][] subjectsScores = returnASubjectsDetail();
+////        for (int scoreIndex = 0; scoreIndex< subjectsScores.length; scoreIndex++){
+////            for (int column = 0; column < subjectsScores[scoreIndex].length; column++){
+////                subjectsScores[scoreIndex][column] = input();
+////            }
+////        }
+////        return subjectsScores;
+////    }}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}
