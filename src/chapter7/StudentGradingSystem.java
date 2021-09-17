@@ -28,30 +28,14 @@ public class StudentGradingSystem {
         return new int[noOfStudents][noOfSubjects];
     }
 
-    public static void displaySubjectName(int [][] studentsScore){
+    private static void displaySubjectName(int [][] studentsScore){
         System.out.print("\t  ");
             for (int column = 0; column < studentsScore[0].length; column++) {
                 System.out.printf("Sub%d \t  ", column + 1);
         }
+        System.out.print("\tAve \t  \tTotal");
         System.out.println();
     }
-
-    public static void displayScores( int[][] studentsScore, ArrayList<Integer> highestScorePerStudent,
-                                      ArrayList<Integer> highestScorePerSubject) {
-        for (int row =0; row< studentsScore.length; row++) {
-            System.out.printf("St%d  |  ", row + 1);
-            for (int column=0; column<studentsScore[row].length; column++) {
-                System.out.print(studentsScore[row][column] + "\t\t");
-            }
-            System.out.print(highestScorePerStudent.get(row) +"  ");
-            System.out.println();
-        }
-        System.out.print("\t\t");
-        for (int index = 0; index< highestScorePerSubject.size(); index++){
-            System.out.print(highestScorePerSubject.get(index) +"\t\t");
-        }
-    }
-
 
     public static ArrayList<Integer> findHighestStudentScore( int[][] studentsScore) {
         int highestStudentsScore;
@@ -83,12 +67,56 @@ public class StudentGradingSystem {
     }
 
 
+    public static void displayScores( int[][] studentsScore, ArrayList<Integer> highestScorePerStudent,
+                                      ArrayList<Integer> highestScorePerSubject) {
+        displaySubjectName(studentsScore);
+        ArrayList<Double> averageScores = averageForEachStudent(studentsScore);
+        ArrayList<Integer> sumForEachStudent = sumForEachStudent(studentsScore);
+        for (int row =0; row< studentsScore.length; row++) {
+            System.out.printf("St%d  |  ", row + 1);
+            for (int column=0; column<studentsScore[row].length; column++) {
+                System.out.print(studentsScore[row][column] + "\t\t");
+            }
+            System.out.printf("%.2f\t\t",averageScores.get(row));
+            System.out.print(sumForEachStudent.get(row) +"  ");
+            System.out.println();
+        }
+        System.out.print("\t\t");
+        for (int index = 0; index< highestScorePerSubject.size(); index++){
+            System.out.print(highestScorePerSubject.get(index) +"\t\t");
+        }
+    }
+
+
+    public static ArrayList<Double> averageForEachStudent(int [][] studentScore){
+        ArrayList<Integer> sumForEachStudent = sumForEachStudent(studentScore);
+        int numberOfSubjects = studentScore[0].length;
+        double averageScore;
+        ArrayList<Double> averageScores = new ArrayList<>();
+        for (Integer totalIn : sumForEachStudent){
+            averageScore = (double)totalIn/numberOfSubjects;
+            averageScores.add(averageScore);
+        }
+        return averageScores;
+    }
+
+    private static ArrayList<Integer> sumForEachStudent(int [][] studentScore){
+        ArrayList<Integer> sumForEachStudent = new ArrayList<>();
+        for (int [] score : studentScore ){
+            int totalScore = 0;
+            for ( int scoreInColumn : score){
+                totalScore += scoreInColumn;
+            }
+            sumForEachStudent.add(totalScore);
+        }
+        return sumForEachStudent;
+    }
+
+
     public static void main(String[] args) {
         int [] [] array = initTableOfScores();
         ArrayList<Integer> list = findHighestStudentScore(array);
         ArrayList<Integer> list1 =findHighestSubjectScore(array);
-        displaySubjectName(array);
-        System.out.println();
         displayScores(array, list, list1);
     }
 }
