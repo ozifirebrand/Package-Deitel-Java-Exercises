@@ -1,6 +1,8 @@
 package chapter7;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.Scanner;
 
 public class StudentGradingSystem {
@@ -86,7 +88,24 @@ public class StudentGradingSystem {
             System.out.print(highestScorePerSubject.get(index) +"\t\t");
         }
     }
-
+    //2 5 3 8 2 9 1 3
+    public static int [] rankStudents(int [][] studentScores){
+        ArrayList<Integer> sumForEachStudent = sumForEachStudent(studentScores);
+//        Collections.sort(sumForEachStudent);
+        int [] rank= new int[sumForEachStudent.size()];
+        Arrays.fill(rank, 1);
+        int highestSum=0;
+        for (int index=0; index< sumForEachStudent.size(); index++) {
+            if ( sumForEachStudent.get(index) > highestSum ) {
+                highestSum = sumForEachStudent.get(index);
+                rank[index] -= 1;
+                for (int indexRank = 0; indexRank< rank.length; indexRank++ ){
+                    rank[indexRank] +=1;
+                }
+            }
+        }
+        return rank;
+    }
 
     public static ArrayList<Double> averageForEachStudent(int [][] studentScore){
         ArrayList<Integer> sumForEachStudent = sumForEachStudent(studentScore);
@@ -118,5 +137,6 @@ public class StudentGradingSystem {
         ArrayList<Integer> list = findHighestStudentScore(array);
         ArrayList<Integer> list1 =findHighestSubjectScore(array);
         displayScores(array, list, list1);
+        System.out.println(Arrays.toString(rankStudents(array)));
     }
 }
