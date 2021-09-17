@@ -4,32 +4,47 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class StudentGradingSystem {
-    public static int[][] initArray() {
-        return new int[][]
-                {{34, 94, 66},
-                {98, 21, 45},
-                {67, 77, 88}};
+    private static int input (){
+        Scanner scanner = new Scanner(System.in);
+        return scanner.nextInt();
     }
 
-    public static void displayScores( int[][] studentsScore, ArrayList<Integer> highestScorePerStudent) {
+    private static int[][] initArray(){
+        int [] [] studentsSubjectTable = declareArray();
+        for ( int row =0; row< studentsSubjectTable.length; row++){
+            for (int column = 0; column< studentsSubjectTable[row].length; column++){
+                System.out.printf("What is student %d score in subject %d", row+1, column+1);
+                studentsSubjectTable[row][column] = input();
+            }
+        }
+        return studentsSubjectTable;
+    }
+
+    public static int[][] declareArray() {
+        System.out.println("How many students are in the class?");
+        int noOfStudents = input();
+        System.out.println("How many subjects are they offering?");
+        int noOfSubjects = input();
+        return new int[noOfStudents][noOfSubjects];
+//                {{34, 94, 66},
+//                {98, 21, 45},
+//                {67, 77, 88}};
+    }
+
+    public static void displayScores( int[][] studentsScore, ArrayList<Integer> highestScorePerStudent,
+                                      ArrayList<Integer> highestScorePerSubject) {
+        int index = 0;
+        while (index < highestScorePerStudent.size()) {
         for (int[] row : studentsScore) {
             for (int column : row) {
                 System.out.print(column + " ");
-            }
-            System.out.println( );
+            }System.out.print(highestScorePerStudent.get(index));
+            index++;
+            System.out.println();
         }
-
-    }
-
-    public static void displayStudentsHighestScores( ArrayList<Integer> highestScorePerStudent) {
-        for (int value : highestScorePerStudent){
-            System.out.println(value);
         }
-    }
-
-    public static void displaySubjectsHighestScores( ArrayList<Integer> highestScorePerStudent) {
-        for (int value : highestScorePerStudent){
-            System.out.print(value +" ");
+        for (int score : highestScorePerSubject){
+            System.out.print(score +" ");
         }
     }
 
@@ -64,5 +79,10 @@ public class StudentGradingSystem {
 
 
     public static void main(String[] args) {
+        int [] [] array = initArray();
+        ArrayList<Integer> list = findHighestStudentScore(array);
+        ArrayList<Integer> list1 =findHighestSubjectScore(array);
+        displayScores(array, list, list1);
+
     }
 }
