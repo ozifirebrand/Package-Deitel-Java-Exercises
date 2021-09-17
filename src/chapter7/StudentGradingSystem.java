@@ -28,58 +28,39 @@ public class StudentGradingSystem {
         return new int[noOfStudents][noOfSubjects];
     }
 
-    public static void displayTableOfScores(int [][] studentsScore, ArrayList<Integer> highestScorePerStudent,
-                                            ArrayList<Integer> highestScorePerSubject) {
-        int row = 0;
-
-        System.out.println("\t");
-        while (row < studentsScore.length) {
-            int lastRow = studentsScore.length-1;
-            if ( row == lastRow ){
-
-            }else {
-                System.out.printf("St%d %n", row + 1);
-            }
-            row++;
+    public static void displaySubjectName(int [][] studentsScore){
+        System.out.print("\t  ");
+            for (int column = 0; column < studentsScore[0].length; column++) {
+                System.out.printf("Sub%d \t  ", column + 1);
         }
+        System.out.println();
     }
 
     public static void displayScores( int[][] studentsScore, ArrayList<Integer> highestScorePerStudent,
                                       ArrayList<Integer> highestScorePerSubject) {
-        int rows = 0;
-        int lastColumn = studentsScore[rows].length-1;
-        System.out.print("\t");
-        for (int column = 0; column < studentsScore[rows].length; column++) {
-            System.out.printf("Su%d ", column + 1);
-            if ( column == lastColumn ){
-                System.out.println();
+        for (int row =0; row< studentsScore.length; row++) {
+            System.out.printf("St%d  |  ", row + 1);
+            for (int column=0; column<studentsScore[row].length; column++) {
+                System.out.print(studentsScore[row][column] + "\t\t");
             }
+            System.out.print(highestScorePerStudent.get(row) +"  ");
+            System.out.println();
         }
-        int lengthOfHighestStudentScoresList = highestScorePerStudent.size();
-        for (int indexOfScoresElement = 0; indexOfScoresElement < lengthOfHighestStudentScoresList; indexOfScoresElement++) {
-            for (int row =0; row< studentsScore.length; row++) {
-                System.out.printf("St%d   ", row + 1);
-                for (int column=0; column<studentsScore[row].length; row++) {
-                    System.out.print(column + " ");
-                }
-
-                System.out.print(highestScorePerStudent.get(indexOfScoresElement));
-                System.out.println();
-            }
-        }
-        for (int highestScoreIn : highestScorePerSubject){
-            System.out.print(highestScoreIn +" ");
+        System.out.print("\t\t");
+        for (int index = 0; index< highestScorePerSubject.size(); index++){
+            System.out.print(highestScorePerSubject.get(index) +"\t\t");
         }
     }
 
+
     public static ArrayList<Integer> findHighestStudentScore( int[][] studentsScore) {
-        int highestStudentsScore = 0;
+        int highestStudentsScore;
         ArrayList<Integer> highestScorePerStudent = new ArrayList<>();
-        for (int[] row : studentsScore) {
-            highestStudentsScore = row[0];
-            for (int column : row) {
-                if ( column > highestStudentsScore ) {
-                    highestStudentsScore = column;
+        for (int row =0; row< studentsScore.length; row++) {
+            highestStudentsScore = studentsScore[row][0];
+            for (int column =0; column< studentsScore[row].length; column++) {
+                if ( studentsScore[row][column] > highestStudentsScore ) {
+                    highestStudentsScore = studentsScore[row][column];
                 }
             }
             highestScorePerStudent.add(highestStudentsScore);
@@ -88,7 +69,7 @@ public class StudentGradingSystem {
     }
 
     public static ArrayList<Integer> findHighestSubjectScore(int [] [] studentsScore){
-        int highestSubjectScore = 0;
+        int highestSubjectScore;
         ArrayList<Integer> highestScorePerSubject = new ArrayList<>();
         for (int column = 0; column < studentsScore[0].length; column++) {
             highestSubjectScore = studentsScore[0][column];
@@ -106,8 +87,8 @@ public class StudentGradingSystem {
         int [] [] array = initTableOfScores();
         ArrayList<Integer> list = findHighestStudentScore(array);
         ArrayList<Integer> list1 =findHighestSubjectScore(array);
-//        displayTableOfScores(array);
+        displaySubjectName(array);
+        System.out.println();
         displayScores(array, list, list1);
-
     }
 }
