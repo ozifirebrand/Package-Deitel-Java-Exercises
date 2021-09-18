@@ -13,23 +13,27 @@ public class Items{
 
     public void setQuantityOfItems() {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("How many items? ");
+        System.out.println("Quantity: ");
         quantityOfItems =  scanner.nextInt();
     }
 
-    public double getItemPrice() {
+    public double returnItemPrice() {
         return itemPrice;
     }
 
-    public void setItemPrice(double itemPrice) {
-        this.itemPrice = itemPrice;
+    public void setItemPrice() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Price: ");
+        itemPrice = scanner.nextDouble();
     }
 
     public String getItemName() {
         return itemName;
     }
 
-    public void setItemName(String itemName) {
-        this.itemName = itemName;
+    public void setItemName() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Product: ");
+        itemName =  scanner.nextLine();
     }
 }
