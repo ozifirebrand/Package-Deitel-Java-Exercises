@@ -1,20 +1,15 @@
 package chapter10.CheckoutAssignment;
 
-import chapter10.CheckoutAssignment.Item;
-import chapter10.CheckoutAssignment.Receipt;
-
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class CheckoutProgram {
     /*
     User inputs product name, price and quantity
-    When items purchased remains nothing else, the program ends with a =
-    If the buyer picks more than 10k worth of items, give them 5 percent bonus
-    The invoice is printed containing the items purchased, quantity, total
-        price per item, total cost of items purchased and bonus (if any)
-    The buyer pays for the items and a receipt is printed with the balance and
-        amount paid
+    Ask if they want more items. Yes means proceed, no means stop receiving inputs
+    If the buyer picks more than 10k worth of items, give them 5 percent bonus (your choice though)
+    The invoice is printed containing the items purc hased, quantity, total price per item, total cost of items purchased and bonus (if any)
+    The buyer pays for the items and a receipt is printed with the items, their quantity, balance and amount paid
 
      Broader algorithm
         An input method takes in input for the price and quantity
@@ -34,15 +29,17 @@ public class CheckoutProgram {
 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
         OOP ROUTE
 
-        User has a Cart and Card
+        User has a Cart, Card, Receipt and a name
         Cart has Items
-        Items contains the quantity of
-            items purchased and each Item is a Product
-        Product contains name and price
-        Receipt is an Invoice
-        Invoice has Items,
+        Items contains the quantity of items purchased, item name and price
+        AmountPayable contains total amount to be paid
+        Card contains amount in account
+        Receipt is an AmountPayable
+        Receipt contains total amount paid, balance/change and bonus if available
+
+
      */
-    ArrayList<Item> products = new ArrayList<>();
+    ArrayList<Items> products = new ArrayList<>();
     Receipt receipt = new Receipt();
 
 

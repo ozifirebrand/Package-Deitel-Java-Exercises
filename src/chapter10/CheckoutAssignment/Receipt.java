@@ -1,6 +1,6 @@
 package chapter10.CheckoutAssignment;
 
-public class Receipt extends CheckoutInvoice{
+public class Receipt implements AmountPayable {
     private double balance;
 
 }
