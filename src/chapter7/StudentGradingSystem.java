@@ -96,13 +96,15 @@ public class StudentGradingSystem {
         Arrays.fill(rank, 1);
         int highestSum=0;
         for (int index=0; index< sumForEachStudent.size(); index++) {
-            if ( sumForEachStudent.get(index) > highestSum ) {
-                highestSum = sumForEachStudent.get(index);
-                rank[index] -= 1;
-                for (int indexRank = 0; indexRank< rank.length; indexRank++ ){
-                    rank[indexRank] +=1;
-                }
-            }
+
+
+//            if ( sumForEachStudent.get(index) > highestSum ) {
+//                highestSum = sumForEachStudent.get(index);
+//                rank[index] -= 1;
+//                for (int indexRank = 0; indexRank< rank.length; indexRank++ ){
+//                    rank[indexRank] +=1;
+//                }
+//            }
         }
         return rank;
     }
@@ -137,6 +139,5 @@ public class StudentGradingSystem {
         ArrayList<Integer> list = findHighestStudentScore(array);
         ArrayList<Integer> list1 =findHighestSubjectScore(array);
         displayScores(array, list, list1);
-        System.out.println(Arrays.toString(rankStudents(array)));
     }
 }
