@@ -1,8 +1,20 @@
 package chapter10.CheckoutAssignment;
 
+import java.util.Scanner;
+
 public class User {
-    Cart userCart = new Cart();
-    Card userCard = new Card();
-    Receipt userReceipt = new Receipt();
-    String userName;
+   private Cart userCart = new Cart();
+   private Card userCard = new Card();
+   private Receipt userReceipt = new Receipt();
+   private String userName;
+
+    public void setUserName(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Welcome. What is your name please?");
+        this.userName = scanner.nextLine();
+    }
+
+    public String getUserName(){
+        return userName;
+    }
 }

@@ -34,15 +34,11 @@ public class CheckoutProgram {
         Items contains the quantity of items purchased, item name and price
         AmountPayable contains total amount to be paid
         Card contains amount in account
-        Receipt is an AmountPayable
+        Receipt implements an AmountPayable
         Receipt contains total amount paid, balance/change and bonus if available
 
 
      */
-    ArrayList<Items> products = new ArrayList<>();
-    Receipt receipt = new Receipt();
-
-
     private static double input() {
         Scanner scanner = new Scanner(System.in);
         return scanner.nextDouble();
@@ -53,7 +49,7 @@ public class CheckoutProgram {
         return scanner.nextLine();
     }
 
-    public static void checkout() {
-        double number = input();
+    public static void main(String[] args) {
+
     }
 }
