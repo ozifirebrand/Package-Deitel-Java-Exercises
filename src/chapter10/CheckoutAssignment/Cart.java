@@ -21,6 +21,7 @@ public class Cart {
     }
 
     public void pickItems(Item item) {
+        items.add(item);
     }
 
     public double getTotalCostOfPurchase() {

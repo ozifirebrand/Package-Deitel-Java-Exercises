@@ -3,9 +3,9 @@ package chapter10.CheckoutAssignment;
 import java.util.Scanner;
 
 public class User {
-   private Cart userCart = new Cart();
-   private Card userCard = new Card();
-   private Receipt userReceipt = new Receipt();
+   private Cart cart = new Cart();
+   private Card card = new Card();
+   private Receipt receipt = new Receipt();
    private String userName;
 
     public void setUserName(){

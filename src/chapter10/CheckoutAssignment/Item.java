@@ -1,9 +1,27 @@
 package chapter10.CheckoutAssignment;
 
+import java.util.Scanner;
+
 public class Item {
     private int quantityOfItems;
     private double itemPrice;
     private String itemName;
+
+    public void setQuantityOfItems() {
+        System.out.println("Quantity: ");
+        Scanner scanner = new Scanner(System.in);
+        quantityOfItems = scanner.nextInt();
+    }
+
+    public void setItemPrice() {
+        Scanner scanner = new Scanner(System.in);
+        itemPrice = scanner.nextDouble();
+    }
+
+    public void setItemName() {
+        Scanner scanner = new Scanner(System.in);
+        itemName = scanner.nextLine();
+    }
 
     public int getQuantityOfItems() {
         return quantityOfItems;
@@ -16,13 +34,11 @@ public class Item {
     public String getItemName() {
         return itemName;
     }
-
-    Item(String itemName, double itemPrice, int quantityOfItems){
-        this.itemName = itemName;
-        this.itemPrice = itemPrice;
-        this.quantityOfItems = quantityOfItems;
-    }
-
+//
+//    Item(String itemName, double itemPrice, int quantityOfItems){
+//        this.itemName = itemName;
+//        this.itemPrice = itemPrice;
+//        this.quantityOfItems = quantityOfItems;
 }
 
 
