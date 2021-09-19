@@ -7,10 +7,27 @@ import java.util.Scanner;
     This is attached to the Item name and returned as an Item value
  */
 public class Item {
+
+
     private int quantityOfItems;
     private double itemPrice;
     private double totalPrice;
     private String itemName;
+
+    public Item() {
+        itemName = input2();
+        System.out.print("Price: ");
+        itemPrice = input();
+        System.out.print("Quantity: ");
+        quantityOfItems =(int)input();
+    }
+
+    public void getItem(){
+        System.out.print(getItemName() +"\t");
+        System.out.print(getItemPrice() +"\t");
+        System.out.print(getQuantityOfItems() +"\t");
+        System.out.println(getItemTotalPrice());
+    }
 
     private static double input() {
         Scanner scanner = new Scanner(System.in);
@@ -22,27 +39,21 @@ public class Item {
         return scanner.nextLine();
     }
 
-    public Item() {
-        itemName = input2();
-        System.out.print("Price: ");
-        itemPrice = input();
-        System.out.print("Quantity: ");
-        quantityOfItems =(int)input();
-    }
 
     private void setItemTotalPrice(){
         totalPrice = itemPrice * quantityOfItems;
     }
 
-    public double getItemTotalPrice(){
+    private double getItemTotalPrice(){
+        setItemTotalPrice();
         return totalPrice;
     }
 
-    public int getQuantityOfItems() {
+    private int getQuantityOfItems() {
         return quantityOfItems;
     }
 
-    public double getItemPrice() {
+    private double getItemPrice() {
         return itemPrice;
     }
 

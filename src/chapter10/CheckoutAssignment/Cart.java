@@ -12,27 +12,40 @@ public class Cart {
     ArrayList<Item> items = new ArrayList<>();
     private double totalCostOfPurchase;
 
-    public void pickItems() {
-        System.out.println("What do you want to purchase?");
-//        Item item = new Item();
-//        items.add(item);
-        purchaseAgain();
+
+    public Cart() {
+        User user = new User();
+//        ArrayList<Item> items = new ArrayList<>();
     }
 
-    public void purchaseAgain() {
+    private String askAgain(){
         Scanner scanner = new Scanner(System.in);
         System.out.println("Any other thing?");
-        String input = scanner.nextLine();
+        return scanner.nextLine();
+    }
+
+    private void purchaseAgain() {
         while (true) {
+            String input = askAgain();
             if ( input.equals("yes") ){
-            pickItems();}
-            else {
+                System.out.println("What else? ");
+            Item item = new Item();
+            items.add(item);}
+            else if ( input.equals("no") ){
                 break;
             }
         }
     }
 
-    public ArrayList<Item> getItems() {
-        return items;
+    public void pickItems(){
+        Item item = new Item();
+        items.add(item);
+        purchaseAgain();
+    }
+
+    public void getItems() {
+        for (Item item : items){
+            item.getItem();
+        }
     }
 }

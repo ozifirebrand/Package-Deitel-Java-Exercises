@@ -50,12 +50,8 @@ public class CheckoutProgram {
     }
 
     public static void main(String[] args) {
-
-
-        Item item = new Item();
-        System.out.println(item.getItemTotalPrice());
-
-
+        User myUser = new User();
+        System.out.println(myUser.getUserName());
 
     }
 }

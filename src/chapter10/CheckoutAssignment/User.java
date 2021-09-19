@@ -3,7 +3,7 @@ package chapter10.CheckoutAssignment;
 import java.util.Scanner;
 
 public class User {
-   private Cart cart = new Cart();
+//   private Cart cart = new Cart();
    private Card card = new Card();
    private Receipt receipt = new Receipt();
    private String userName;
