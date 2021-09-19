@@ -6,6 +6,5 @@ public class CheckoutProgramTest {
         Items items = new Items();
         User ozi = new User();
 
-
     }
 }
