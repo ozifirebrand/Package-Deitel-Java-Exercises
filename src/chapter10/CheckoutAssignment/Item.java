@@ -1,26 +1,41 @@
 package chapter10.CheckoutAssignment;
 
 import java.util.Scanner;
-
+/*
+    Each Item has a price tag and quantity
+    These two values are multiplied to give the total cost of an Item purchase
+    This is attached to the Item name and returned as an Item value
+ */
 public class Item {
     private int quantityOfItems;
     private double itemPrice;
+    private double totalPrice;
     private String itemName;
 
-    public void setQuantityOfItems() {
-        System.out.println("Quantity: ");
+    private static double input() {
         Scanner scanner = new Scanner(System.in);
-        quantityOfItems = scanner.nextInt();
+        return scanner.nextDouble();
     }
 
-    public void setItemPrice() {
+    private static String input2() {
         Scanner scanner = new Scanner(System.in);
-        itemPrice = scanner.nextDouble();
+        return scanner.nextLine();
     }
 
-    public void setItemName() {
-        Scanner scanner = new Scanner(System.in);
-        itemName = scanner.nextLine();
+    public Item() {
+        itemName = input2();
+        System.out.print("Price: ");
+        itemPrice = input();
+        System.out.print("Quantity: ");
+        quantityOfItems =(int)input();
+    }
+
+    private void setItemTotalPrice(){
+        totalPrice = itemPrice * quantityOfItems;
+    }
+
+    public double getItemTotalPrice(){
+        return totalPrice;
     }
 
     public int getQuantityOfItems() {
@@ -34,82 +49,4 @@ public class Item {
     public String getItemName() {
         return itemName;
     }
-//
-//    Item(String itemName, double itemPrice, int quantityOfItems){
-//        this.itemName = itemName;
-//        this.itemPrice = itemPrice;
-//        this.quantityOfItems = quantityOfItems;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//    public Item(){
-//
-//    }
-//    public int getQuantityOfItems() {
-//        return quantityOfItems;
-//    }
-//
-//    public void setQuantityOfItems() {
-//        Scanner scanner = new Scanner(System.in);
-//        System.out.println("Quantity: ");
-//        quantityOfItems =  scanner.nextInt();
-//    }
-//
-//    public double returnItemPrice() {
-//        return itemPrice;
-//    }
-//
-//    public void setItemPrice() {
-//        Scanner scanner = new Scanner(System.in);
-//        System.out.println("Price: ");
-//        itemPrice = scanner.nextDouble();
-//    }
-//
-//    public String getItemName() {
-//        return itemName;
-//    }
-//
-//    public void setItemName() {
-//        Scanner scanner = new Scanner(System.in);
-//        System.out.println("Product: ");
-//        itemName =  scanner.nextLine();
-//    }
-

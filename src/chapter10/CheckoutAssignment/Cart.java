@@ -1,12 +1,9 @@
 package chapter10.CheckoutAssignment;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 /* User purchases Item
-The Item total cost is computed
-    How?
-    Each Item has a price tag and quantity
-    These two values are multiplied to give the total cost of an Item purchase
-    This is attached to the Item name and returned as an Item value
+The Items' total cost is computed using the individual Items cost
 The Item list contains the information of total cost for each Item and its name
 */
 
@@ -15,20 +12,27 @@ public class Cart {
     ArrayList<Item> items = new ArrayList<>();
     private double totalCostOfPurchase;
 
+    public void pickItems() {
+        System.out.println("What do you want to purchase?");
+//        Item item = new Item();
+//        items.add(item);
+        purchaseAgain();
+    }
+
+    public void purchaseAgain() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Any other thing?");
+        String input = scanner.nextLine();
+        while (true) {
+            if ( input.equals("yes") ){
+            pickItems();}
+            else {
+                break;
+            }
+        }
+    }
 
     public ArrayList<Item> getItems() {
         return items;
-    }
-
-    public void pickItems(Item item) {
-        items.add(item);
-    }
-
-    public double getTotalCostOfPurchase() {
-        return totalCostOfPurchase;
-    }
-
-    public void computeTotalCostOfPurchase(double costOfPurchase) {
-        totalCostOfPurchase += costOfPurchase;
     }
 }

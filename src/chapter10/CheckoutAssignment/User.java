@@ -8,13 +8,20 @@ public class User {
    private Receipt receipt = new Receipt();
    private String userName;
 
-    public void setUserName(){
-        Scanner scanner = new Scanner(System.in);
+    public User (){
         System.out.println("Welcome. What is your name please?");
-        this.userName = scanner.nextLine();
+        userName = input2();
+        System.out.print("Welcome "+getUserName()+
+                ". What will you like to purchase today?");
+        this.userName = userName;
     }
 
     public String getUserName(){
         return userName;
+    }
+
+    private static String input2() {
+        Scanner scanner = new Scanner(System.in);
+        return scanner.nextLine();
     }
 }
