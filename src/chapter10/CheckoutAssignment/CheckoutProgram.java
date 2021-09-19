@@ -30,8 +30,8 @@ public class CheckoutProgram {
         OOP ROUTE
 
         User has a Cart, Card, Receipt and a name
-        Cart has Items
-        Items contains the quantity of items purchased, item name and price
+        Cart has Item
+        Item contains the quantity of items purchased, item name and price
         AmountPayable contains total amount to be paid
         Card contains amount in account
         Receipt implements an AmountPayable
