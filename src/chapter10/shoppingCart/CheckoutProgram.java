@@ -30,12 +30,9 @@ public class CheckoutProgram {
 
         User has a Cart, Card and a name
         Cart has Items and total cost of all items
-        Item contains the quantity of items purchased, item name and price
-        AmountPayable contains total amount to be paid
+        Item contains the quantity of items purchased, item name, price
+            and Item's total cost
         Card contains amount in account
-        Receipt implements an AmountPayable
-        Receipt contains total amount paid, balance/change and bonus if available
-
 
      */
     private static double input() {
@@ -49,7 +46,7 @@ public class CheckoutProgram {
     }
 
     public static void main(String[] args) {
-        User myUser = new User();
-
+        Cart cart = new Cart();
+        cart.
     }
 }
