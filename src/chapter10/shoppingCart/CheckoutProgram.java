@@ -1,6 +1,5 @@
-package chapter10.CheckoutAssignment;
+package chapter10.shoppingCart;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class CheckoutProgram {
@@ -29,8 +28,8 @@ public class CheckoutProgram {
 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
         OOP ROUTE
 
-        User has a Cart, Card, Receipt and a name
-        Cart has Item
+        User has a Cart, Card and a name
+        Cart has Items and total cost of all items
         Item contains the quantity of items purchased, item name and price
         AmountPayable contains total amount to be paid
         Card contains amount in account
@@ -51,7 +50,6 @@ public class CheckoutProgram {
 
     public static void main(String[] args) {
         User myUser = new User();
-        System.out.println(myUser.getUserName());
 
     }
 }
