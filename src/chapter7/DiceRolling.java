@@ -1,7 +1,6 @@
 package chapter7;
 
 import java.security.SecureRandom;
-import java.util.Arrays;
 
 public class DiceRolling {
     /*
@@ -25,11 +24,11 @@ public class DiceRolling {
     */
 
 
-    int dice1;
-    int dice2;
-    int count = 0;
-    String freqToString;
-    int [] frequency = new int[13];
+    private int dice1;
+    private int dice2;
+    private int count = 0;
+    private String freqToString;
+    private int [] frequency = new int[13];
 
 
 
@@ -55,7 +54,7 @@ public class DiceRolling {
 
 
     public void toStringOccurrence(){
-        frequency = countOccurrence();
+        frequency= countOccurrence();
         System.out.printf("%3s \t\t\t %10s\n", "Sum", "Frequency");
 
         for (int index =0; index<frequency.length; index++) {
