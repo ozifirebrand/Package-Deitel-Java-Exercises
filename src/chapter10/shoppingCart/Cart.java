@@ -10,14 +10,13 @@ public class Cart {
 
     public void getItemsInCartToString(){
         for (Item item: items){
-            System.out.println(item.getItemToString());
+            item.getItemToString();
             System.out.println();
         }
     }
 
-    private Item pickItem(){
+    private Item pickItem() {
         return new Item();
-
     }
 
     private String purchaseAgain(){
@@ -29,16 +28,18 @@ public class Cart {
         Item item = pickItem();
         items.add(item);
         String response = purchaseAgain();
-        while (response.equals("yes")) {
-            items.add(item);
-            pickItem();
+        if ( response.equals("no") ) {
+            calculateTotalOfItems();
+        }
+        while ( response.equals("yes") ) {
+                pickNewItem();
         }
     }
 
     private void calculateTotalOfItems(){
         totalOfItems = 0;
-        for (Item item : items){
-            totalOfItems += item.getTotalOfItem();
+        for (int index = 0; index< items.size(); index++){
+            totalOfItems += items.get(index).getTotalOfItem();
         }
     }
     public double getTotalOfItems(){

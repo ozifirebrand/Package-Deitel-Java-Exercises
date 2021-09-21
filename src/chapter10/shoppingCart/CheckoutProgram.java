@@ -46,7 +46,7 @@ public class CheckoutProgram {
     }
 
     public static void main(String[] args) {
-        Cart cart = new Cart();
-        cart.
+//        Cart cart = new Cart();
+//        cart.pickNewItem();
     }
 }
