@@ -17,35 +17,25 @@ When the economy class is full, the application should ask the user if he wants 
 If he refuses display the next flight leaves in 3 hours
  */
 public class AirlineReservation {
-    private int seats = 10;
-    private boolean [] seatIsTaken = new boolean[seats];
+    private final int seats = 10;
+    private final boolean [] seatIsTaken = new boolean[seats];
     private int inFirstClass = 0;
     private int inEconomyClass = 5;
+
 
     private String collectUserInput(){
         Scanner scanner = new Scanner(System.in);
         return scanner.nextLine();
     }
 
-    private int collectUserChoice() {
-        int response = 0;
-        System.out.println("Please enter 1 for a first class reservation or\n" +
-                "2 for an economy class reservation.");
-        Scanner scanner = new Scanner(System.in);
-        try {
-            response = scanner.nextInt();
-        }catch (InputMismatchException mismatch){
-            System.out.print("Invalid input" +mismatch.getMessage());
-        }
-        return response;
+    public boolean[] seatIsReserved(){
+        return seatIsTaken;
     }
 
-    public void makeReservation(){
-        int response = collectUserChoice();
+    public void makeReservation(int response){
         if ( response == 1 ){
             if(inFirstClass > 4){
                 System.out.println("First class is full!");
-                makeReservation();
             }else {
                 seatIsTaken[inFirstClass] = true;
                 inFirstClass+=1;
@@ -66,8 +56,7 @@ public class AirlineReservation {
         System.out.println(Arrays.toString(seatIsTaken));
     }
 
-    public void assignFirstClassWhenEconomyIsFull(){
-//        boolean economyIsFull = seatIsTaken[5] = seatIsTaken[6] = seatIsTaken[7]= seatIsTaken[8]= seatIsTaken[9] = true;
+    public void assignFirstClassWhenEconomyIsFull(boolean []seatIsTaken){
         if ( inEconomyClass== seatIsTaken.length ){
             System.out.print("Do you care for a place in the first class? ");
             String response = collectUserInput();
