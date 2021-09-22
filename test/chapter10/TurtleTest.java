@@ -1,70 +1,80 @@
 package chapter10;
 
-import chapter10.Turtle.Pen;
-import chapter10.Turtle.PenPosition;
-import chapter10.Turtle.Turtle;
-import chapter10.Turtle.TurtlePosition;
+import chapter10.Turtle.*;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 class TurtleTest {
 
+
+    Turtle turtle;
+    Pen pen;
+
+    @BeforeEach
+    public void setUp() {
+        turtle = new Turtle();
+        pen = turtle.getNewPen();
+    }
+
+
     @Test
-    public void testThatTurtleHasAPen(){
-        Turtle turtle = new Turtle();
-        Pen pen = turtle.getNewPen();
+    public void testThatTurtleHasAPen() {
         Assertions.assertNotNull(pen);
     }
 
     @Test
-    public void testThatPenIsUpByDefault(){
+    public void testThatPenIsUpByDefault() {
         //given that we have
-        Pen pen = new Pen();
         Assertions.assertSame(PenPosition.UP, pen.getPosition());
     }
 
     @Test
-    public void testThatTurtleCanPlaceThePenDown(){
+    public void testThatTurtleCanPlaceThePenDown() {
         //GIVEN
-        Turtle turtle = new Turtle();
-        Pen pen = new Pen();
         Assertions.assertSame(PenPosition.UP, pen.getPosition());
 
         //WHEN
         turtle.penDown();
 
         //ASSERT
-        Assertions.assertSame(PenPosition.DOWN, turtle.getNewPen().getPosition());
+        Assertions.assertSame(PenPosition.DOWN, pen.getPosition());
     }
 
     @Test
-    public void testThatPenCanComeUp(){
-        Turtle turtle = new Turtle();
-        Pen pen = new Pen();
-        pen.setPenPosition(PenPosition.DOWN);
+    public void testThatPenCanComeUp() {
+        turtle.penDown();
         Assertions.assertSame(PenPosition.DOWN, pen.getPenPosition());
 
-        pen.setPenPosition(PenPosition.UP);
+        turtle.penUp();
         Assertions.assertSame(PenPosition.UP, pen.getPenPosition());
     }
 
     @Test
-    public void testThatTurtleCanTurnRight(){
-        //given
-        Turtle turtle = new Turtle();
-        TurtlePosition turtlePosition = TurtlePosition.RIGHT;
-        //when
-        turtle.turnTurtleRight(turtlePosition);
-        //assert(
-        Assertions.assertSame(TurtlePosition.RIGHT, turtle.turtleHasTurnedRight());
+    @DisplayName("Turtle can turn right when facing east test")
+    public void testThatTurtleCanTurnRight() {
+        Assertions.assertSame(Direction.EAST, turtle.getCurrentDirection());
+        turtle.turnRight();
+        Assertions.assertSame(Direction.SOUTH, turtle.getCurrentDirection());
     }
 
     @Test
-    public void testThatTurtleCanTurnLeft(){
-        //given
-        Turtle turtle = new Turtle();
-
+    @DisplayName("Turtle can turn right when facing south test.")
+    public void testThatTurtleCanTurnRight2(){
+        //when
+        turtle.turnRight();
+        turtle.turnRight();
+        //assert
+        Assertions.assertSame(Direction.WEST, turtle.getCurrentDirection());
     }
 
-
+    @Test
+    public void testThatTurtleCanTurnRight3(){
+        //when
+        turtle.turnRight();
+        turtle.turnRight();
+        turtle.turnRight();
+        Assertions.assertSame(Direction.NORTH, turtle.getCurrentDirection());
+    }
 }
