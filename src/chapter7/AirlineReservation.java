@@ -17,65 +17,27 @@ When the economy class is full, the application should ask the user if he wants 
 If he refuses display the next flight leaves in 3 hours
  */
 public class AirlineReservation {
-    private final int seats = 10;
-    private final boolean [] seatIsTaken = new boolean[seats];
-    private int inFirstClass = 0;
-    private int inEconomyClass = 5;
 
+    private int input;
+    private boolean seatIsReserved;
+    private boolean bookedSeats;
 
-    private String collectUserInput(){
-        Scanner scanner = new Scanner(System.in);
-        return scanner.nextLine();
+    public void receiveInput(int input) {
+        this.input = input;
     }
 
-    public boolean[] seatIsReserved(){
-        return seatIsTaken;
+    public int getInput() {
+        return input;
     }
 
-    public void makeReservation(int response){
-        if ( response == 1 ){
-            if(inFirstClass > 4){
-                System.out.println("First class is full!");
-            }else {
-                seatIsTaken[inFirstClass] = true;
-                inFirstClass+=1;
-            }
-
-        }else if ( response == 2 ){
-            seatIsTaken[inEconomyClass] = true;
-            try {
-                inEconomyClass +=1;
-            }catch (IndexOutOfBoundsException outOfBounds){
-                System.out.println("Seats are full!");
-            }
-
-        } else {
-            throw new InputMismatchException("Input 1 or 2 to make " +
-                    "your reservation");
-        }
-        System.out.println(Arrays.toString(seatIsTaken));
+    public boolean seatIsReserved() {
+        return seatIsReserved;
     }
 
-    public void assignFirstClassWhenEconomyIsFull(boolean []seatIsTaken){
-        if ( inEconomyClass== seatIsTaken.length ){
-            System.out.print("Do you care for a place in the first class? ");
-            String response = collectUserInput();
-            if ( response.equals("yes") ){
-                if ( seatIsTaken[inFirstClass] = false ){
-                seatIsTaken[inFirstClass] = true;
-                inFirstClass +=1;
-                }else {
-                    System.out.println("Seats are full!");
-                }
-            }else {
-                System.out.println("The next flight is in 3 hours.");
-            }
-        }
+    public boolean getBookedSeats() {
+        boolean userWantsEconomy = input == 2;
+        boolean userWantsFirstClass = input == 1;
+        if ( userWantsFirstClass || userWantsEconomy)bookedSeats = true;
+        return bookedSeats;
     }
-//
-//    public void getAirlineTicket(){
-//        int response = collectUserChoice();
-//        makeReservation();
-//    }
-
 }

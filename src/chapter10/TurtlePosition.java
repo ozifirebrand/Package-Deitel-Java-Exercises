@@ -7,15 +7,14 @@ public class TurtlePosition {
     public TurtlePosition(int row, int column){
         this.row=row;
         this.column=column;
-
     }
 
     @Override
     public boolean equals(Object o) {
         if ( this == o ) return true;
-        if ( !(o instanceof TurtlePosition turtlePosition)) return false;
-        boolean rowsAreEqual = Integer.compare(row, turtlePosition.row) == 0;
-        boolean columnsAreEqual = Integer.compare(column, turtlePosition.column)==0;
+        if ( !(o instanceof TurtlePosition comparedTurtlePosition)) return false;
+        boolean rowsAreEqual = Integer.compare(this.row, comparedTurtlePosition.row) == 0;
+        boolean columnsAreEqual = Integer.compare(column, comparedTurtlePosition.column)==0;
         return rowsAreEqual && columnsAreEqual;
     }
 }

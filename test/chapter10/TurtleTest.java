@@ -152,6 +152,7 @@ class TurtleTest {
         Assertions.assertEquals(turtle.getCurrentPosition(), turtlePosition);
         turtle.moveForward();
         Assertions.assertEquals(new TurtlePosition(0,1), turtle.getCurrentPosition());
+        TurtlePosition pos = new TurtlePosition(0,0);
     }
 
 //    @Test
