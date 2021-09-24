@@ -48,13 +48,28 @@ class AirlineReservationTest {
     }
 
     @Test
-    public void testThatSeatCannotBeBookedMoreThanOnce(){
+    public void testThatABookedSeatCanBeStored(){
         //given ...
         //when
         reserve.receiveInput(1);
         boolean getBookedSeats = reserve.getBookedSeats();
-        //assert
-        System.out.println(getBookedSeats);
         Assertions.assertTrue(getBookedSeats);
+    }
+
+    @Test
+    public void testThatManySeatsCanBeBooked(){
+        //given ...
+        //when
+        reserve.setSeatNumber(1);
+        int seatPosition = reserve.getSeatNumber();
+        reserve.setSeatNumber(2);
+        int seatPosition2 = reserve.getSeatNumber();
+        //assert
+        Assertions.assertNotEquals(seatPosition, seatPosition2);
+    }
+
+    @Test
+    public void testThatASeatCannotBeBookedMoreThanOnce(){
+
     }
 }

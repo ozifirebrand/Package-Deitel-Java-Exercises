@@ -17,7 +17,7 @@ When the economy class is full, the application should ask the user if he wants 
 If he refuses display the next flight leaves in 3 hours
  */
 public class AirlineReservation {
-
+    private int seatNumber;
     private int input;
     private boolean seatIsReserved;
     private boolean bookedSeats;
@@ -39,5 +39,14 @@ public class AirlineReservation {
         boolean userWantsFirstClass = input == 1;
         if ( userWantsFirstClass || userWantsEconomy)bookedSeats = true;
         return bookedSeats;
+    }
+
+
+    public void setSeatNumber(int seatNumber) {
+        this.seatNumber = seatNumber;
+    }
+
+    public int getSeatNumber() {
+        return seatNumber;
     }
 }
