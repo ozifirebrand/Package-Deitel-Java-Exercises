@@ -46,12 +46,8 @@ public class Turtle {
 
     }
 
-
-
-
-
-
-
+    public void moveForward() {
+    }
 
 
 //fixme Same is used for singletons
