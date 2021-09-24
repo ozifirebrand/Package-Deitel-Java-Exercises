@@ -143,4 +143,12 @@ class TurtleTest {
         turtle.turnLeft();
         Assertions.assertSame(Direction.EAST, turtle.getCurrentDirection());
     }
+
+    @Test
+    @DisplayName("Test that turtle can move forward while facing east")
+    public void testThatTurtleCanMoveForwardWhileFacingEast(){
+//        given
+        TurtlePosition turtlePosition= new TurtlePosition(0,0);
+        Assertions.assertTrue(turtle.getCurrentPosition().equals(turtlePosition));
+    }
 }
