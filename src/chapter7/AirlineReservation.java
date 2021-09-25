@@ -1,9 +1,5 @@
 package chapter7;
 
-import java.util.Arrays;
-import java.util.InputMismatchException;
-import java.util.Scanner;
-
 /*The program asks users to input either 1 for first class or 2 for economy;
 If user enters 1, the first five seats which are the first class seats are reserved
 Else the space will be between 6 and 10
@@ -17,33 +13,35 @@ When the economy class is full, the application should ask the user if he wants 
 If he refuses display the next flight leaves in 3 hours
  */
 public class AirlineReservation {
-    private int seatNumber;
+    private int seatNumber = 0;
     private int input;
-    private boolean seatIsReserved;
-    private boolean bookedSeats;
+    private boolean [] seatIsReserved;
+    private boolean [] bookedSeatsBoolean = new boolean[10];
 
     public void receiveInput(int input) {
         this.input = input;
     }
 
-    public int getInput() {
-        return input;
+    public void reserveSeat(){
+        if ( input == 1 || input ==2 )
+            seatIsReserved[seatNumber] = true;
     }
 
-    public boolean seatIsReserved() {
+    public boolean [] seatIsReserved() {
         return seatIsReserved;
     }
 
-    public boolean getBookedSeats() {
+    public boolean [] getBookedSeatsBoolean() {
         boolean userWantsEconomy = input == 2;
         boolean userWantsFirstClass = input == 1;
-        if ( userWantsFirstClass || userWantsEconomy)bookedSeats = true;
-        return bookedSeats;
+        if ( userWantsFirstClass || userWantsEconomy) bookedSeatsBoolean[seatNumber] = true;
+        return bookedSeatsBoolean;
     }
 
 
-    public void setSeatNumber(int seatNumber) {
-        this.seatNumber = seatNumber;
+    public void setSeatNumber() {
+        if ( input ==1 || input == 2 )
+        seatNumber += 1;
     }
 
     public int getSeatNumber() {

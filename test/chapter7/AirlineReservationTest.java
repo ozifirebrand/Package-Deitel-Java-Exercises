@@ -25,7 +25,7 @@ class AirlineReservationTest {
         //when
         reserve.receiveInput(1);
         //assert
-        Assertions.assertSame(1, reserve.getInput());
+//        Assertions.assertSame(1, reserve.getInput());
     }
 
     @Test
@@ -33,8 +33,9 @@ class AirlineReservationTest {
         //given ...
         //when
         reserve.receiveInput(1);
+        reserve.reserveSeat();
         //assert
-        Assertions.assertTrue(reserve.seatIsReserved());
+        Assertions.assertTrue(reserve.seatIsReserved()[0]);
     }
 
 
@@ -43,8 +44,9 @@ class AirlineReservationTest {
         //given ...
         //when
         reserve.receiveInput(2);
+        reserve.reserveSeat();
         //assert
-        Assertions.assertTrue(reserve.seatIsReserved());
+        Assertions.assertTrue(reserve.seatIsReserved()[0]);
     }
 
     @Test
@@ -52,24 +54,43 @@ class AirlineReservationTest {
         //given ...
         //when
         reserve.receiveInput(1);
-        boolean getBookedSeats = reserve.getBookedSeats();
-        Assertions.assertTrue(getBookedSeats);
+        boolean [] getBookedSeats = reserve.getBookedSeatsBoolean();
+        Assertions.assertTrue(getBookedSeats[0]);
     }
 
     @Test
     public void testThatManySeatsCanBeBooked(){
         //given ...
         //when
-        reserve.setSeatNumber(1);
+        reserve.receiveInput(1);
+        reserve.setSeatNumber();
+        reserve.receiveInput(2);
+        reserve.setSeatNumber();
+        //assert
+        Assertions.assertNotEquals(reserve.getSeatNumber(), reserve.getSeatNumber());
+    }
+
+    @Test
+    public void testThatASeatCannotBeBookedMoreThanOnce(){
+        //given ...
+        //when
+        reserve.receiveInput(1);
         int seatPosition = reserve.getSeatNumber();
-        reserve.setSeatNumber(2);
+        reserve.receiveInput(2);
         int seatPosition2 = reserve.getSeatNumber();
         //assert
         Assertions.assertNotEquals(seatPosition, seatPosition2);
     }
 
     @Test
-    public void testThatASeatCannotBeBookedMoreThanOnce(){
-
+    public void testThatFirstClassSeatIsJust5Seats(){
+        //given ...
+        //when
+        reserve.receiveInput(1);
+        reserve.setSeatNumber();
+        reserve.receiveInput(1);
+        reserve.setSeatNumber();
+        //assert
+        Assertions.assertEquals(reserve.getBookedSeatsBoolean()[0], reserve.getBookedSeatsBoolean()[1]);
     }
 }
