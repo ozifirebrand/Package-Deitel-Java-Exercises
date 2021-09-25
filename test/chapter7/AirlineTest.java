@@ -4,8 +4,6 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
-
     /*Assign seats to flight by asking users to input 1 or 2
     If seat has been taken, assign next seat
     1 is for first class and 2 is for economy
@@ -23,18 +21,55 @@ class AirlineTest {
 
     @Test
     public void testThatFirstClassSeatsNotGreaterThan5(){
-        Assertions.assertEquals(5, reserve.computeTheNumberOfAvailableFirstClassSeats());
+        //given ...
+        //when
+        reserve.bookSeat(1);
+        reserve.bookSeat(1);
+        reserve.bookSeat(1);
+        reserve.bookSeat(1);
+        reserve.bookSeat(1);
+        reserve.bookSeat(1);
+        //assert
+        Assertions.assertFalse(reserve.isFirstClass());
     }
 
 
     @Test
-    public void testThatFirstClassSeatCanBeBookedTillNumber5(){
+    public void testThatEconomySeatCanBeBookedTillNumber10(){
+        //given ...
+        //when
+        reserve.bookSeat(1);
+        reserve.bookSeat(1);
+        reserve.bookSeat(1);
+        reserve.bookSeat(1);
+        reserve.bookSeat(1);
+        reserve.bookSeat(1);
         reserve.bookSeat(1);
         reserve.bookSeat(1);
         reserve.bookSeat(1);
         reserve.bookSeat(1);
         reserve.bookSeat(1);
         Assertions.assertFalse(reserve.isEconomy());
+    }
+
+    @Test
+    public void testThatEconomySeatStartsFromNumber6(){
+        //given ...
+        //when
+        reserve.bookSeat(2);
+        //assert
+        Assertions.assertEquals(6, reserve.getSeatNumberForEconomy());
+//        reserve.bookSeat(2);
+    }
+
+    @Test
+    public void testThatFirstClassSeatStartsFromNumber1(){
+        //given ...
+        //when
+        reserve.bookSeat(1);
+        //assert
+        Assertions.assertEquals(1, reserve.getSeatNumberForFirstClass());
+//        reserve.bookSeat(2);
     }
 
 }
