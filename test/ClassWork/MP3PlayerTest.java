@@ -25,9 +25,19 @@ class MP3PlayerTest {
     @Test
     public void mp3CanBeTurnedOff(){
         //given ...
+        player.turnOnAndOff();
         //when
         player.turnOnAndOff();
         //assert
-        Assertions.assertTrue(player.isOn());
+        Assertions.assertFalse(player.isOn());
+    }
+
+    @Test
+    public void testThatMP3CanPlayMusic(){
+        //given ...
+        //whem
+        player.playMusic();
+        //assert
+        assertTrue(player.musicIsPlaying());
     }
 }
