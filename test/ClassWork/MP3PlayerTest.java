@@ -9,6 +9,8 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class MP3PlayerTest {
     MP3Player player;
+    Playlist list;
+//    Playlist myPlaylist;
     @BeforeEach
     public void setPlayer(){
         player = new MP3Player();
@@ -94,12 +96,23 @@ class MP3PlayerTest {
 
     @Test
     @DisplayName("Test that mp3 can pause music")
-    public void testThatMp3CanPauseMusic(){
+    public void testThatMp3CanPauseMusic() {
         //given ...
         player.turnOnAndOff();
         player.playMusic();
         //when
         player.playMusic();
         Assertions.assertFalse(player.musicIsPlaying());
+    }
+
+    @Test
+    void testThatMp3CanNextMusic(){
+        //given
+        player.turnOnAndOff();
+        player.playMusic();
+        //when
+        player.playNextMusic();
+        //assert
+        Assertions.assertEquals(1, list.getTrackNumber());
     }
 }
