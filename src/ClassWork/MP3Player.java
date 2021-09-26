@@ -1,8 +1,8 @@
 package ClassWork;
 
 public class MP3Player {
-    private boolean isOn = false;
-    private boolean playingMusic;
+    private boolean isOn ;
+    private boolean isPlayingMusic ;
 
 
     public void turnOnAndOff() {
@@ -14,9 +14,10 @@ public class MP3Player {
     }
 
     public void playMusic() {
+        isPlayingMusic = !isPlayingMusic;
     }
 
     public boolean musicIsPlaying() {
-        return playingMusic;
+        return isPlayingMusic;
     }
 }

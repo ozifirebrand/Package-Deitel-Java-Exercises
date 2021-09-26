@@ -35,7 +35,8 @@ class MP3PlayerTest {
     @Test
     public void testThatMP3CanPlayMusic(){
         //given ...
-        //whem
+        player.turnOnAndOff();
+        //when
         player.playMusic();
         //assert
         assertTrue(player.musicIsPlaying());
