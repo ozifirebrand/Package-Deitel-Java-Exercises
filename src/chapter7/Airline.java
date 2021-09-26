@@ -10,46 +10,32 @@ public class Airline {
     private int seatNumberForFirstClass = 0;
     private int seatNumberForEconomy = 5;
 
-
     public int getSeatNumber(){
         return seatNo;
     }
 
     public int getSeatNumberForFirstClass(){
-        if ( isFirstClass() ){
-            seatNumberForFirstClass +=1;
-        }
         return seatNumberForFirstClass;
     }
 
     public int getSeatNumberForEconomy(){
-        if ( isEconomy() ){
-            seatNumberForEconomy +=1;
-        }
         return seatNumberForEconomy;
     }
 
-    public boolean isFirstClass() {
-        if ( this.seatNo >= 0 && this.seatNo <= 4 ){
-            isFirstClass = true;
-        }
-        return isFirstClass;
-    }
-
-    public boolean isEconomy() {
-        if ( this.seatNo >= 5 && this.seatNo <= 9 ){
-            isEconomy = true;
-        }
-        return isEconomy;
-    }
-
     private void setSeatNumber(int input){
-        if ( input == 1 || input==2 ){
-            seatNo += 1;
-        }
         if ( input ==1 ){
-            seatNumberForFirstClass += 1;
+            try {
+                seatNo += 1;
+                if ( seatNo >5 )
+            }catch (ArithmeticException exception){
+
+                seatNumberForFirstClass +=1;
+            }
+
+            }
+
         }else {
+            seatNo += 1;
             seatNumberForEconomy +=1;
         }
     }
@@ -65,4 +51,17 @@ public class Airline {
         }
     }
 
+    public boolean isFirstClass() {
+        if ( this.seatNo >= 0 && this.seatNo <= 4 ){
+            isFirstClass = true;
+        }
+        return isFirstClass;
+    }
+
+    public boolean isEconomy() {
+        if ( this.seatNo >= 5 && this.seatNo <= 9 ){
+            isEconomy = true;
+        }
+        return isEconomy;
+    }
 }

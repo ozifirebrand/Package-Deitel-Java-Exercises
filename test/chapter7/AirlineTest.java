@@ -2,6 +2,7 @@ package chapter7;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
     /*Assign seats to flight by asking users to input 1 or 2
@@ -70,6 +71,21 @@ class AirlineTest {
         //assert
         Assertions.assertEquals(1, reserve.getSeatNumberForFirstClass());
 //        reserve.bookSeat(2);
+    }
+
+    @Test
+    @DisplayName("First class cannot exceed 5 seats")
+    public void testThatFirstClassCanBeFull(){
+        //given ...
+        //when
+        reserve.bookSeat(1);
+        reserve.bookSeat(1);
+        reserve.bookSeat(1);
+        reserve.bookSeat(1);
+        reserve.bookSeat(1);
+        reserve.bookSeat(1);
+        //assert
+        Assertions.assertNotEquals(6, reserve.getSeatNumber());
     }
 
 }
