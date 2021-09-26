@@ -78,6 +78,15 @@ class MP3PlayerTest {
     @Test
     @DisplayName("Test that MP3 volume can be increased in increments of 5%")
     public void testThatVolumeCanBeDecreased(){
+        //given
+        player.turnOnAndOff();
+        player.turnVolumeUp();
+        player.turnVolumeUp();
+        player.turnVolumeUp();
+        //when
+        player.turnVolumeDown();
+        //assert
+        Assertions.assertEquals(10, player.viewVolumeLevel());
 
     }
 }

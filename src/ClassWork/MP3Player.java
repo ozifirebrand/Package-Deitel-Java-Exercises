@@ -29,4 +29,8 @@ public class MP3Player {
     public int viewVolumeLevel() {
         return volume;
     }
+
+    public void turnVolumeDown() {
+        volume -= 5;
+    }
 }
