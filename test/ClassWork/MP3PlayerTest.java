@@ -85,8 +85,10 @@ class MP3PlayerTest {
         player.turnVolumeUp();
         //when
         player.turnVolumeDown();
+        player.turnVolumeDown();
+        player.turnVolumeDown();
+        player.turnVolumeDown();
         //assert
-        Assertions.assertEquals(10, player.viewVolumeLevel());
-
+        Assertions.assertEquals(0, player.viewVolumeLevel());
     }
 }

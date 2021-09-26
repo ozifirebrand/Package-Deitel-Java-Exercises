@@ -31,6 +31,7 @@ public class MP3Player {
     }
 
     public void turnVolumeDown() {
+        if ( volume > 0 )
         volume -= 5;
     }
 }
