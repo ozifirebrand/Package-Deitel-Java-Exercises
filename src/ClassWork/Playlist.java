@@ -10,13 +10,8 @@ public class Playlist {
         this.musics = musics;
     }
 
-    public Playlist()
 
     public void playNextMusic() {
-        music.setTrackNumber();
     }
 
-    public int getTrackNumber() {
-        return music.getTrackNumber();
-    }
 }

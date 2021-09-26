@@ -111,8 +111,5 @@ class MP3PlayerTest {
         player.turnOnAndOff();
         player.playMusic();
         //when
-        player.playNextMusic();
-        //assert
-        Assertions.assertEquals(1, list.getTrackNumber());
     }
 }
