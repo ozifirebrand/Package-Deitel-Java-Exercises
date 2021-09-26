@@ -1,9 +1,13 @@
 package ClassWork;
 
+import java.util.ArrayList;
+
 public class MP3Player {
     private boolean isOn ;
     private boolean isPlayingMusic ;
     private int volume = 0;
+    private int index =1;
+
 
     public void turnOnAndOff() {
         isOn = !isOn;
@@ -14,7 +18,9 @@ public class MP3Player {
     }
 
     public void playMusic() {
-        isPlayingMusic = !isPlayingMusic;
+        if ( isOn = true ) {
+            isPlayingMusic = !isPlayingMusic;
+        }
     }
 
     public boolean musicIsPlaying() {
@@ -22,8 +28,11 @@ public class MP3Player {
     }
 
     public void turnVolumeUp() {
-        if ( volume < 100 ){
-        volume +=5;}
+        if ( isOn= true ) {
+            if ( volume < 100 ) {
+                volume += 5;
+            }
+        }
     }
 
     public int viewVolumeLevel() {
@@ -33,5 +42,13 @@ public class MP3Player {
     public void turnVolumeDown() {
         if ( volume > 0 )
         volume -= 5;
+    }
+
+    public void playNextMusic() {
+        index +=1;
+    }
+
+    public int displayNextMusicPosition() {
+        return index;
     }
 }

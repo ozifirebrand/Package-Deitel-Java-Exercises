@@ -91,4 +91,27 @@ class MP3PlayerTest {
         //assert
         Assertions.assertEquals(0, player.viewVolumeLevel());
     }
+
+    @Test
+    @DisplayName("Test that mp3 can pause music")
+    public void testThatMp3CanPauseMusic(){
+        //given ...
+        player.turnOnAndOff();
+        player.playMusic();
+        //when
+        player.playMusic();
+        Assertions.assertFalse(player.musicIsPlaying());
+    }
+
+    @Test
+    @DisplayName("Test that mp3 can play next music")
+    public void testThatMp3CanPlayNextMusic(){
+        //given ...
+        player.turnOnAndOff();
+        player.playMusic();
+
+        //when
+        player.playNextMusic();
+        Assertions.assertEquals(2, player.displayNextMusicPosition());
+    }
 }
