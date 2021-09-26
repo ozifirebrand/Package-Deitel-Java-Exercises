@@ -22,13 +22,19 @@ public class RectangleClass {
     }
 
     public void calculateArea(double width, double length){
-        area = width * length;
+        boolean widthIsValid = width >0 && width< 20;
+        boolean lengthIsValid = length> 0 && length< 20;
+        if ( widthIsValid && lengthIsValid  )
+            area = width * length;
     }
-    public double getArea(){
+    public double getAreaValue(){
         return area;
     }
 
     public void calculatePerimeter(double width, double length){
+        boolean widthIsValid = width >0 && width< 20;
+        boolean lengthIsValid = length> 0 && length< 20;
+        if ( widthIsValid && lengthIsValid  )
         perimeter = 2 *(width +length);
     }
 
