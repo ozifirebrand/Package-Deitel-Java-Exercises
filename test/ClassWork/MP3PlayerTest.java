@@ -5,15 +5,20 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class MP3PlayerTest {
     MP3Player player;
+    ArrayList<Playlist> lists;
     Playlist list;
 //    Playlist myPlaylist;
     @BeforeEach
     public void setPlayer(){
         player = new MP3Player();
+        list = new Playlist();
+        lists = new ArrayList<>();
     }
 
     @Test
@@ -111,5 +116,7 @@ class MP3PlayerTest {
         player.turnOnAndOff();
         player.playMusic();
         //when
+        player.nextMusic();
+        Assertions.assertEquals(2, player.showNextMusic());
     }
 }

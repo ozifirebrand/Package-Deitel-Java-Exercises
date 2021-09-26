@@ -6,6 +6,8 @@ public class MP3Player {
     private boolean isOn ;
     private boolean isPlayingMusic ;
     private int volume = 0;
+    private Playlist list;
+    private ArrayList<Playlist> lists;
 
     public void turnOnAndOff() {
         isOn = !isOn;
@@ -41,5 +43,14 @@ public class MP3Player {
         if ( volume > 0 )
         volume -= 5;
     }
+
+    public void nextMusic(){
+        list.playNextMusic();
+    }
+
+    public int showNextMusic(){
+        return list.showNextMusic();
+    }
+
 
 }
