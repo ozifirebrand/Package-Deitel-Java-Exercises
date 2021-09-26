@@ -2,6 +2,7 @@ package ClassWork;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -40,5 +41,43 @@ class MP3PlayerTest {
         player.playMusic();
         //assert
         assertTrue(player.musicIsPlaying());
+    }
+
+    @Test
+    @DisplayName("Test that MP3 volume can be increased in increments of 5%")
+    public void testThatVolumeCanBeIncreased(){
+        //given ...
+        player.turnOnAndOff();
+        player.playMusic();
+        //when
+        player.turnVolumeUp();
+        player.turnVolumeUp();
+        player.turnVolumeUp();
+        player.turnVolumeUp();
+        player.turnVolumeUp();
+        player.turnVolumeUp();
+        player.turnVolumeUp();
+        player.turnVolumeUp();
+        player.turnVolumeUp();
+        player.turnVolumeUp();
+        player.turnVolumeUp();
+        player.turnVolumeUp();
+        player.turnVolumeUp();
+        player.turnVolumeUp();
+        player.turnVolumeUp();
+        player.turnVolumeUp();
+        player.turnVolumeUp();
+        player.turnVolumeUp();
+        player.turnVolumeUp();
+        player.turnVolumeUp();
+        player.turnVolumeUp();
+        //assert
+        Assertions.assertEquals(100, player.viewVolumeLevel());
+    }
+
+    @Test
+    @DisplayName("Test that MP3 volume can be increased in increments of 5%")
+    public void testThatVolumeCanBeDecreased(){
+
     }
 }

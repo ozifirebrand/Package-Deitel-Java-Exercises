@@ -3,7 +3,7 @@ package ClassWork;
 public class MP3Player {
     private boolean isOn ;
     private boolean isPlayingMusic ;
-
+    private int volume = 0;
 
     public void turnOnAndOff() {
         isOn = !isOn;
@@ -19,5 +19,14 @@ public class MP3Player {
 
     public boolean musicIsPlaying() {
         return isPlayingMusic;
+    }
+
+    public void turnVolumeUp() {
+        if ( volume < 100 ){
+        volume +=5;}
+    }
+
+    public int viewVolumeLevel() {
+        return volume;
     }
 }
