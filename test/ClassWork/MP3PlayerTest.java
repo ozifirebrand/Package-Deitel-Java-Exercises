@@ -102,16 +102,4 @@ class MP3PlayerTest {
         player.playMusic();
         Assertions.assertFalse(player.musicIsPlaying());
     }
-
-    @Test
-    @DisplayName("Test that mp3 can play next music")
-    public void testThatMp3CanPlayNextMusic(){
-        //given ...
-        player.turnOnAndOff();
-        player.playMusic();
-
-        //when
-        player.playNextMusic();
-        Assertions.assertEquals(2, player.displayNextMusicPosition());
-    }
 }
