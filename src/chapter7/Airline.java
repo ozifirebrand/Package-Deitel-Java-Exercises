@@ -26,15 +26,13 @@ public class Airline {
         if ( input ==1 ){
             try {
                 seatNo += 1;
-                if ( seatNo >5 )
+//                if ( seatNo >5 )
             }catch (ArithmeticException exception){
 
                 seatNumberForFirstClass +=1;
             }
 
-            }
-
-        }else {
+            }else {
             seatNo += 1;
             seatNumberForEconomy +=1;
         }
