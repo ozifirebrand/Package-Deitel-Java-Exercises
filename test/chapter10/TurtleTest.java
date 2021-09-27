@@ -239,13 +239,19 @@ class TurtleTest {
         SketchPad sketchPad = new SketchPad(7, 7);
         int [] [] floor = sketchPad.getFloor();
             //when
-        turtle.moveForward(5);
-        turtle.turnRight();
-        turtle.turnRight();
-        turtle.writeOn(sketchPad, 3);
 
+        turtle.writeOn(sketchPad, 5);
         Assertions.assertEquals(4, floor[0][4]);
         Assertions.assertEquals(4, floor[0][3]);
         Assertions.assertEquals(4, floor[0][2]);
+        turtle.penDown();
+        turtle.turnRight();
+        turtle.turnRight();
+        turtle.writeOn(sketchPad, 3);
+        Assertions.assertEquals(1, floor[0][4]);
+        Assertions.assertEquals(1, floor[0][3]);
+        Assertions.assertEquals(1, floor[0][2]);
+        Assertions.assertEquals(4, floor[0][1]);
+        sketchPad.displayFloor();
     }
 }

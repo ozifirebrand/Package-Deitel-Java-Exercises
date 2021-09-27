@@ -59,28 +59,37 @@ import static chapter10.Turtle.PenPosition.*;
 
      public void writeOn(SketchPad sketchPad, int numberOfMoves) {
          int [][] floor = sketchPad.getFloor();
+         int rowPosition = turtlePosition.getRowPosition();
+         int columnPosition = turtlePosition.getColumnPosition();
+
          if ( this.newPen.getPosition() == DOWN ) {
              if ( this.direction == EAST ) {
-                 int rowPosition = turtlePosition.getRowPosition();
-                 int columnPosition = turtlePosition.getColumnPosition();
 
                  for (int index = 0; index < numberOfMoves; index++){
                      floor[rowPosition][columnPosition+index] =1;
                  }
              }else if ( this.direction == SOUTH ){
-                 int rowPosition = turtlePosition.getRowPosition();
-                 int columnPosition = turtlePosition.getColumnPosition();
-
                  for ( int index = 0; index < numberOfMoves; index++){
                      floor[rowPosition+index][columnPosition] = 1;
                  }
+             } else if ( direction == WEST ) {
+                 for (int index = 0; index< numberOfMoves; index++){
+                     floor[rowPosition][columnPosition-index] = 1;
+                 }
              }
          }else if ( newPen.getPosition() == UP ){
+
              if ( direction == WEST ){
-                 int rowPosition = turtlePosition.getRowPosition();
-                 int columnPosition = turtlePosition.getColumnPosition();
+                 rowPosition = turtlePosition.getRowPosition();
+                 columnPosition = turtlePosition.getColumnPosition();
                  for (int index =0; index<numberOfMoves; index++){
                      floor[rowPosition][columnPosition-index] = 4;
+                 }
+             }else if ( direction==EAST ){
+                 rowPosition = turtlePosition.getRowPosition();
+                 columnPosition = turtlePosition.getColumnPosition();
+                 for (int index = 0; index < numberOfMoves; index++){
+                     floor[rowPosition][columnPosition + index]= 4;
                  }
              }
          }
