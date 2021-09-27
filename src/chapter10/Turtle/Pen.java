@@ -9,11 +9,9 @@ public class Pen {
         return currentPenPosition;
     }
 
-    public void setTurtlePositionTo(PenPosition currentPosition) {
+    public void setPenPositionTo(PenPosition currentPosition) {
         this.currentPenPosition = currentPosition;
     }
-
-    public void setPenPosition(PenPosition currentPenPosition) { this.currentPenPosition = currentPenPosition; }
 
     public PenPosition getPenPosition() {
         return currentPenPosition;

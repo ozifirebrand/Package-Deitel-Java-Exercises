@@ -1,6 +1,6 @@
  package chapter10.Turtle;
 
-import chapter10.Direction; import chapter10.SketchPad; import chapter10.TurtlePosition;
+import static chapter10.Turtle.PenPosition.*;
 
  public class Turtle {
      private TurtlePosition turtlePosition = new TurtlePosition(0, 0);
@@ -12,11 +12,11 @@ import chapter10.Direction; import chapter10.SketchPad; import chapter10.TurtleP
      }
 
      public void penDown() {
-         newPen.setTurtlePositionTo(PenPosition.DOWN);
+         newPen.setPenPositionTo(DOWN);
      }
 
      public void penUp() {
-         newPen.setTurtlePositionTo(PenPosition.UP);
+         newPen.setPenPositionTo(UP);
      }
 
      public Direction getCurrentDirection() {
@@ -46,8 +46,8 @@ import chapter10.Direction; import chapter10.SketchPad; import chapter10.TurtleP
              int currentColumnPosition = turtlePosition.getColumnPosition();
              turtlePosition.setColumnPosition(currentColumnPosition + numberOfSteps - 1);
          } else if ( direction == Direction.SOUTH ) {
-             int rowPosition = turtlePosition.getRowPosition();
-             turtlePosition.setRowPosition(rowPosition + numberOfSteps);
+             int currentRowPosition = turtlePosition.getRowPosition();
+             turtlePosition.setRowPosition(currentRowPosition + numberOfSteps -1);
          } else if ( direction == Direction.WEST ) {
              int columnPosition = turtlePosition.getColumnPosition();
              turtlePosition.setColumnPosition(columnPosition - numberOfSteps);
@@ -58,13 +58,21 @@ import chapter10.Direction; import chapter10.SketchPad; import chapter10.TurtleP
      }
 
      public void writeOn(SketchPad sketchPad, int numberOfMoves) {
-         if ( this.newPen.getPosition() == PenPosition.DOWN ) {
+         int [][] floor = sketchPad.getFloor();
+         if ( this.newPen.getPosition() == DOWN ) {
              if ( this.direction == Direction.EAST ) {
-                 int [][] floor = sketchPad.getFloor();
                  int rowPosition = turtlePosition.getRowPosition();
                  int columnPosition = turtlePosition.getColumnPosition();
+
                  for (int index = 0; index < numberOfMoves; index++){
                      floor[rowPosition][columnPosition+index] =1;
+                 }
+             }else if ( this.direction == Direction.SOUTH ){
+                 int rowPosition = turtlePosition.getRowPosition();
+                 int columnPosition = turtlePosition.getColumnPosition();
+
+                 for ( int index = 0; index < numberOfMoves; index++){
+                     floor[rowPosition+index][columnPosition] = 1;
                  }
              }
          }

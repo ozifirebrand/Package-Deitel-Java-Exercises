@@ -1,9 +1,9 @@
-package chapter10;
+package chapter10.Turtle;
 
 
 public class TurtlePosition {
-   private int row =0 ;
-   private int column= 0 ;
+   private int row;
+   private int column;
     public TurtlePosition(int row, int column){
         this.row=row;
         this.column=column;
@@ -13,13 +13,9 @@ public class TurtlePosition {
     public boolean equals(Object o) {
         if ( this == o ) return true;
         if ( !(o instanceof TurtlePosition comparedTurtlePosition)) return false;
-        boolean rowsAreEqual = Integer.compare(this.row, comparedTurtlePosition.row) == 0;
-        boolean columnsAreEqual = Integer.compare(column, comparedTurtlePosition.column)==0;
+        boolean rowsAreEqual = this.row == comparedTurtlePosition.row;
+        boolean columnsAreEqual = this.column == comparedTurtlePosition.column;
         return rowsAreEqual && columnsAreEqual;
-    }
-
-    public int increaseNumberOfSteps(int numberOfSteps) {
-        return column + numberOfSteps;
     }
 
     public int getColumnPosition() {

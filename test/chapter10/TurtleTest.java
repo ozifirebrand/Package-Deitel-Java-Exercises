@@ -1,6 +1,7 @@
 package chapter10;
 
 import chapter10.Turtle.*;
+import jdk.jfr.Description;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -150,7 +151,7 @@ class TurtleTest {
 //        given
         Assertions.assertSame(Direction.EAST, turtle.getCurrentDirection());
         turtle.moveForward(5);
-        Assertions.assertEquals(new TurtlePosition(0, 5), turtle.getCurrentPosition());
+        Assertions.assertEquals(new TurtlePosition(0, 4), turtle.getCurrentPosition());
     }
 
     @Test
@@ -161,7 +162,7 @@ class TurtleTest {
         turtle.turnRight();
         turtle.moveForward(4);
         //assert
-        Assertions.assertEquals(new TurtlePosition(4, 0), turtle.getCurrentPosition());
+        Assertions.assertEquals(new TurtlePosition(3, 0), turtle.getCurrentPosition());
     }
 
     @Test
@@ -192,19 +193,42 @@ class TurtleTest {
     }
 
     @Test
+    @DisplayName("Test that turtle can write while facing east")
     public void testCanWriteOnSketchPad() {
         //given
         turtle.penDown();
         Assertions.assertSame(Direction.EAST, turtle.getCurrentDirection());
         SketchPad sketchPad = new SketchPad(5, 5);
         turtle.writeOn(sketchPad, 3);
-        //assert
         int[][] floor = sketchPad.getFloor();
+        //assert
         Assertions.assertEquals(1, floor[0][0]);
         Assertions.assertEquals(1, floor[0][1]);
         Assertions.assertEquals(1, floor[0][2]);
         Assertions.assertEquals(0, sketchPad.getFloor()[0][3]);
         Assertions.assertEquals(new TurtlePosition(0, 2), turtle.getCurrentPosition());
+        sketchPad.displayFloor();
+    }
+
+    @Test
+    @Description("Test that turtle can write while facing south")
+    public void testThatTurtleCanWriteWhileFacingSouth(){
+        //given
+        turtle.turnRight();
+        Assertions.assertSame(Direction.SOUTH, turtle.getCurrentDirection());
+        turtle.penDown();
+        SketchPad sketchPad = new SketchPad(7,7);
+        int[][] floor = sketchPad.getFloor();
+
+        //when
+        turtle.writeOn(sketchPad, 5);
+        //assert
+        Assertions.assertEquals(1, floor[0][0]);
+        Assertions.assertEquals(1, floor[1][0]);
+        Assertions.assertEquals(1, floor[2][0]);
+        Assertions.assertEquals(1, floor[3][0]);
+        Assertions.assertEquals(1, floor[4][0]);
+        Assertions.assertEquals(new TurtlePosition(4, 0),turtle.getCurrentPosition());
         sketchPad.displayFloor();
     }
 }
