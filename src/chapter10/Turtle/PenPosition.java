@@ -1,5 +1,5 @@
 package chapter10.Turtle;
 
-public enum PenDirection {
+public enum PenPosition {
     UP, DOWN
 }

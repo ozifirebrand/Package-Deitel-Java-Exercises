@@ -26,28 +26,28 @@ class TurtleTest {
     @DisplayName("Test that pen is up by default")
     public void testThatPenIsUpByDefault() {
         //given that we have
-        Assertions.assertSame(PenDirection.UP, pen.getPosition());
+        Assertions.assertSame(PenPosition.UP, pen.getPosition());
     }
 
     @Test
     @DisplayName("Test that turtle can turn turn pen down")
     public void testThatTurtleCanPlaceThePenDown() {
         //GIVEN
-        Assertions.assertSame(PenDirection.UP, pen.getPosition());
+        Assertions.assertSame(PenPosition.UP, pen.getPosition());
         //WHEN
         turtle.penDown();
         //ASSERT
-        Assertions.assertSame(PenDirection.DOWN, pen.getPosition());
+        Assertions.assertSame(PenPosition.DOWN, pen.getPosition());
     }
 
     @Test
     @DisplayName("Test that turtle can turn turn pen up")
     public void testThatPenCanComeUp() {
         turtle.penDown();
-        Assertions.assertSame(PenDirection.DOWN, pen.getPenPosition());
+        Assertions.assertSame(PenPosition.DOWN, pen.getPenPosition());
 
         turtle.penUp();
-        Assertions.assertSame(PenDirection.UP, pen.getPenPosition());
+        Assertions.assertSame(PenPosition.UP, pen.getPenPosition());
     }
 
     @Test
@@ -198,7 +198,15 @@ class TurtleTest {
         SketchPad sketchPad = new SketchPad(5, 5);
         turtle.writeOn(sketchPad, 3);
         //assert
-        Assertions.assertEquals(3, turtle.getCurrentPosition());
+        int [][] floor = sketchPad.getFloor();
+        Assertions.assertEquals(1, floor[0][0]);
+        Assertions.assertEquals(1, floor[0][1]);
+        Assertions.assertEquals(1, floor[0][2]);
+        Assertions.assertEquals(0, sketchPad.getFloor()[0][3]);
+        Assertions.assertEquals(new TurtlePosition(0, 2), turtle.getCurrentPosition());
+        sketchPad.displayFloor();
     }
 
+//    @Test
+//    public void
 }

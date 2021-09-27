@@ -1,23 +1,23 @@
 package chapter10.Turtle;
 
-import static chapter10.Turtle.PenDirection.UP;
+import static chapter10.Turtle.PenPosition.UP;
 
 public class Pen {
-    PenDirection currentPenPosition = UP;
+    PenPosition currentPenPosition = UP;
 
-    public PenDirection getPosition() {
+    public PenPosition getPosition() {
         return currentPenPosition;
     }
 
-    public void setTurtlePositionTo(PenDirection currentPosition) {
+    public void setTurtlePositionTo(PenPosition currentPosition) {
         this.currentPenPosition = currentPosition;
     }
 
-    public void setPenPosition(PenDirection currentPenPosition) {
+    public void setPenPosition(PenPosition currentPenPosition) {
         this.currentPenPosition = currentPenPosition;
     }
 
-    public PenDirection getPenPosition() {
+    public PenPosition getPenPosition() {
         return currentPenPosition;
     }
 }
