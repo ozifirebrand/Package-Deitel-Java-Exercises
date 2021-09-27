@@ -275,5 +275,11 @@ class TurtleTest {
         sketchPad.displayFloor();
     }
 
+    @Test
+    @DisplayName("Test that turtle can draw shape")
+    public void testThatTurtleCanDrawShape(){
+        SketchPad sketchPad = new SketchPad(7, 7);
+
+    }
 
 }

@@ -42,6 +42,7 @@ import static chapter10.Turtle.PenPosition.*;
      }
 
      public void moveForward(int numberOfSteps) {
+
          if ( direction == EAST ) {
              int currentColumnPosition = turtlePosition.getColumnPosition();
              turtlePosition.setColumnPosition(currentColumnPosition + numberOfSteps - 1);

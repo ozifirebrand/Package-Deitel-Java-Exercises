@@ -18,6 +18,11 @@ public class TurtlePosition {
         return rowsAreEqual && columnsAreEqual;
     }
 
+    @Override
+    public String toString(){
+        return String.format("Turtle is at row %d and column %d%n", row, column);
+    }
+
     public int getColumnPosition() {
         return column;
     }
