@@ -1,10 +1,10 @@
  package chapter10.Turtle;
-
+import static chapter10.Turtle.Direction.*;
 import static chapter10.Turtle.PenPosition.*;
 
  public class Turtle {
      private TurtlePosition turtlePosition = new TurtlePosition(0, 0);
-     private Direction direction = Direction.EAST;
+     private Direction direction = EAST;
      private Pen newPen = new Pen();
 
      public Pen getNewPen() {
@@ -24,17 +24,17 @@ import static chapter10.Turtle.PenPosition.*;
      }
 
      public void turnRight() {
-         if ( direction == Direction.NORTH ) direction = Direction.EAST;
-         else if ( direction == Direction.WEST ) direction = Direction.NORTH;
-         else if ( direction == Direction.SOUTH ) direction = Direction.WEST;
-         else if ( direction == Direction.EAST ) direction = Direction.SOUTH;
+         if ( direction == NORTH ) direction = EAST;
+         else if ( direction == WEST ) direction = NORTH;
+         else if ( direction == SOUTH ) direction = WEST;
+         else if ( direction == EAST ) direction = SOUTH;
      }
 
      public void turnLeft() {
-         if ( direction == Direction.EAST ) direction = Direction.NORTH;
-         else if ( direction == Direction.NORTH ) direction = Direction.WEST;
-         else if ( direction == Direction.WEST ) direction = Direction.SOUTH;
-         else if ( direction == Direction.SOUTH ) direction = Direction.EAST;
+         if ( direction == EAST ) direction = NORTH;
+         else if ( direction == NORTH ) direction = WEST;
+         else if ( direction == WEST ) direction = SOUTH;
+         else if ( direction == SOUTH ) direction = EAST;
      }
 
      public TurtlePosition getCurrentPosition() {
@@ -42,16 +42,16 @@ import static chapter10.Turtle.PenPosition.*;
      }
 
      public void moveForward(int numberOfSteps) {
-         if ( direction == Direction.EAST ) {
+         if ( direction == EAST ) {
              int currentColumnPosition = turtlePosition.getColumnPosition();
              turtlePosition.setColumnPosition(currentColumnPosition + numberOfSteps - 1);
-         } else if ( direction == Direction.SOUTH ) {
+         } else if ( direction == SOUTH ) {
              int currentRowPosition = turtlePosition.getRowPosition();
              turtlePosition.setRowPosition(currentRowPosition + numberOfSteps -1);
-         } else if ( direction == Direction.WEST ) {
+         } else if ( direction == WEST ) {
              int columnPosition = turtlePosition.getColumnPosition();
              turtlePosition.setColumnPosition(columnPosition - numberOfSteps);
-         } else if ( direction == Direction.NORTH ) {
+         } else if ( direction == NORTH ) {
              int rowPosition = turtlePosition.getRowPosition();
              turtlePosition.setRowPosition(rowPosition - numberOfSteps);
          }
@@ -60,19 +60,27 @@ import static chapter10.Turtle.PenPosition.*;
      public void writeOn(SketchPad sketchPad, int numberOfMoves) {
          int [][] floor = sketchPad.getFloor();
          if ( this.newPen.getPosition() == DOWN ) {
-             if ( this.direction == Direction.EAST ) {
+             if ( this.direction == EAST ) {
                  int rowPosition = turtlePosition.getRowPosition();
                  int columnPosition = turtlePosition.getColumnPosition();
 
                  for (int index = 0; index < numberOfMoves; index++){
                      floor[rowPosition][columnPosition+index] =1;
                  }
-             }else if ( this.direction == Direction.SOUTH ){
+             }else if ( this.direction == SOUTH ){
                  int rowPosition = turtlePosition.getRowPosition();
                  int columnPosition = turtlePosition.getColumnPosition();
 
                  for ( int index = 0; index < numberOfMoves; index++){
                      floor[rowPosition+index][columnPosition] = 1;
+                 }
+             }
+         }else if ( newPen.getPosition() == UP ){
+             if ( direction == WEST ){
+                 int rowPosition = turtlePosition.getRowPosition();
+                 int columnPosition = turtlePosition.getColumnPosition();
+                 for (int index =0; index<numberOfMoves; index++){
+                     floor[rowPosition][columnPosition-index] = 4;
                  }
              }
          }

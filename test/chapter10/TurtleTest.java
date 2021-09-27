@@ -231,4 +231,21 @@ class TurtleTest {
         Assertions.assertEquals(new TurtlePosition(4, 0),turtle.getCurrentPosition());
         sketchPad.displayFloor();
     }
+
+    @Test
+    @DisplayName("Test that turtle can write at west")
+    public void testThatTurtleCanWriteAtWest(){
+            //given
+        SketchPad sketchPad = new SketchPad(7, 7);
+        int [] [] floor = sketchPad.getFloor();
+            //when
+        turtle.moveForward(5);
+        turtle.turnRight();
+        turtle.turnRight();
+        turtle.writeOn(sketchPad, 3);
+
+        Assertions.assertEquals(4, floor[0][4]);
+        Assertions.assertEquals(4, floor[0][3]);
+        Assertions.assertEquals(4, floor[0][2]);
+    }
 }
