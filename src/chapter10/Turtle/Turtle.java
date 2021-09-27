@@ -1,11 +1,10 @@
-package chapter10.Turtle;
+ package chapter10.Turtle;
 
 import chapter10.Direction;
+import chapter10.SketchPad;
 import chapter10.TurtlePosition;
 
-import java.util.Objects;
-
-public class Turtle {
+ public class Turtle {
     private TurtlePosition turtlePosition = new TurtlePosition(0,0);
     private Direction direction = Direction.EAST;
     private Pen newPen = new Pen();
@@ -16,11 +15,11 @@ public class Turtle {
     }
 
     public void penDown() {
-        newPen.setTurtlePositionTo(PenPosition.DOWN);
+        newPen.setTurtlePositionTo(PenDirection.DOWN);
     }
 
     public void penUp(){
-        newPen.setTurtlePositionTo(PenPosition.UP);
+        newPen.setTurtlePositionTo(PenDirection.UP);
     }
 
     public Direction getCurrentDirection() {
@@ -43,12 +42,28 @@ public class Turtle {
 
     public TurtlePosition getCurrentPosition() {
         return turtlePosition;
-
     }
 
-    public void moveForward() {
+    public void moveForward(int numberOfSteps) {
+        if ( direction == Direction.EAST )
+        {
+            int currentColumnPosition = turtlePosition.getColumnPosition();
+            turtlePosition.setColumnPosition(currentColumnPosition + numberOfSteps);
+        }
+        else if ( direction == Direction.SOUTH ){
+            int rowPosition = turtlePosition.getRowPosition();
+            turtlePosition.setRowPosition(rowPosition + numberOfSteps);
+        }else if ( direction == Direction.WEST ){
+            int columnPosition = turtlePosition.getColumnPosition();
+            turtlePosition.setColumnPosition(columnPosition- numberOfSteps);
+        }else if ( direction == Direction.NORTH ){
+            int rowPosition = turtlePosition.getRowPosition();
+            turtlePosition.setRowPosition(rowPosition-numberOfSteps);
+        }
     }
 
+    public void writeOn(SketchPad sketchPad, int numberOfMoves) {
+    }
 
 //fixme Same is used for singletons
 //todo is also a keyword that highlights stuffs

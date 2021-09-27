@@ -17,4 +17,24 @@ public class TurtlePosition {
         boolean columnsAreEqual = Integer.compare(column, comparedTurtlePosition.column)==0;
         return rowsAreEqual && columnsAreEqual;
     }
+
+    public int increaseNumberOfSteps(int numberOfSteps) {
+        return column + numberOfSteps;
+    }
+
+    public int getColumnPosition() {
+        return column;
+    }
+
+    public void setColumnPosition(int numberOfSteps) {
+        column += numberOfSteps;
+    }
+
+    public int getRowPosition(){
+        return row;
+    }
+
+    public void setRowPosition(int numberOfRows){
+        row += numberOfRows;
+    }
 }
