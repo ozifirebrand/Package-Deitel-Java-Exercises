@@ -76,18 +76,22 @@ import static chapter10.Turtle.PenPosition.*;
                  for (int index = 0; index< numberOfMoves; index++){
                      floor[rowPosition][columnPosition-index] = 1;
                  }
+             }else if ( direction ==NORTH ){
+                 for (int index = 0; index < numberOfMoves;index++){
+                     floor[rowPosition-index][columnPosition]= 1;
+                 }
              }
          }else if ( newPen.getPosition() == UP ){
 
              if ( direction == WEST ){
-                 rowPosition = turtlePosition.getRowPosition();
-                 columnPosition = turtlePosition.getColumnPosition();
                  for (int index =0; index<numberOfMoves; index++){
                      floor[rowPosition][columnPosition-index] = 4;
                  }
+             }else if ( direction == SOUTH ){
+                 for (int index = 0; index < numberOfMoves; index++){
+                     floor[rowPosition+index][columnPosition] =4;
+                 }
              }else if ( direction==EAST ){
-                 rowPosition = turtlePosition.getRowPosition();
-                 columnPosition = turtlePosition.getColumnPosition();
                  for (int index = 0; index < numberOfMoves; index++){
                      floor[rowPosition][columnPosition + index]= 4;
                  }

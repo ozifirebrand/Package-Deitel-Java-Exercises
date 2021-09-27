@@ -11,10 +11,12 @@ class TurtleTest {
     Turtle turtle;
     Pen pen;
 
+
     @BeforeEach
     public void setUp() {
         turtle = new Turtle();
         pen = turtle.getNewPen();
+
     }
 
     @Test
@@ -239,7 +241,6 @@ class TurtleTest {
         SketchPad sketchPad = new SketchPad(7, 7);
         int [] [] floor = sketchPad.getFloor();
             //when
-
         turtle.writeOn(sketchPad, 5);
         Assertions.assertEquals(4, floor[0][4]);
         Assertions.assertEquals(4, floor[0][3]);
@@ -248,10 +249,31 @@ class TurtleTest {
         turtle.turnRight();
         turtle.turnRight();
         turtle.writeOn(sketchPad, 3);
+            //assert
         Assertions.assertEquals(1, floor[0][4]);
         Assertions.assertEquals(1, floor[0][3]);
         Assertions.assertEquals(1, floor[0][2]);
         Assertions.assertEquals(4, floor[0][1]);
         sketchPad.displayFloor();
     }
+
+    @Test
+    @DisplayName("Test that turtle can write at north")
+    public void testThatTurtleCanWriteAtNorth(){
+        //given
+        SketchPad sketchPad = new SketchPad(7, 7);
+        int [][] floor = sketchPad.getFloor();
+        turtle.turnRight();
+        turtle.writeOn(sketchPad, 6);
+        Assertions.assertEquals(4, floor[5][0]);
+        turtle.turnLeft();
+        turtle.turnLeft();
+        turtle.penDown();
+        turtle.writeOn(sketchPad, 5);
+        Assertions.assertEquals(1, floor[1][0]);
+        Assertions.assertEquals(4, floor[0][0]);
+        sketchPad.displayFloor();
+    }
+
+
 }
