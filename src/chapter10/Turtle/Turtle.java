@@ -1,14 +1,11 @@
  package chapter10.Turtle;
 
-import chapter10.Direction;
-import chapter10.SketchPad;
-import chapter10.TurtlePosition;
+import chapter10.Direction; import chapter10.SketchPad; import chapter10.TurtlePosition;
 
  public class Turtle {
      private TurtlePosition turtlePosition = new TurtlePosition(0, 0);
      private Direction direction = Direction.EAST;
      private Pen newPen = new Pen();
-
 
      public Pen getNewPen() {
          return newPen;

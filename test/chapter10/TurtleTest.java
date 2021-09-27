@@ -60,7 +60,7 @@ class TurtleTest {
 
     @Test
     @DisplayName("Test that turtle can turn right while facing south")
-    public void testThatTurtleCanTurnRight2(){
+    public void testThatTurtleCanTurnRight2() {
         //when
         turtle.turnRight();
         Assertions.assertSame(Direction.SOUTH, turtle.getCurrentDirection());
@@ -71,7 +71,7 @@ class TurtleTest {
 
     @Test
     @DisplayName("Test that turtle can turn right while facing west")
-    public void testThatTurtleCanTurnRight3(){
+    public void testThatTurtleCanTurnRight3() {
         //given
         turtle.turnRight();
         Assertions.assertSame(Direction.SOUTH, turtle.getCurrentDirection());
@@ -85,7 +85,7 @@ class TurtleTest {
 
     @Test
     @DisplayName("Test that turtle can turn right while facing north")
-    public void testThatTurtleCanTurnRight4(){
+    public void testThatTurtleCanTurnRight4() {
         //given
         turtle.turnRight();
         Assertions.assertSame(Direction.SOUTH, turtle.getCurrentDirection());
@@ -101,7 +101,7 @@ class TurtleTest {
 
     @Test
     @DisplayName("Test that turtle can turn left while facing east")
-    public void testThatTurtleCanTurnLeft(){
+    public void testThatTurtleCanTurnLeft() {
         turtle.turnLeft();
         Assertions.assertSame(Direction.NORTH, turtle.getCurrentDirection());
     }
@@ -109,7 +109,7 @@ class TurtleTest {
 
     @Test
     @DisplayName("Test that turtle can turn left while facing north")
-    public void testThatTurtleCanTurnLeft2(){
+    public void testThatTurtleCanTurnLeft2() {
         turtle.turnLeft();
         Assertions.assertSame(Direction.NORTH, turtle.getCurrentDirection());
         turtle.turnLeft();
@@ -118,7 +118,7 @@ class TurtleTest {
 
     @Test
     @DisplayName("Test that turtle can turn left while facing west")
-    public void testThatTurtleCanTurnLeft3(){
+    public void testThatTurtleCanTurnLeft3() {
         //WHEN
         turtle.turnLeft();
         Assertions.assertSame(Direction.NORTH, turtle.getCurrentDirection());
@@ -131,7 +131,7 @@ class TurtleTest {
 
     @Test
     @DisplayName("Test that turtle can turn left while facing south")
-    public void testThatTurtleCanTurnLeft4(){
+    public void testThatTurtleCanTurnLeft4() {
         //WHEN
         turtle.turnLeft();
         Assertions.assertSame(Direction.NORTH, turtle.getCurrentDirection());
@@ -146,16 +146,16 @@ class TurtleTest {
 
     @Test
     @DisplayName("Test that turtle can move forward while facing east")
-    public void testThatTurtleCanMoveForwardWhileFacingEast(){
+    public void testThatTurtleCanMoveForwardWhileFacingEast() {
 //        given
         Assertions.assertSame(Direction.EAST, turtle.getCurrentDirection());
         turtle.moveForward(5);
-        Assertions.assertEquals(new TurtlePosition(0,5), turtle.getCurrentPosition());
+        Assertions.assertEquals(new TurtlePosition(0, 5), turtle.getCurrentPosition());
     }
 
     @Test
     @DisplayName("Test that turtle can move forward while facing south")
-    public void testThatTurtleCanMoveForwardInSouth(){
+    public void testThatTurtleCanMoveForwardInSouth() {
         //given ...
         //when
         turtle.turnRight();
@@ -166,7 +166,7 @@ class TurtleTest {
 
     @Test
     @DisplayName("Test that turtle can move forward while on west position")
-    public void testThatTurtleCanMoveForwardAtWest(){
+    public void testThatTurtleCanMoveForwardAtWest() {
         //given ...
         //when
         turtle.turnRight();
@@ -179,7 +179,7 @@ class TurtleTest {
 
     @Test
     @DisplayName("Test that turtle can move forward while on north direction")
-    public void testThatTurtleCanMoveForwardAtNorth(){
+    public void testThatTurtleCanMoveForwardAtNorth() {
         //given ...
         //when
         turtle.turnRight();
@@ -190,15 +190,16 @@ class TurtleTest {
         //assert
         Assertions.assertEquals(new TurtlePosition(-4, 0), turtle.getCurrentPosition());
     }
+
     @Test
-    public void testCanWriteOnSketchPad(){
+    public void testCanWriteOnSketchPad() {
         //given
         turtle.penDown();
         Assertions.assertSame(Direction.EAST, turtle.getCurrentDirection());
         SketchPad sketchPad = new SketchPad(5, 5);
         turtle.writeOn(sketchPad, 3);
         //assert
-        int [][] floor = sketchPad.getFloor();
+        int[][] floor = sketchPad.getFloor();
         Assertions.assertEquals(1, floor[0][0]);
         Assertions.assertEquals(1, floor[0][1]);
         Assertions.assertEquals(1, floor[0][2]);
@@ -206,7 +207,4 @@ class TurtleTest {
         Assertions.assertEquals(new TurtlePosition(0, 2), turtle.getCurrentPosition());
         sketchPad.displayFloor();
     }
-
-//    @Test
-//    public void
 }

@@ -13,9 +13,7 @@ public class Pen {
         this.currentPenPosition = currentPosition;
     }
 
-    public void setPenPosition(PenPosition currentPenPosition) {
-        this.currentPenPosition = currentPenPosition;
-    }
+    public void setPenPosition(PenPosition currentPenPosition) { this.currentPenPosition = currentPenPosition; }
 
     public PenPosition getPenPosition() {
         return currentPenPosition;
