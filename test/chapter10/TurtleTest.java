@@ -269,17 +269,21 @@ class TurtleTest {
         turtle.turnLeft();
         turtle.turnLeft();
         turtle.penDown();
+        //when
         turtle.writeOn(sketchPad, 5);
+        //assert
         Assertions.assertEquals(1, floor[1][0]);
         Assertions.assertEquals(4, floor[0][0]);
         sketchPad.displayFloor();
     }
 
-    @Test
-    @DisplayName("Test that turtle can draw shape")
-    public void testThatTurtleCanDrawShape(){
-        SketchPad sketchPad = new SketchPad(7, 7);
-
-    }
-
+//    @Test
+//    @DisplayName("Test that turtle can draw shape")
+//    public void testThatTurtleCanDrawShape(){
+//        SketchPad sketchPad = new SketchPad(7, 7);
+//        int [] [] floor = sketchPad.getFloor();
+//        turtle.penDown();
+//        turtle.writeOn(sketchPad, 8);
+//        Assertions.assertEquals(new TurtlePosition(0, 6), turtle.getCurrentPosition());
+//    }
 }
