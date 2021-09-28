@@ -96,6 +96,10 @@ import static chapter10.Turtle.PenPosition.*;
                  for (int index = 0; index < numberOfMoves; index++){
                      floor[rowPosition][columnPosition + index]= 4;
                  }
+             }else if ( direction == NORTH ){
+                 for (int index=0; index< numberOfMoves; index++){
+                     floor[rowPosition-index][columnPosition] = 4;
+                 }
              }
          }
         moveForward(numberOfMoves);
