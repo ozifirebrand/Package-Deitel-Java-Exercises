@@ -1,5 +1,4 @@
 package chapter10.Turtle;
-import chapter10.Turtle.*;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -8,7 +7,6 @@ public class TurtleMain {
     public static void main(String[] args) {
         Turtle turtle = new Turtle();
         SketchPad sketchPad = new SketchPad(20, 20);
-        TurtlePosition turtlePosition = new TurtlePosition(0, 0);
         ArrayList<Integer> turtleInputs = new ArrayList<>();
         Scanner scanner = new Scanner(System.in);
         System.out.println("""
@@ -69,16 +67,5 @@ public class TurtleMain {
             }
         }
         sketchPad.displayFloor();
-
-
-
-
-
-
-
-
-
-
-
     }
 }
