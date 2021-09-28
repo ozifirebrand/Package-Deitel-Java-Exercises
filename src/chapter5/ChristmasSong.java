@@ -1,5 +1,7 @@
 package chapter5;
 
+import java.util.Scanner;
+
 public class ChristmasSong {
 
     String christmasActivity = "";
@@ -66,7 +68,12 @@ public class ChristmasSong {
 
 
     public static void main(String[] args) {
-        //conditionForDisplay(5);
-        dayOfChristmasMethod(conditionForDisplay(6));
+        int daysOfChristmas = 12;
+        int daysFromOne = 1;
+        while ( daysFromOne <= daysOfChristmas ) {
+            dayOfChristmasMethod(conditionForDisplay(daysFromOne));
+            System.out.println();
+            daysFromOne ++;
+        }
     }
 }

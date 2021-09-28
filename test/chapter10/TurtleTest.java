@@ -248,12 +248,13 @@ class TurtleTest {
         turtle.penDown();
         turtle.turnRight();
         turtle.turnRight();
-        turtle.writeOn(sketchPad, 3);
+        turtle.writeOn(sketchPad, 5);
             //assert
         Assertions.assertEquals(1, floor[0][4]);
         Assertions.assertEquals(1, floor[0][3]);
         Assertions.assertEquals(1, floor[0][2]);
-        Assertions.assertEquals(4, floor[0][1]);
+        Assertions.assertEquals(1, floor[0][1]);
+        Assertions.assertEquals(1, floor[0][0]);
         sketchPad.displayFloor();
     }
 
@@ -270,10 +271,10 @@ class TurtleTest {
         turtle.turnLeft();
         turtle.penDown();
         //when
-        turtle.writeOn(sketchPad, 5);
+        turtle.writeOn(sketchPad, 6);
         //assert
         Assertions.assertEquals(1, floor[1][0]);
-        Assertions.assertEquals(4, floor[0][0]);
+        Assertions.assertEquals(1, floor[0][0]);
         sketchPad.displayFloor();
     }
 

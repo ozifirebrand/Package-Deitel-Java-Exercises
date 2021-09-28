@@ -23,9 +23,7 @@ public class TurtlePosition {
         return String.format("Turtle is at row %d and column %d%n", row, column);
     }
 
-    public int getColumnPosition() {
-        return column;
-    }
+    public int getColumnPosition() { return column; }
 
     public void setColumnPosition(int numberOfSteps) {
         column += numberOfSteps;

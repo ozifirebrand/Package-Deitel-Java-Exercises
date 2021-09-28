@@ -51,33 +51,38 @@ import static chapter10.Turtle.PenPosition.*;
              turtlePosition.setRowPosition(currentRowPosition + numberOfSteps -1);
          } else if ( direction == WEST ) {
              int columnPosition = turtlePosition.getColumnPosition();
-             turtlePosition.setColumnPosition(columnPosition - numberOfSteps);
+             turtlePosition.setColumnPosition(columnPosition - numberOfSteps - 1);
          } else if ( direction == NORTH ) {
              int rowPosition = turtlePosition.getRowPosition();
-             turtlePosition.setRowPosition(rowPosition - numberOfSteps);
+             turtlePosition.setRowPosition(rowPosition - numberOfSteps - 1);
          }
      }
 
      public void writeOn(SketchPad sketchPad, int numberOfMoves) {
          int [][] floor = sketchPad.getFloor();
-         int rowPosition = turtlePosition.getRowPosition();
-         int columnPosition = turtlePosition.getColumnPosition();
 
          if ( this.newPen.getPosition() == DOWN ) {
              if ( this.direction == EAST ) {
-
+                 int rowPosition = turtlePosition.getRowPosition();
+                 int columnPosition = turtlePosition.getColumnPosition();
                  for (int index = 0; index < numberOfMoves; index++){
                      floor[rowPosition][columnPosition+index] =1;
                  }
              }else if ( this.direction == SOUTH ){
+                 int rowPosition = turtlePosition.getRowPosition();
+                 int columnPosition = turtlePosition.getColumnPosition();
                  for ( int index = 0; index < numberOfMoves; index++){
                      floor[rowPosition+index][columnPosition] = 1;
                  }
              } else if ( direction == WEST ) {
+                 int rowPosition = turtlePosition.getRowPosition();
+                 int columnPosition = turtlePosition.getColumnPosition();
                  for (int index = 0; index< numberOfMoves; index++){
                      floor[rowPosition][columnPosition-index] = 1;
                  }
              }else if ( direction ==NORTH ){
+                 int rowPosition = turtlePosition.getRowPosition();
+                 int columnPosition = turtlePosition.getColumnPosition();
                  for (int index = 0; index < numberOfMoves;index++){
                      floor[rowPosition-index][columnPosition]= 1;
                  }
@@ -85,18 +90,26 @@ import static chapter10.Turtle.PenPosition.*;
          }else if ( newPen.getPosition() == UP ){
 
              if ( direction == WEST ){
+                 int rowPosition = turtlePosition.getRowPosition();
+                 int columnPosition = turtlePosition.getColumnPosition();
                  for (int index =0; index<numberOfMoves; index++){
                      floor[rowPosition][columnPosition-index] = 4;
                  }
              }else if ( direction == SOUTH ){
+                 int rowPosition = turtlePosition.getRowPosition();
+                 int columnPosition = turtlePosition.getColumnPosition();
                  for (int index = 0; index < numberOfMoves; index++){
                      floor[rowPosition+index][columnPosition] =4;
                  }
              }else if ( direction==EAST ){
+                 int rowPosition = turtlePosition.getRowPosition();
+                 int columnPosition = turtlePosition.getColumnPosition();
                  for (int index = 0; index < numberOfMoves; index++){
                      floor[rowPosition][columnPosition + index]= 4;
                  }
              }else if ( direction == NORTH ){
+                 int rowPosition = turtlePosition.getRowPosition();
+                 int columnPosition = turtlePosition.getColumnPosition();
                  for (int index=0; index< numberOfMoves; index++){
                      floor[rowPosition-index][columnPosition] = 4;
                  }
