@@ -1,6 +1,5 @@
 package ClassWork.kata;
 
-import ClassWork.kata.Screen;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -155,9 +154,12 @@ class SevenSegmentDisplayTest {
     }
 
     @Test
-    public void trailingZeros(){
-        //given
-
+    public void trailingZerosTest(){
+        display.setScreen("1111");
+        int [][] screen = display.getScreen();
+        for (int i = 0; i < 4; i++){
+            Assertions.assertEquals(0, screen[0][i]);
+        }
     }
 
 }
