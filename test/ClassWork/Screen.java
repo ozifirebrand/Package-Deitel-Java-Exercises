@@ -2,15 +2,12 @@ package ClassWork;
 
 public class Screen {
 
-    int [][] screen ;
-    int row;
-    int column;
+    int [][] screen;
     public Screen(){
-
     }
 
-    public int displayScreenValue() {
-        return screen[row][column];
+    public int[][] displayScreen() {
+        return screen;
     }
 
     public void setScreen() {

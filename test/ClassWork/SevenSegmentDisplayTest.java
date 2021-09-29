@@ -3,8 +3,6 @@ package ClassWork;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import java.util.Arrays;
-
 
 class SevenSegmentDisplayTest {
     @Test
@@ -14,6 +12,16 @@ class SevenSegmentDisplayTest {
         //when
         screen.setScreen();
         //assert
-        Assertions.assertEquals(0, screen.displayScreenValue());
+        Assertions.assertEquals(new int[5] [4], screen.displayScreen());
     }
+//
+//    @Test
+//    public void testThatRowsCanBeSetInScreen(){
+//        //given
+//        Screen screen = new Screen();
+//        //when
+//        screen.setScreenRow();
+//        //assert
+//        Assertions.assertEquals(4, screen.getScreenRow());
+//    }
 }
