@@ -2,10 +2,13 @@ package ClassWork;
 
 public class Screen {
 
-    int [][] screen;
-    public Screen(){
-    }
+    int [][] screen ;
+    int numberOfRows;
+    int numberOfColumns;
 
+    public Screen( int [][] screen){
+        this.screen = screen;
+    }
     public int[][] displayScreen() {
         return screen;
     }
