@@ -1,7 +1,11 @@
 package ClassWork;
 
 public class Screen {
+
+    int row;
+    int column;
     public Screen(){
-        int [][] screen = new int[5][4];
+        column = 4;
+        row = 5;
     }
 }
