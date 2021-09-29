@@ -1,4 +1,4 @@
-package ClassWork;
+package ClassWork.kata;
 
 public class Screen {
 
@@ -6,8 +6,8 @@ public class Screen {
     int numberOfRows;
     int numberOfColumns;
 
-    public Screen( int [][] screen){
-        this.screen = screen;
+    public Screen( ){
+        screen = new int[5][4];
     }
     public int[][] displayScreen() {
         return screen;
