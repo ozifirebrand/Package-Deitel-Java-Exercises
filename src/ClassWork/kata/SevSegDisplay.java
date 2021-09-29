@@ -70,23 +70,19 @@ public class SevSegDisplay {
         for (char number : numbers.toCharArray()){
             if ( number != '1' && number != '0' ) throw new IllegalArgumentException("Inappropriate input.");
         }
-        for (int index = 0; index < numbers.length() -1; index++){
-        if ( numbers.charAt(0) == '1' ){
-            writeOnA();
-        }if ( numbers.charAt(1) == '1' ){
-                writeOnB();
-        }if ( numbers.charAt(2) == '1' ){
-                writeOnC();
-        }if ( numbers.charAt(3) == '1' ){
-                writeOnD();
-        }if ( numbers.charAt(4) == '1' ){
-                writeOnE();
-        }if ( numbers.charAt(5) == '1' ){
-                writeOnF();
-        }if ( numbers.charAt(6) == '1' ){
-                writeOnG();
+        for (int index = 0; index < numbers.length() -1; index++) {
+            if ( numbers.charAt(7) != '0' ) {
+                if ( numbers.charAt(0) == '1' ) {
+                    writeOnA();
+                }
+                if ( numbers.charAt(1) == '1' ) { writeOnB(); }
+                if ( numbers.charAt(2) == '1' ) { writeOnC(); }
+                if ( numbers.charAt(3) == '1' ) { writeOnD(); }
+                if ( numbers.charAt(4) == '1' ) { writeOnE(); }
+                if ( numbers.charAt(5) == '1' ) { writeOnF(); }
+                if ( numbers.charAt(6) == '1' ) { writeOnG(); }
+            }else { clear();}
         }
-    }
 }
 }
 

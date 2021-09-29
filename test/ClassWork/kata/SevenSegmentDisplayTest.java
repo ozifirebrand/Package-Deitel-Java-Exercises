@@ -145,4 +145,19 @@ class SevenSegmentDisplayTest {
         Assertions.assertThrows(IllegalArgumentException.class, ()->display.setScreen("28746106194"));
     }
 
+    @Test
+    public void lastOneBitCanRunTheCode(){
+        display.setScreen("11001100");
+        int [][] screen = display.getScreen();
+        for (int i = 2; i< 5; i++){
+            Assertions.assertEquals(0, screen[i][3]);
+        }
+    }
+
+    @Test
+    public void trailingZeros(){
+        //given
+
+    }
+
 }
