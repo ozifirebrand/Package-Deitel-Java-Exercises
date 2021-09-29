@@ -1,5 +1,6 @@
 package ClassWork;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class SevenSegmentDisplay {
@@ -15,6 +16,16 @@ public class SevenSegmentDisplay {
         }
     }
 
+    public void initialiseArrays(int [][] segmentDisplay){
+        for (int[] ints : segmentDisplay) {
+            Arrays.fill(ints, 0);
+        }
+    }
+
+    public void collectInput(String input){
+
+    }
+
     public void printArrays(int [][] segmentDisplay){
         for (int[] rows : segmentDisplay) {
             for (int columns : rows) {
@@ -26,12 +37,5 @@ public class SevenSegmentDisplay {
             }
             System.out.println();
         }
-    }
-
-    public static void main(String[] args) {
-        int [] [] segmentDisplay = new int[5][4];
-        SevenSegmentDisplay sevenSegment = new SevenSegmentDisplay();
-        sevenSegment.arrayss(segmentDisplay);
-        sevenSegment.printArrays(segmentDisplay);
     }
 }
