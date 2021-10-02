@@ -119,6 +119,27 @@ class ShoppingCartTest {
     }
 
     @Test
+    @DisplayName("Test that user can pay with visa card")
+    public void testThatPaymentIsThroughVisaCard(){
+        //given
+        User person = new User();
+        //when
+        person.payWith(CardType.VISA_CARD);
+        //assert
+        assertSame(CardType.VISA_CARD, person.paidWith());
+    }
+
+    @Test
+    @DisplayName("Test that user can pay with America express")
+    public void testThatPaymentIsThroughAmericaExpress(){
+        //given
+        User person = new User();
+        //when
+        person.payWith(CardType.AMERICA_EXPRESS);
+        //assert
+        assertSame(CardType.AMERICA_EXPRESS, person.paidWith());
+    }
+    @Test
     @DisplayName("User has many billing information")
     public void testThatUserHasManyBillingInformation(){
         //given
@@ -129,8 +150,39 @@ class ShoppingCartTest {
         billingInformation.add(new BillingInformation());
         //assert
         assertEquals( billingInformation , person.getBillingInformation());
+    }
 
+    @Test
+    @DisplayName("Test that user has a name")
+    public void testUserHasAName(){
+        //given
+        User person = new User();
+        //when
+        person.setName("Onuoha");
+        //assert
+        assertEquals("Onuoha", person.getName());
+    }
 
+    @Test
+    @DisplayName("Test that product is a grocery")
+    public void testThatProductIsAGrocery(){
+        //given
+        Product product = new Product();
+        //when
+        product.setProductCategory(ProductCategory.GROCERIES);
+        //assert
+        assertEquals(ProductCategory.GROCERIES, product.getProductCategory());
+    }
+
+    @Test
+    @DisplayName("Test that product category is electronics")
+    public void testProductCategoryIsElectronics(){
+        //given
+        Product product = new Product();
+        //when
+        product.setProductCategory(ProductCategory.ELECTRONICS);
+        //assert
+        assertEquals(ProductCategory.ELECTRONICS, product.getProductCategory());
     }
 
 }
