@@ -106,4 +106,18 @@ class ShoppingCartTest {
         assertEquals(90, cart.getTotalPriceOfItemsInCart());
     }
 
+    @Test
+    @DisplayName("Test that user can pay with verve card")
+    public void testThatPaymentIsThroughVerve(){
+        //given
+        User person = new User();
+        CardType cardType;
+        cardType = CardType.VERVE;
+        //when
+        person.payWith(cardType);
+        //assert
+
+
+    }
+
 }
