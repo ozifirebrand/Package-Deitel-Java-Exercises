@@ -111,11 +111,24 @@ class ShoppingCartTest {
     public void testThatPaymentIsThroughVerve(){
         //given
         User person = new User();
-        CardType cardType;
-        cardType = CardType.VERVE;
         //when
-        person.payWith(cardType);
+        person.payWith(CardType.VERVE);
         //assert
+        assertSame(CardType.VERVE, person.paidWith());
+
+    }
+
+    @Test
+    @DisplayName("User has many billing information")
+    public void testThatUserHasManyBillingInformation(){
+        //given
+        User person = new User();
+        ArrayList<BillingInformation> billingInformation = new ArrayList<>();
+        //when
+        person.giveBillingInformation(new BillingInformation());
+        billingInformation.add(new BillingInformation());
+        //assert
+        assertEquals( billingInformation , person.getBillingInformation());
 
 
     }
