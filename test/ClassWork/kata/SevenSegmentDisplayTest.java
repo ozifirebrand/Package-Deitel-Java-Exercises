@@ -160,8 +160,6 @@ class SevenSegmentDisplayTest {
         display.clear();
         display.setScreen("1111");
         int [][] screen = display.getScreen();
-        System.out.println(Arrays.deepToString(screen));
-        display.display();
         for (int i = 1; i < 4; i++){
             Assertions.assertEquals(0, screen[0][i]);
         }
