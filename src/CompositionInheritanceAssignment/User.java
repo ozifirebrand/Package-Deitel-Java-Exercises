@@ -3,13 +3,12 @@ package CompositionInheritanceAssignment;
 import java.util.ArrayList;
 
 public class User {
+    int amountPaidByUser;
+    public void payForItem(int amountPaid) {
+        amountPaidByUser = amountPaid;
+    }
 
-   //private ArrayList<User> users =new ArrayList<>();
-   private int age;
-   private String email;
-   private String homeAddress;
-   private String name;
-   private String password;
-   private String phone;
-
+    public int getAmountPaidByUser() {
+        return amountPaidByUser;
+    }
 }
