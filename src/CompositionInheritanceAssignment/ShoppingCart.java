@@ -20,7 +20,16 @@ public class ShoppingCart {
     }
 
     public void computeTotalPriceOfItemsInCart() {
-        for (Item item : items)
-        totalPriceOfItems += item.computeTotalOfItem();
+        for (Item item : items) {
+            item.computeTotalOfItem();
+            totalPriceOfItems += item.displayTotalOfItem();
+        }
+    }
+
+    public void displayItems() {
+        for (Item item : items){
+            item.computeTotalOfItem();
+            System.out.println(item.getItemName() +"\t" +item.displayPrice() + "\t" +item.displayQuantity() + "\t" +item.displayTotalOfItem());
+        }
     }
 }

@@ -14,7 +14,7 @@ class ShoppingCartTest {
     public void testThatUserCanAddItemToCart(){
         //given
         ShoppingCart cart = new ShoppingCart();
-        Item item = new Item();
+        Item item = new Item("Tea", 10, 1);
         ArrayList<Item> items = new ArrayList<>();
         //when
         cart.addItemToCart(item);
@@ -30,8 +30,8 @@ class ShoppingCartTest {
         //given
         ShoppingCart cart = new ShoppingCart();
         ArrayList<Item> items = new ArrayList<>();
-        Item item = new Item();
-        Item item2 = new Item();
+        Item item = new Item("Ope", 10, 1);
+        Item item2 = new Item("Sugar", 4, 13);
         //when
         cart.addItemToCart(item);
         cart.addItemToCart(item2);
@@ -44,7 +44,7 @@ class ShoppingCartTest {
     @DisplayName("Test that item has price")
     public void testThatItemHasPrice(){
         //given
-        Item item = new Item();
+        Item item = new Item("Yoghurt", 50, 1);
         //when
         item.statePrice(50);
         //assert
@@ -55,9 +55,8 @@ class ShoppingCartTest {
     @DisplayName("Test that item has quantity")
     public void testThatItemHasQuantity(){
         //given
-        Item item = new Item();
+        Item item = new Item("Sleepy John", 65, 5);
         //when
-        item.stateQuantity(5);
         //assert
         assertEquals(5, item.displayQuantity());
     }
@@ -66,12 +65,11 @@ class ShoppingCartTest {
     @DisplayName("Test that item has quantity and price for computing total")
     public void testThatTotalItemPriceCanBeComputed(){
         //given
-        Item item = new Item();
+        Item item = new Item("John", 23, 2);
         //when
-        item.statePrice(23);
-        item.stateQuantity(2);
+        item.computeTotalOfItem();
         //assert
-        assertEquals(46, item.computeTotalOfItem());
+        assertEquals(46, item.displayTotalOfItem());
     }
 
     @Test
@@ -90,20 +88,14 @@ class ShoppingCartTest {
     public void testTheTotalOfItemsInCart(){
         //given
         ShoppingCart cart = new ShoppingCart();
-        ArrayList<Item> items = new ArrayList<>();
-        Item item1 = new Item();
-        Item item2 = new Item();
-        Item item3 = new Item();
+        Item item1 = new Item("Ready", 34, 2);
+        Item item2 = new Item("Scrabble", 1, 22);
+        Item item3 = new Item("Toma the legend", 5, 1);
         cart.addItemToCart(item1);
         cart.addItemToCart(item2);
         cart.addItemToCart(item3);
-
-        item1.statePrice(34);
-        item1.stateQuantity(2);
-        item2.statePrice(1);
-        item2.stateQuantity(22);
         cart.computeTotalPriceOfItemsInCart();
-        assertEquals(90, cart.getTotalPriceOfItemsInCart());
+        assertEquals(95, cart.getTotalPriceOfItemsInCart());
     }
 
     @Test
@@ -185,4 +177,21 @@ class ShoppingCartTest {
         assertEquals(ProductCategory.ELECTRONICS, product.getProductCategory());
     }
 
+    @Test
+    @DisplayName("Test that items in cart can be displayed  with their prices")
+    public void testThatItemsInCartCanBeDisplayed(){
+        //given
+        ShoppingCart cart = new ShoppingCart();
+        //when
+        Item item1 = new Item("Garri package", 34, 2);
+        Item item2 = new Item("Legacy by Nnari", 500, 1);
+        Item item3 = new Item("Ajewole the movie", 12, 3);
+        Item item4 = new Item("Omo", 10, 12);
+        cart.addItemToCart(item1);
+        cart.addItemToCart(item2);
+        cart.addItemToCart(item3);
+        cart.addItemToCart(item4);
+        cart.displayItems();
+
+    }
 }
