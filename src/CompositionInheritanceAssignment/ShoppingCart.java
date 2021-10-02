@@ -32,6 +32,7 @@ public class ShoppingCart {
             item.computeTotalOfItem();
             System.out.println(item);
         }
-        return "";
+        computeTotalPriceOfItemsInCart();
+        return getTotalPriceOfItemsInCart() + "";
     }
 }

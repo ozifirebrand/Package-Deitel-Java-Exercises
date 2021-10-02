@@ -212,4 +212,5 @@ class ShoppingCartTest {
         //assert
         assertEquals( 724, cart.getTotalPriceOfItemsInCart());
     }
+
 }
