@@ -3,7 +3,7 @@ package chapter7;
 import java.security.SecureRandom;
 import java.util.Arrays;
 
-public class TortoiseAndHare {
+public class   TortoiseAndHare {
     /*Contenders are hare and tortoise
     70x70 squares which are positions for the race
     Random numbers are generated.

@@ -4,6 +4,8 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.Arrays;
+
 
 class SevenSegmentDisplayTest {
     SevSegDisplay display;
@@ -62,7 +64,7 @@ class SevenSegmentDisplayTest {
 
     @Test
     public void test8(){
-        display.setScreen("11111111");
+        display.setScreen("111111");
         display.display();
     }
 
@@ -155,9 +157,12 @@ class SevenSegmentDisplayTest {
 
     @Test
     public void trailingZerosTest(){
+        display.clear();
         display.setScreen("1111");
         int [][] screen = display.getScreen();
-        for (int i = 0; i < 4; i++){
+        System.out.println(Arrays.deepToString(screen));
+        display.display();
+        for (int i = 1; i < 4; i++){
             Assertions.assertEquals(0, screen[0][i]);
         }
     }

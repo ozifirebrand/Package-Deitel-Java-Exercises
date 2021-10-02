@@ -70,10 +70,10 @@ public class SevSegDisplay {
         for (char number : numbers.toCharArray()){
             if ( number != '1' && number != '0' ) throw new IllegalArgumentException("Inappropriate input.");
         }
+        if ( numbers.length() < 8 ){ int input = Integer.parseInt(numbers);
+            numbers = String.format("%08d", input);}
         for (int index = 0; index < numbers.length() -1; index++) {
-            if ( numbers.charAt(numbers.length()-1) != '0' ) {
-                if ( numbers.length() < 8 ){ int input = Integer.parseInt(numbers);
-                    numbers = String.format("%08d", input);}
+            if ( numbers.charAt(numbers.length() - 1) == '1' ) {
                 if ( numbers.charAt(0) == '1' ) { writeOnA(); }
                 if ( numbers.charAt(1) == '1' ) { writeOnB(); }
                 if ( numbers.charAt(2) == '1' ) { writeOnC(); }
