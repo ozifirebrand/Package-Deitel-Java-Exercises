@@ -7,6 +7,11 @@ public class Item {
     private String itemName;
 
 
+    @Override
+    public String toString(){
+        return String.format("%-30s  %-8d  %-8d  %-10d  \n", itemName, itemPrice, itemQuantity, totalOfItem);
+    }
+
     public Item(String itemName, int itemPrice, int itemQuantity){
         this.itemName = itemName;
         this.itemPrice = itemPrice;

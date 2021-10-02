@@ -26,10 +26,12 @@ public class ShoppingCart {
         }
     }
 
-    public void displayItems() {
-        for (Item item : items){
+    @Override
+    public String toString(){
+        for (Item item: items){
             item.computeTotalOfItem();
-            System.out.println(item.getItemName() +"\t" +item.displayPrice() + "\t" +item.displayQuantity() + "\t" +item.displayTotalOfItem());
+            System.out.println(item);
         }
+        return "";
     }
 }

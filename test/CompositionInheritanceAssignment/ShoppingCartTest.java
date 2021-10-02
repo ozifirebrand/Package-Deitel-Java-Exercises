@@ -191,7 +191,25 @@ class ShoppingCartTest {
         cart.addItemToCart(item2);
         cart.addItemToCart(item3);
         cart.addItemToCart(item4);
-        cart.displayItems();
+        System.out.println(cart);
+    }
 
+    @Test
+    @DisplayName("Test that total of all items can be displayed")
+    public void testThatTotalCanBeDisplayedForItemsInCart(){
+        //given
+        ShoppingCart cart = new ShoppingCart();
+        //when
+        Item item1 = new Item("Garri package", 34, 2);
+        Item item2 = new Item("Legacy by Nnari", 500, 1);
+        Item item3 = new Item("Ajewole the movie", 12, 3);
+        Item item4 = new Item("Omo", 10, 12);
+        cart.addItemToCart(item1);
+        cart.addItemToCart(item2);
+        cart.addItemToCart(item3);
+        cart.addItemToCart(item4);
+        cart.computeTotalPriceOfItemsInCart();
+        //assert
+        assertEquals( 724, cart.getTotalPriceOfItemsInCart());
     }
 }
