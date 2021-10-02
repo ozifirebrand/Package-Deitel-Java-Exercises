@@ -11,8 +11,5 @@ public class Forest {
         for (Animal animal: animals){
             animal.move(); 
         }
-
-
-
     }
 }

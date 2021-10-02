@@ -34,6 +34,4 @@ public class Account {
             balance = (balance + amountDeposited <= 500000) ? (balance+ amountDeposited) : balance;
             System.out.println(balance);
         }
-
-
     }

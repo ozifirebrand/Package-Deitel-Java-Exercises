@@ -4,9 +4,6 @@ import java.util.Scanner;
 
 public class ShoppingCartMain {
 
-    public void takeInputs(){
-    }
-
     private String collectNameOfItem(){
         Scanner scanner = new Scanner(System.in);
         System.out.print("Item: ");
@@ -34,12 +31,16 @@ public class ShoppingCartMain {
         System.out.println("What will you buy today?");
         String itemName = m.collectNameOfItem();
         System.out.println();
+
         int itemPrice = m.collectPriceOfItem();
         int itemQuantity = m.collectQuantityOfItem();
+
         Item item = new Item(itemName, itemPrice, itemQuantity);
         cart.addItemToCart(item);
+
         System.out.print("Any other thing? ");
         String response = scanner.nextLine();
+
         while (response.equalsIgnoreCase("yes")){
             itemName = m.collectNameOfItem();
             System.out.println();
@@ -51,8 +52,5 @@ public class ShoppingCartMain {
             response = scanner.nextLine();
         }
         System.out.println(cart);
-
-
     }
-
 }
