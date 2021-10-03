@@ -14,11 +14,30 @@ public class CardValidation {
     }
 
     public void sumOfDoubleEvenNumber(String numbers) {
-        for (int index = numbers.length()-1; index > 0 ; index-=2){
-            char numberAtIndexInCharFormat = numbers.charAt(index);
-            int numberInIntFormat = Character.getNumericValue(numberAtIndexInCharFormat);
+        if ( cardNumberLength == 16 ){
+            calculateDoubleSum(numbers);
+        }else {
+            calculateDoubleSum(numbers);
+        }
+    }
+
+
+
+    private void calculateDoubleSum(String numbers) {
+        loopThroughStringOfNumbers(numbers);
+    }
+
+    private void loopThroughStringOfNumbers(String numbers) {
+        for (int index = cardNumberLength-2; index > 0 ; index-=2){
+            int numberInIntFormat = getNumberInIntFormat(numbers, index);
             sumOfDoubleEvenNumber += numberInIntFormat;
         }
+    }
+
+
+    private int getNumberInIntFormat(String numbers, int index) {
+        char numberAtIndexInCharFormat = numbers.charAt(index);
+        return Character.getNumericValue(numberAtIndexInCharFormat);
     }
 
     public int getDoubleEvenNumberSum() {

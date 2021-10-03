@@ -32,7 +32,17 @@ class CardValidationTest {
         CardValidation cardValidation = new CardValidation("4537802395732425");
         //when
         cardValidation.sumOfDoubleEvenNumber("4537802395732425");
-        assertEquals(32, cardValidation.getDoubleEvenNumberSum());
+        assertEquals(33, cardValidation.getDoubleEvenNumberSum());
+    }
+
+    @Test
+    @DisplayName("Test that numbers can be summed at even place from the back")
+    public void testNumbersCanSumAtEvenPlaceFor13Digits(){
+        //given
+        CardValidation cardValidation = new CardValidation("4537802392425");
+        //when
+        cardValidation.sumOfDoubleEvenNumber("4537802392425");
+        assertEquals(19, cardValidation.getDoubleEvenNumberSum());
     }
 
 }
