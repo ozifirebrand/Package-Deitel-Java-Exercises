@@ -108,12 +108,6 @@ public class CardValidation {
         return prefixMatch;
     }
 
-//    @Override
-//    public boolean equals (Object numbers){
-//        if ( numbers instanceof String obj ) return  true;
-//        String value = (String) numbers;
-//        if ( value.charAt(0)==  )
-//    }
     private String getPrefix(String numbers, int firstIntNumbersInNumber){
         String getPrefixString = "";
         for ( int index = 0; index < firstIntNumbersInNumber; index ++){
