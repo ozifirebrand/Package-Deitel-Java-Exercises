@@ -13,27 +13,20 @@ public class CardValidation {
 
     }
 
-    public void sumOfDoubleEvenNumber(String numbers) {
-        if ( cardNumberLength == 16 ){
-            calculateDoubleSum(numbers);
-        }else {
-            calculateDoubleSum(numbers);
-        }
+    public void sumOddPlace(String numbers) {
+        calculateDoubleSum(numbers);
     }
-
-
 
     private void calculateDoubleSum(String numbers) {
         loopThroughStringOfNumbers(numbers);
     }
 
     private void loopThroughStringOfNumbers(String numbers) {
-        for (int index = cardNumberLength-2; index > 0 ; index-=2){
+        for (int index = cardNumberLength-1; index > 0 ; index-=2){
             int numberInIntFormat = getNumberInIntFormat(numbers, index);
             sumOfDoubleEvenNumber += numberInIntFormat;
         }
     }
-
 
     private int getNumberInIntFormat(String numbers, int index) {
         char numberAtIndexInCharFormat = numbers.charAt(index);

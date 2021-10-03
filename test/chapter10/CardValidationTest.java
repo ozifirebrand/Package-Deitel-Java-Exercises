@@ -26,23 +26,32 @@ class CardValidationTest {
     }
 
     @Test
-    @DisplayName("Test that numbers can be summed at even place from the back")
+    @DisplayName("Test that numbers can be summed at odd` place from the back")
     public void testNumbersCanSumAtEvenPlace(){
         //given
         CardValidation cardValidation = new CardValidation("4537802395732425");
         //when
-        cardValidation.sumOfDoubleEvenNumber("4537802395732425");
-        assertEquals(33, cardValidation.getDoubleEvenNumberSum());
+        cardValidation.sumOddPlace("4537802395732425");
+        assertEquals(32, cardValidation.getDoubleEvenNumberSum());
     }
 
     @Test
-    @DisplayName("Test that numbers can be summed at even place from the back")
+    @DisplayName("Test that numbers can be summed at odd place from the back for 13 digits")
     public void testNumbersCanSumAtEvenPlaceFor13Digits(){
         //given
         CardValidation cardValidation = new CardValidation("4537802392425");
         //when
-        cardValidation.sumOfDoubleEvenNumber("4537802392425");
-        assertEquals(19, cardValidation.getDoubleEvenNumberSum());
+        cardValidation.sumOddPlace("4537802392425");
+        assertEquals(31, cardValidation.getDoubleEvenNumberSum());
     }
 
+    @Test
+    @DisplayName("Test that numbers can be summed at even place from the back")
+    public void testMultiplicationOfNumbersBy2(){
+        //given
+        CardValidation cardValidation = new CardValidation("4537802392425");
+        //when
+        cardValidation.sumOddPlace("4537802392425");
+        assertEquals(19, cardValidation.getDoubleEvenNumberSum());
+    }
 }
