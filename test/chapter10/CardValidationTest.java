@@ -62,6 +62,26 @@ class CardValidationTest {
         CardValidation cardValidation = new CardValidation("4537802392425");
         //when
         //assert
-        assertEquals(1, cardValidation.getDigit(5));
+        assertEquals(9, cardValidation.getDigit(18));
+    }
+
+    @Test
+    @DisplayName("Test that prefix matches condition for visa card")
+    public void testPrefixMatchRequirementForVisaCard(){
+        //given
+        CardValidation cardValidation = new CardValidation("4537802392425");
+        //when
+        //assert
+        assertTrue(cardValidation.prefixMatched("4537802392425", 45));
+    }
+
+    @Test
+    @DisplayName("Test that prefix matches condition for visa card")
+    public void testPrefixMatchRequirementForMasterCard(){
+        //given
+        CardValidation cardValidation = new CardValidation("4537802392425");
+        //when
+        //assert
+        assertTrue(cardValidation.prefixMatched("4537802392425", 4));
     }
 }

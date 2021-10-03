@@ -5,6 +5,7 @@ public class CardValidation {
     private int sumOfOddPlaceNumbers;
     private int sumOfEvenPlacedNumbers;
     private int sumOfNumber = 0;
+    private boolean prefixMatch;
 
     public CardValidation(String number){
         boolean numberIsLesserThan13 = number.length() < 13;
@@ -25,12 +26,12 @@ public class CardValidation {
 
     private void loopThroughStringOfNumbersAtOddPlace(String numbers) {
         for (int index = cardNumberLength-1; index > 0 ; index-=2){
-            int numberInIntFormat = convertStringToInt(numbers, index);
+            int numberInIntFormat = convertStringToIntAtIndex(numbers, index);
             sumOfOddPlaceNumbers += numberInIntFormat;
         }
     }
 
-    private int convertStringToInt(String numbers, int index) {
+    private int convertStringToIntAtIndex(String numbers, int index) {
         char numberAtIndexInCharFormat = numbers.charAt(index);
         return Character.getNumericValue(numberAtIndexInCharFormat);
     }
@@ -45,7 +46,7 @@ public class CardValidation {
 
     private void loopThroughStringOfNumbersAtEvenPlace(String numbers) {
         for (int indexOfNumbers = cardNumberLength-2; indexOfNumbers > 0 ; indexOfNumbers-=2){
-            int numberInIntFormat = convertStringToInt(numbers, indexOfNumbers);
+            int numberInIntFormat = convertStringToIntAtIndex(numbers, indexOfNumbers);
             int multiplier = multiplyNumber(numberInIntFormat);
             sumOfEvenPlacedNumbers += multiplier;
         }
@@ -90,4 +91,39 @@ public class CardValidation {
     private void addIndividualNumbersTo(int toIntOfNumber) {
         sumOfNumber += toIntOfNumber;
     }
+
+    public boolean prefixMatched(String numbers, int digit) {
+           int lengthOfDigit = getSize(digit);
+           String getPrefixString = getPrefix(numbers, lengthOfDigit);
+           int numberToInt = convertToInt(numbers, 0);
+            if ( lengthOfDigit == 1 ){
+                if ( digit == numberToInt )
+                    prefixMatch = true;
+            }
+            if ( lengthOfDigit == 2  ){
+                if ( getPrefixString.charAt(0) == numbers.charAt(0) && getPrefixString.charAt(1) == numbers.charAt(1 ) ){
+                    prefixMatch = true;
+                }
+            }
+        return prefixMatch;
+    }
+
+//    @Override
+//    public boolean equals (Object numbers){
+//        if ( numbers instanceof String obj ) return  true;
+//        String value = (String) numbers;
+//        if ( value.charAt(0)==  )
+//    }
+    private String getPrefix(String numbers, int firstIntNumbersInNumber){
+        String getPrefixString = "";
+        for ( int index = 0; index < firstIntNumbersInNumber; index ++){
+            getPrefixString += numbers.charAt(index);
+        }
+        return getPrefixString;
+    }
+    private int getSize(int digit) {
+        String digitToString = String.format("%d", digit);
+        return digitToString.length();
+    }
+
 }
