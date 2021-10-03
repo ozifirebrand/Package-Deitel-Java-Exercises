@@ -32,7 +32,7 @@ class CardValidationTest {
         CardValidation cardValidation = new CardValidation("4537802395732425");
         //when
         cardValidation.sumOddPlace("4537802395732425");
-        assertEquals(32, cardValidation.getDoubleEvenNumberSum());
+        assertEquals(32, cardValidation.getOddPlaceNumberSum());
     }
 
     @Test
@@ -42,16 +42,26 @@ class CardValidationTest {
         CardValidation cardValidation = new CardValidation("4537802392425");
         //when
         cardValidation.sumOddPlace("4537802392425");
-        assertEquals(31, cardValidation.getDoubleEvenNumberSum());
+        assertEquals(31, cardValidation.getOddPlaceNumberSum());
     }
 
     @Test
-    @DisplayName("Test that numbers can be summed at even place from the back")
+    @DisplayName("Test that numbers can be doubled at even place from the back")
     public void testMultiplicationOfNumbersBy2(){
         //given
         CardValidation cardValidation = new CardValidation("4537802392425");
         //when
-        cardValidation.sumOddPlace("4537802392425");
-        assertEquals(19, cardValidation.getDoubleEvenNumberSum());
+        cardValidation.sumOfDoubleEvenPlacedNumbers("4537802392425");
+        assertEquals(38, cardValidation.getDoubleEvenPlaceNumberSum());
+    }
+
+    @Test
+    @DisplayName("Test that if digit is greater than 9, the individual digits are added")
+    public void testDigitsGreaterThan9AreSummed(){
+        //given
+        CardValidation cardValidation = new CardValidation("4537802392425");
+        //when
+        //assert
+        assertEquals(1, cardValidation.getDigit(5));
     }
 }
