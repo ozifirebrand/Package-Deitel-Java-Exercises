@@ -84,4 +84,14 @@ class CardValidationTest {
         //assert
         assertTrue(cardValidation.prefixMatched("4537802392425", 4));
     }
+
+    @Test
+    @DisplayName("Test that card number is valid")
+    public void testNumberIsValid(){
+        //given
+        CardValidation cardValidation = new CardValidation("4537802392425");
+        //when
+        //assert
+        assertTrue(cardValidation.isValid("4537802392426"));
+    }
 }

@@ -6,6 +6,8 @@ public class CardValidation {
     private int sumOfEvenPlacedNumbers;
     private int sumOfNumber = 0;
     private boolean prefixMatch;
+    private boolean cardIsValid;
+
 
     public CardValidation(String number){
         boolean numberIsLesserThan13 = number.length() < 13;
@@ -120,4 +122,16 @@ public class CardValidation {
         return digitToString.length();
     }
 
+    public boolean isValid(String numbers) {
+        sumOddPlace(numbers);
+        int sumOfOddPlacedNumbers = getOddPlaceNumberSum();
+        sumOfDoubleEvenPlacedNumbers(numbers);
+        int sumOfEvenPlacedNumbers = getDoubleEvenPlaceNumberSum();
+        int cardNumberSum = sumOfOddPlacedNumbers + sumOfEvenPlacedNumbers;
+        if ( cardNumberSum% 10 ==0 ){
+            if (  )
+            cardIsValid = true;
+        }
+        return cardIsValid;
+    }
 }
