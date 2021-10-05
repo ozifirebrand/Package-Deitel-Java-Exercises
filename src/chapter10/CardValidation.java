@@ -129,7 +129,7 @@ public class CardValidation {
         int sumOfEvenPlacedNumbers = getDoubleEvenPlaceNumberSum();
         int cardNumberSum = sumOfOddPlacedNumbers + sumOfEvenPlacedNumbers;
         if ( cardNumberSum% 10 ==0 ){
-            if (  )
+//            if (  )
             cardIsValid = true;
         }
         return cardIsValid;
