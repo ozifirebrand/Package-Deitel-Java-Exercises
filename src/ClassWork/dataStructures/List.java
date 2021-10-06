@@ -7,11 +7,13 @@ public interface List {
 
     void add(int element, int index);
 
-    void remove(int i);
+    void remove(int element);
 
     int getSize();
 
     int get(int i);
 
     int getCapacity();
+
+    int getIndexOf(int i);
 }
