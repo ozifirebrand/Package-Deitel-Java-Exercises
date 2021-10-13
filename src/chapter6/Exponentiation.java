@@ -18,4 +18,5 @@ public class Exponentiation {
         int exponent = scanner.nextInt();
         System.out.println("The exponent of " +base+" to "+ exponent+" is "+findIntegerPower(base, exponent));
     }
+    //todo: can be further modified for improvement
 }
