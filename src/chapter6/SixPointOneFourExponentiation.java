@@ -2,7 +2,7 @@ package chapter6;
 
 import java.util.Scanner;
 
-public class Exponentiation {
+public class SixPointOneFourExponentiation {
 
     public static int findIntegerPower(int base, int exponent) {
         int integerPower = 1;
