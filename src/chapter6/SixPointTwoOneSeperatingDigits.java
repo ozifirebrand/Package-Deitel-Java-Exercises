@@ -45,13 +45,6 @@ public class SixPointTwoOneSeperatingDigits {
         return outputDisplay;
     }
 
-    @Override
-    public boolean equals(Object wh){
-        if ( !(wh instanceof String s) ) return false;
-        String bl = (String) wh;
-
-        return true;
-    }
     private static int findDivisor(int digitInput) {
         String inputDigitToString = "" + digitInput;
         int divisor= 1;
@@ -60,4 +53,9 @@ public class SixPointTwoOneSeperatingDigits {
         }
         return divisor / 10;
     }
+
+    public static void main(String[] args) {
+        System.out.println(displayDigits(36302));
+    }
+    //fixme ASAP
 }
