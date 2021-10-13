@@ -17,9 +17,9 @@ class SixPointTwoOneSeperatingDigitsTest {
         assertEquals(2, returnedRemainder);
     }
     @Test
-    public void testCanSplitInput(){
-        String splitDigits = SixPointTwoOneSeperatingDigits.splitInput(4362);
-        assertSame("4 3 6 2", splitDigits);
+    public void testCanDisplaySplittedInput(){
+         assertEquals("5 4 6", SixPointTwoOneSeperatingDigits.displayDigits(546));
+//fixme :display works yet test is failing. Why?
     }
 
 }
