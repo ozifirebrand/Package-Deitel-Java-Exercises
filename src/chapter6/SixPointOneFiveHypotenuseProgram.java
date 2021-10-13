@@ -8,6 +8,7 @@ public class SixPointOneFiveHypotenuseProgram {
         return Math.sqrt(Math.pow(sideOne, 2) + Math.pow(sideTwo, 2));
     }
 
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("CALCULATING THE HYPOTENUSE OF A TRIANGLE FROM ITS 2 SIDES.");
@@ -15,7 +16,6 @@ public class SixPointOneFiveHypotenuseProgram {
         double sideOne = scanner.nextDouble();
         System.out.print("Enter side two: ");
         double sideTwo = scanner.nextDouble();
-        System.out.printf("The hypotenuse is %.3f", calculateHypotenuse(sideOne, sideTwo));
-
+        System.out.printf("Hypotenuse of the triangle is %.3f", calculateHypotenuse(sideOne, sideTwo));
     }
 }
