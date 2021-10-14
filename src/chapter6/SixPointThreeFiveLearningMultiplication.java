@@ -35,7 +35,7 @@ public class SixPointThreeFiveLearningMultiplication {
         return firstNumber*secondNumber;
     }
 
-    public static boolean isLowerThan(int userAnswer, int realAnswer) {
+    private static boolean isLowerThan(int userAnswer, int realAnswer) {
         return userAnswer<realAnswer;
     }
 
@@ -67,7 +67,6 @@ public class SixPointThreeFiveLearningMultiplication {
                 System.out.println("Type 1 to continue and 2 to end");
             }
             exitValue = scanner.nextInt();
-
         }
     }
 }
