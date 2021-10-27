@@ -9,6 +9,11 @@ public class Dog implements Comparable<Dog> {
     }
 
     @Override
+    public String toString(){
+        return "Name: "+name +"\n" + "Age: "+ age +"\n\n";
+    }
+
+    @Override
     public int compareTo(Dog anotherDog) {
         if ( this.age> anotherDog.age ) return 1;
         if ( this.age< anotherDog.age ) return -1;
