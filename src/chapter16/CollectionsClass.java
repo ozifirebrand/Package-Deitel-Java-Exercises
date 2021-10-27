@@ -1,7 +1,6 @@
 package chapter16;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 public class CollectionsClass {
@@ -13,8 +12,6 @@ public class CollectionsClass {
         dogs.add(dog1);
         dogs.add(dog2);
         dogs.add(dog3);
-        Collections.sort(dogs);
-        System.out.println(dogs);
-
+        System.out.println(dog1.compareTo(dog3));
     }
 }
