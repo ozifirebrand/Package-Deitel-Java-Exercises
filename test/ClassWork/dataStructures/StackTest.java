@@ -43,4 +43,13 @@ class StackTest {
         assertThrows(Stack.UnderFlowException.class, ()-> stack.pop());
     }
 
+    @Test
+    public void testPushValuePeekValue(){
+        stack.push(45);
+        stack.push(41);
+        stack.push(8);
+        stack.push(99);
+        assertEquals(99, stack.peek());
+    }
+
 }

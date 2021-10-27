@@ -2,8 +2,10 @@ package ClassWork.dataStructures;
 
 public class Stack {
     private int counter = 0;
+    private int element;
 
-    public void push(int value) {
+    public void push(int element) {
+        this.element = element;
         counter++;
     }
 
@@ -17,8 +19,11 @@ public class Stack {
     }
 
     public boolean isEmpty() {
-        if ( counter ==0 ) return true;
-        return false;
+        return counter == 0;
+    }
+
+    public int peek(){
+        return element;
     }
 
 
