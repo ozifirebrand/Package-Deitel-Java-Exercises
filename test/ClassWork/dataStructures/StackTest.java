@@ -62,4 +62,14 @@ class StackTest {
         assertEquals(45, stack.peek());
     }
 
+    @Test
+    public void testStackOverFlow(){
+        stack.push(45);
+        stack.push(41);
+        stack.push(8);
+        stack.push(9);
+        stack.push(78);
+        assertThrows(Stack.OverFlowException.class, ()-> stack.push(44));
+    }
+
 }

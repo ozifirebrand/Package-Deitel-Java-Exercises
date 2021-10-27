@@ -9,17 +9,17 @@ public class Stack {
     }
 
     public void push(int element) {
-        elements[counter] = element;
-        counter++;
+        if ( counter == elements.length ) throw new OverFlowException("Too mush numbers");
+        elements[counter++] = element;
     }
 
     public int size() {
         return counter;
     }
 
-    public void pop() {
+    public int pop() {
         if ( isEmpty() ) throw new UnderFlowException("message lo ku bayii");
-        counter--;
+        return --counter;
     }
 
     public boolean isEmpty() {
@@ -27,7 +27,7 @@ public class Stack {
     }
 
     public int peek(){
-        return elements[counter-1];
+        return elements[--counter];
     }
 
 
@@ -36,4 +36,12 @@ public class Stack {
             super(message);
         }
     }
+
+    public static class OverFlowException extends RuntimeException {
+        public OverFlowException(String message){
+            super(message);
+        }
+    }
 }
+//todo implement an email regex and a password regex that contains 8 characters. At least one uppercase character, lowercase character, a number and a number
+// todo QUEUE.
