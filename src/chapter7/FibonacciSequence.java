@@ -27,7 +27,7 @@ public class FibonacciSequence {
     /*User inputs a parameter into a method
     The method calculates the number's findFibonacci
         How to find the findFibonacci of each number
-            Start from the zeroth and first findFibonacci and add them
+            Start from the zeroth and first findFibonacci and push them
             This is equal to the next findFibonacci
             The new findFibonacci and the last number will be added to give the nth
             findFibonacci and so on until the nth number is reached

@@ -111,7 +111,7 @@ public class StudentsArray {
         The inputs are collected and appropriately initialised
         During initialisation, the counter-controlled loop also separates the inputs as rows and
         columns
-            To display the average, total and rank one will need to add each row individually and
+            To display the average, total and rank one will need to push each row individually and
              divide by number of students.
              This implies that each row will be the major factor in this computation.
              A method that adds all elements in a row and displays the sum immediately will be created.
