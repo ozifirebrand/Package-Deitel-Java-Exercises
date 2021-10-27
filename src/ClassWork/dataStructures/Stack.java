@@ -2,10 +2,14 @@ package ClassWork.dataStructures;
 
 public class Stack {
     private int counter = 0;
-    private int element;
+    private int[] elements;
+
+    public Stack(int capacity) {
+        elements = new int[capacity];
+    }
 
     public void push(int element) {
-        this.element = element;
+        elements[counter] = element;
         counter++;
     }
 
@@ -23,7 +27,7 @@ public class Stack {
     }
 
     public int peek(){
-        return element;
+        return elements[counter-1];
     }
 
 

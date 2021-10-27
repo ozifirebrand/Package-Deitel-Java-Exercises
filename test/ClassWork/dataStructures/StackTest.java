@@ -9,7 +9,7 @@ class StackTest {
     Stack stack;
     @BeforeEach
     public void setStack(){
-        stack = new Stack();
+        stack = new Stack(5);
     }
     @Test
     public void stackCanBeCreatedTest(){
@@ -50,6 +50,16 @@ class StackTest {
         stack.push(8);
         stack.push(99);
         assertEquals(99, stack.peek());
+    }
+
+    @Test
+    public void testPushThreeElementsPopTwoAndGetFirstElementAtPeek(){
+        stack.push(45);
+        stack.push(41);
+        stack.push(8);
+        stack.pop();
+        stack.pop();
+        assertEquals(45, stack.peek());
     }
 
 }
