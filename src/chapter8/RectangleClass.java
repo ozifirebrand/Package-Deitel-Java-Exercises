@@ -5,6 +5,7 @@ public class RectangleClass {
     private double length = 1;
     private double area;
     private double perimeter;
+
     public double getWidth() {
         return width;
     }
