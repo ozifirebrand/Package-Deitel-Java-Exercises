@@ -3,8 +3,10 @@ package chapter17;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Map;
 import java.util.function.Function;
 import java.util.function.Predicate;
+import java.util.stream.Collectors;
 
 public class ProcessEmployees {
     public static void main(String[] args) {
@@ -44,7 +46,35 @@ public class ProcessEmployees {
         System.out.printf("%nEmployees in descending order by last name then first:%n");
         list.stream().sorted(lastThenFirst.reversed()).forEach(System.out::println);
 
+        System.out.printf("%nUnique employee last name:%n");
+        list.stream().map(Employee::getLastName).distinct().sorted()
+                .forEach(System.out::println);
+
+        System.out.printf("%nEmployee names in order by last name then first name");
+        list.stream().sorted(lastThenFirst).map(Employee::getName)
+                .forEach(System.out::println);
+
+        System.out.printf("%nEmployees by department:%n");
+        Map<String, List<Employee>> groupedByDepartment =
+                list.stream().collect(Collectors.groupingBy(Employee::getDepartment));
+
+        groupedByDepartment.forEach((department, employeesInDepartment)->{
+            System.out.println();
+            System.out.println(department);
+            employeesInDepartment.forEach(
+                    employee -> System.out.printf("  %s%n", employee)
+            );
+        });
+
+        System.out.printf("%nCount of Employees by department:%n");
+        Map<String, Long> employeeCountByDepartment =
+                list.stream().collect(Collectors.groupingBy
+                        (Employee::getDepartment, Collectors.counting()));
+
+        employeeCountByDepartment.forEach((department, count)->{
+                System.out.println();
+        System.out.printf("%s has %d employee(s)%n", department,count);});
+
+
     }
-
-
 }
