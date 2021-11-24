@@ -15,6 +15,5 @@ public class RandomIntStream {
                         Collectors.counting()))
                 .forEach((face, frequency)->
         System.out.printf("%-6d%d%n", face, frequency));
-
     }
 }
