@@ -3,6 +3,7 @@ package chapter17;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
+import java.util.function.Function;
 import java.util.function.Predicate;
 
 public class ProcessEmployees {
@@ -27,6 +28,21 @@ public class ProcessEmployees {
 
         System.out.printf("%nFirst employee who earns in the range $4000-$6000: %n%s%n",
                 list.stream().filter(fourToSixThousand).findFirst().get());
+
+
+        System.out.println();
+        System.out.println();
+        Function<Employee, String> byFirstName = Employee::getFirstName;
+        Function<Employee, String> byLastName = Employee::getLastName;
+
+        Comparator<Employee> lastThenFirst = Comparator.comparing(byLastName)
+                .thenComparing(byFirstName);
+
+        System.out.printf("%nEmployees in ascending order by last name then first: %n");
+        list.stream().sorted(lastThenFirst).forEach(System.out::println);
+
+        System.out.printf("%nEmployees in descending order by last name then first:%n");
+        list.stream().sorted(lastThenFirst.reversed()).forEach(System.out::println);
 
     }
 
