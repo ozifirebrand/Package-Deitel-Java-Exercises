@@ -18,5 +18,21 @@ public class StreamsClasswork {
         String numbers = random.ints(10,1, 7).
                 mapToObj(String::valueOf).collect(Collectors.joining(" "));
         System.out.printf("Random numbers on one line %s%n", numbers);
+
+        int [] values = {3, 10, 8, 4, 1, 2, 9, 7, 5,6};
+        System.out.print("Original values: ");
+        System.out.println(
+                IntStream.of(values).mapToObj(String :: valueOf).
+                        collect(Collectors.joining(" "))
+        );
+
+        System.out.printf("%nCount: %d%n",IntStream.of(values).count());
+        System.out.printf("Min: %d%n", IntStream.of(values).min().getAsInt());
+        System.out.printf("Max: %d%n", IntStream.of(values).max().getAsInt());
+        System.out.printf("Average: %.2f%n", IntStream.of(values).average().getAsDouble());
+        System.out.printf("Sum via reduce method: %d%n", IntStream.of(values).
+                reduce(0, (x,y)->x+y));
+        System.out.printf("Sum of squares via reduce method: %d%n", IntStream.of(values)
+                .reduce(0, (x,y)->x+y*y));
     }
 }
