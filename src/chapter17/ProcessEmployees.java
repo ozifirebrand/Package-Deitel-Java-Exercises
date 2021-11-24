@@ -75,6 +75,15 @@ public class ProcessEmployees {
                 System.out.println();
         System.out.printf("%s has %d employee(s)%n", department,count);});
 
+        System.out.printf("%nSum of employees' salaries (via sum method):%.2f%n",
+                list.stream().mapToDouble(Employee::getSalary).sum());
+
+        System.out.printf("Sum of Enployees' salaries via reduce method: %.2f%n",
+                list.stream().mapToDouble(Employee::getSalary).
+                        reduce(0,(value1, value2)-> value1+ value2));
+
+        System.out.printf("Average of Employees' salaries: %.2f%n",
+                list.stream().mapToDouble(Employee::getSalary).average().getAsDouble());
 
     }
 }
