@@ -12,8 +12,17 @@ public class FilesManipulation {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter a new file or directory name");
 
-        Path path = Paths.get(scanner.nextLine());
+        String pathUri = scanner.nextLine();
+        Path path = takeInPathUri(pathUri);
 
+        documentPathValues(path);
+    }
+
+    public static Path takeInPathUri(String pathUri){
+        return Paths.get(pathUri);
+    }
+
+    public static void documentPathValues(Path path) throws IOException {
         if ( Files.exists(path) ){
             System.out.printf("%n%s exists %n", path.getFileName());
             System.out.printf("%s a directory %n", Files.isDirectory(path)?"Is": "Is not");
@@ -23,18 +32,22 @@ public class FilesManipulation {
             System.out.printf("Path is %s%n", path);
             System.out.printf("Absolute path is %s%n", path.toAbsolutePath());
 
-            if ( Files.isDirectory(path) ){
-                System.out.printf("%nDirectory contents: %n");
-                DirectoryStream<Path> directoryStream = Files.newDirectoryStream(path);
-                for (Path p: directoryStream){
-                    System.out.println(p);
-                }
-
-            }
+            checkIfIsDirectory(path);
 
         }
         else System.out.printf("%s does not exist.%n", path);
 
+    }
+
+    private static void checkIfIsDirectory(Path path) throws IOException {
+        if ( Files.isDirectory(path) ){
+            System.out.printf("%nDirectory contents: %n");
+            DirectoryStream<Path> directoryStream = Files.newDirectoryStream(path);
+            for (Path p: directoryStream){
+                System.out.println(p);
+            }
+
+        }
     }
 
 }
