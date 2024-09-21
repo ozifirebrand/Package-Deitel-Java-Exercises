@@ -1,6 +1,6 @@
 //OKOROAFOR OZIOMA ASSIGNMENT 18/7/2021
 
-package chapterThree;
+package Chapter3i;
 
 public class Bike {
     private boolean isOn;
